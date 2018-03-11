@@ -58,6 +58,7 @@ public class User {
     @Column(name = "gender")
     private int gender;
 
+    @Temporal(TemporalType.DATE)
     @Column
     private Date date_of_birth;
 
