@@ -10,7 +10,7 @@ public interface IArticleService {
 
     Article getArticleById(int articleId);
 
-    boolean addArticle(Article article);
+    void addArticle(Article article);
 
     void updateArticle(Article article);
 

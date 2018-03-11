@@ -24,13 +24,13 @@ public class ArticleServiceImpl implements IArticleService {
         return articleDAO.getAllArticles();
     }
     @Override
-    public synchronized boolean addArticle(Article article){
-        if (articleDAO.articleExists(article.getTitle(), article.getCategory())) {
-            return false;
-        } else {
+    public void addArticle(Article article){
+//        if (articleDAO.articleExists(article.getTitle(), article.getCategory())) {
+//            return false;
+//        } else {
             articleDAO.addArticle(article);
-            return true;
-        }
+//            return true;
+//        }
     }
     @Override
     public void updateArticle(Article article) {
