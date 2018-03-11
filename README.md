@@ -2,6 +2,13 @@
 Project overview : Company management 
 
 
+### Stack using 
++ Spring boot 
++ Hibernate ORM 
++ JPA
++ MySQL 
+
+
 
 
 
