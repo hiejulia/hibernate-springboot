@@ -23,6 +23,12 @@ public class ArticleServiceImpl implements IArticleService {
     public List<Article> getAllArticles(){
         return articleDAO.getAllArticles();
     }
+
+    @Override
+    public List<Article> getAll5Articles() {
+        return articleDAO.getAll5Articles();
+    }
+
     @Override
     public void addArticle(Article article){
 //        if (articleDAO.articleExists(article.getTitle(), article.getCategory())) {

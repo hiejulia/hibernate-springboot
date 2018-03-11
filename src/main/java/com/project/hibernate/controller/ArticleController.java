@@ -37,6 +37,13 @@ public class ArticleController {
         List<Article> list = articleService.getAllArticles();
         return new ResponseEntity<List<Article>>(list, HttpStatus.OK);
     }
+
+    @GetMapping("/get5")
+    public ResponseEntity<List<Article>> getAll5Articles() {
+        List<Article> list = articleService.getAll5Articles();
+        return new ResponseEntity<List<Article>>(list, HttpStatus.OK);
+    }
+
     @PostMapping
     public ResponseEntity<Article> addArticle(@Valid @RequestBody Article article) {
         System.out.print("create new article");

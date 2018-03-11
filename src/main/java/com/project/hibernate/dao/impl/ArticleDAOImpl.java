@@ -27,11 +27,21 @@ public class ArticleDAOImpl implements IArticleDAO {
         String hql = "FROM Article as atcl ORDER BY atcl.articleId";
         return (List<Article>) entityManager.createQuery(hql).getResultList();
     }
+
+    // GET TOP 5
+
+
+    @Override
+    public List<Article> getAll5Articles() {
+        return entityManager.createQuery("SELECT a FROM Article a ORDER BY a.articleId DESC").setMaxResults(5).getResultList();
+    }
+
     @Override
     public void addArticle(Article article) {
+//        entityManager.
         entityManager.merge(article);
-//        entityManager.getTransaction().commit();
-//        entityManager.close();
+        entityManager.getTransaction().commit();
+        entityManager.close();
 
     }
     @Override

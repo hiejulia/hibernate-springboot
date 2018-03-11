@@ -20,10 +20,10 @@ public class Article implements Serializable {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    @Column(name="article_id")
+    @Column(name="article_id",nullable = false)
     private int articleId;
 
-    @Column(name="title")
+    @Column(name="title",nullable = false)
     private String title;
 
     @Column(name="category")

@@ -1,11 +1,14 @@
 package com.project.hibernate.dao;
 import com.project.hibernate.entity.Article;
+import org.hibernate.boot.archive.scan.spi.AbstractScannerImpl;
 
 import java.util.List;
 
 public interface IArticleDAO {
 
     List<Article> getAllArticles();
+
+    List<Article> getAll5Articles();
 
     Article getArticleById(int articleId);
 

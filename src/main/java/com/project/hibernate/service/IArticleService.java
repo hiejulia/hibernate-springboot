@@ -15,4 +15,6 @@ public interface IArticleService {
     void updateArticle(Article article);
 
     void deleteArticle(int articleId);
+
+    List<Article> getAll5Articles();
 }
