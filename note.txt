@@ -27,6 +27,20 @@ https://github.com/philipsorst/angular-rest-springsecurity
 
 
 
+Base project:
+https://github.com/Bartosz-D3V/E-Commerce-Full-Stack
+
+
+
+
+
+
+
+
+
+
+
+
 
 ---- spring mvc - hibernate  
 https://github.com/xujeff/tianti
