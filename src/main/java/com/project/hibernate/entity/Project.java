@@ -3,6 +3,8 @@ package com.project.hibernate.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -21,6 +23,12 @@ public class Project {
 
 
     private Department department;
+
+    @NotNull
+    private Date deadline;
+
+    @NotNull
+    private String status;
 
     @OneToOne
     private ProjectManager projectManager;
