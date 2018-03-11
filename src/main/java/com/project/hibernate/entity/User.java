@@ -5,6 +5,7 @@ package com.project.hibernate.entity;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -56,6 +57,9 @@ public class User {
     @NotNull
     @Column(name = "gender")
     private int gender;
+
+    @Column
+    private Date date_of_birth;
 
 
 //    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user_id",fetch = FetchType.LAZY)
