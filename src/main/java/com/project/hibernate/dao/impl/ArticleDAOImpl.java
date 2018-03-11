@@ -40,8 +40,8 @@ public class ArticleDAOImpl implements IArticleDAO {
     public void addArticle(Article article) {
 //        entityManager.
         entityManager.merge(article);
-        entityManager.getTransaction().commit();
-        entityManager.close();
+//        entityManager.getTransaction().commit();
+//        entityManager.close();
 
     }
     @Override

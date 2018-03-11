@@ -9,14 +9,16 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
-@Data
-@Entity
+//@Data
+//@Entity(name = "expertise")
 public class Expertise {
 
-    @Column
-    String name;
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.AUTO)
+//    private Integer id;
+//
+//    @Column
+//    String name;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+
 }

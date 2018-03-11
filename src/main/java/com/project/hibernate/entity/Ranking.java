@@ -6,24 +6,24 @@ import org.springframework.data.annotation.Id;
 import javax.persistence.*;
 
 @Data
-@Entity
+//@Entity
 public class Ranking {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
-
-    @ManyToOne
-    User subject;
-
-    @ManyToOne
-    User observer;
-
-    @ManyToOne
-    Expertise expertise;
-
-    @Column
-    Integer ranking;
+//
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.AUTO)
+//    private Integer id;
+//
+//    @ManyToOne
+//    User subject;
+//
+//    @ManyToOne
+//    User observer;
+//
+//    @ManyToOne
+//    Expertise expertise;
+//
+//    @Column
+//    Integer ranking;
 
 
 }
