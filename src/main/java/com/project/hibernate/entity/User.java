@@ -34,6 +34,12 @@ public class User implements Serializable {
     @Column(name = "username")
     private String username;
 
+
+    private String firstName;
+
+
+    private String lastName;
+
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 255)
@@ -46,7 +52,7 @@ public class User implements Serializable {
     private int gender;
 
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "userId",fetch = FetchType.LAZY)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user_id",fetch = FetchType.LAZY)
     private List<Contact> contact;
 
 

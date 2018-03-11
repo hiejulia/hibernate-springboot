@@ -7,7 +7,7 @@ import org.springframework.data.annotation.LastModifiedDate;
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
+//import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -26,18 +26,18 @@ public class Contact implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @Column(name = "id")
+    @Column(name = "contact_id",nullable = false)
     private Integer contactId;
 
     @Size(max = 255)
-    @Column(name = "contact")
-    @NotBlank
-    private String contact;
+    @Column(name = "name",nullable = false)
+//    @NotBlank
+    private String name;
 
     @NotNull
     private String title;
 
-    @NotBlank
+    @NotNull
     private String content;
 
     @JoinColumn(name = "user_id", referencedColumnName = "user_id")
