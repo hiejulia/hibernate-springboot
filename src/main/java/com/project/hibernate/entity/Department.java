@@ -5,6 +5,8 @@ import lombok.Data;
 import javax.persistence.Id;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,6 +21,8 @@ public class Department {
     private int id;
 
     @Column(name = "name", nullable = false)
+    @NotNull
+    @NotBlank
     String name;
 
     @Column(name = "contact_email", nullable = false)

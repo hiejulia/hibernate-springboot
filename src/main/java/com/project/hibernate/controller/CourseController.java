@@ -6,8 +6,11 @@ import java.util.List;
 import javax.validation.Valid;
 
 import com.project.hibernate.entity.Course;
+import com.project.hibernate.repository.CourseRepository;
 import com.project.hibernate.service.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,6 +23,9 @@ public class CourseController {
 
     @Autowired
     private CourseService courseService;
+
+    @Autowired
+    private CourseRepository courseRepository;
 
 
     // Get All Notes
@@ -85,5 +91,16 @@ public class CourseController {
 
         return ResponseEntity.ok().build();
     }
+
+    // SEARCH COURSE BY CATEGORY ID
+    @RequestMapping(value = "/searchCoursesByCategory", method = RequestMethod.POST)
+    public Page<Course> searchCourseByCategory(
+            @RequestParam(name="categoryId",   defaultValue="")     Integer categoryId,
+            @RequestParam(name="page", defaultValue="0") 	int page,
+            @RequestParam(name="size", defaultValue="5") 	int size) {
+//        return courseRepository.searchByCategory("%"+categoryId+"%", new PageRequest(page, size));
+        return courseRepository.searchByCategory(categoryId, new PageRequest(page, size));
+    }
+
 
 }

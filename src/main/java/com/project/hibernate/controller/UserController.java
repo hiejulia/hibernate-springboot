@@ -107,4 +107,59 @@ public class UserController {
 //    }
 //
 
+
+//
+//    @Autowired
+//    EmployeeRepository employeeRepository;
+//
+//    @PostMapping(value = "/employees")
+//    public Employee createEmployee(@Valid @RequestBody Employee employee) {
+//        return employeeRepository.save(employee);
+//    }
+//
+//    @GetMapping("/employees")
+//    public List<Employee> listEmployee() {
+//        return employeeRepository.findAll();
+//    }
+//
+//    @GetMapping("/employees/{id}")
+//    public ResponseEntity<?> getEmployee(@PathVariable(value = "id")  Long id) {
+//        Employee employee = employeeRepository.findOne(id);
+//
+//        if(employee == null) {
+//            return ResponseEntity.notFound().build();
+//        }
+//        return ResponseEntity.ok().body(employee);
+//    }
+//
+//    @PutMapping("/employees/{id}")
+//    public ResponseEntity<?> updateEmployee(@PathVariable(value = "id")  Long id,
+//                                            @Valid @RequestBody Employee updateData) {
+//        Employee employee = employeeRepository.findOne(id);
+//
+//        if(employee == null) {
+//            return ResponseEntity.notFound().build();
+//        }
+//
+//        employee.setManagerId(updateData.getManagerId());
+//        employee.setName(updateData.getName());
+//
+//        Employee updatedEmployee = employeeRepository.save(employee);
+//
+//        return ResponseEntity.ok(updatedEmployee);
+//    }
+//
+//    @DeleteMapping("/employees/{id}")
+//    public ResponseEntity<?> deleteEmployee(@PathVariable(value = "id")  Long id) {
+//        Employee employee = employeeRepository.findOne(id);
+//
+//        if(employee == null) {
+//            return ResponseEntity.notFound().build();
+//        }
+//
+//        employeeRepository.delete(employee);
+//
+//        return ResponseEntity.ok().build();
+//    }
+
 }
