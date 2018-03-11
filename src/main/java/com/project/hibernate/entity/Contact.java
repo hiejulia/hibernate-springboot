@@ -40,9 +40,9 @@ public class Contact implements Serializable {
     @NotNull
     private String content;
 
-    @JoinColumn(name = "user_id", referencedColumnName = "user_id")
-    @ManyToOne(optional = false)
-    private User userId;
+//    @JoinColumn(name = "user_id", referencedColumnName = "user_id")
+//    @ManyToOne(optional = false)
+//    private User userId;
 
     // CREATED DATE
     @Column(nullable = false, updatable = false)

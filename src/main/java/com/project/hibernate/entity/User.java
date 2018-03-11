@@ -52,8 +52,8 @@ public class User implements Serializable {
     private int gender;
 
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user_id",fetch = FetchType.LAZY)
-    private List<Contact> contact;
+//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user_id",fetch = FetchType.LAZY)
+//    private List<Contact> contact;
 
 
 

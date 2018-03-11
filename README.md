@@ -1,2 +1,4 @@
 # hibernate-springboot
-Project overview 
+Project overview : Company management 
+
++ 
