@@ -9,6 +9,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface IUserRepository extends CrudRepository<User, Long> {
 
-    @Cacheable(value = "findByUsername")
-    User findByUsername(String username);
+//    @Cacheable(value = "findByUserName")
+    User findByUserName(String username);
 }

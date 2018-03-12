@@ -4,10 +4,9 @@ package com.project.hibernate.controller;
 import com.project.hibernate.entity.User;
 import com.project.hibernate.repository.IUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/v1/api/users")
@@ -21,9 +20,16 @@ public class UserController {
     // find User by user name
     @RequestMapping(value = "/{name}", method = RequestMethod.GET)
     public User getUserByUserName(@PathVariable("name") String name) {
-        
 
-        return userRepository.findByUsername(name);
+
+        return userRepository.findByUserName(name);
+    }
+
+    // get all
+    @GetMapping
+    public Iterable<User> findAll() {
+
+        return userRepository.findAll();
     }
 
 //    @Autowired

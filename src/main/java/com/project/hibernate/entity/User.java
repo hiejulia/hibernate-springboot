@@ -15,15 +15,16 @@ import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 //
-@Entity
-@Table(name = "user")
-@XmlRootElement
+
+//@XmlRootElement
 ////@NamedQueries({
 ////        @NamedQuery(name = "User.findAll", query = "SELECT s FROM user s")})
+@Entity
+@Table
 @Data
-public class User {
+public class User implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+//    private static final long serialVersionUID = 1L;
 
 //    @Id
 //    @GeneratedValue(strategy = GenerationType.AUTO)
@@ -31,11 +32,10 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Basic(optional = false)
     @Column(name = "user_id")
     private String userId;
 
-    @Basic(optional = false)
+
     @NotNull
     @Size(min = 1, max = 255)
     @Column(name = "user_name")
@@ -47,7 +47,7 @@ public class User {
 
     private String lastName;
 
-    @Basic(optional = false)
+
     @NotNull
     @Size(min = 1, max = 255)
     @Column(name = "password")
@@ -57,7 +57,6 @@ public class User {
     private String email;
 
     @Basic(optional = false)
-    @NotNull
     @Column(name = "gender")
     private int gender;
 
@@ -82,8 +81,6 @@ public class User {
             inverseJoinColumns = { @JoinColumn(name="role_id")}
     )
     private List<Role> roles;
-
-
 
 
 
