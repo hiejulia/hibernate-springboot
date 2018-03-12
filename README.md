@@ -8,6 +8,9 @@ Project overview : Company management hub
 + Hibernate ORM 
 + JPA
 + MySQL 
++ Maven 
++ JPA
++ Tomcat 7 
 
 
 
