@@ -30,7 +30,7 @@ public class ArticleDAOImpl implements IArticleDAO {
 
     @Override
     @Transactional(readOnly = true)
-    public Article getArticleById(int articleId) {
+    public Article getArticleById(int articleId)  {
         return entityManager.find(Article.class, articleId);
     }
 
