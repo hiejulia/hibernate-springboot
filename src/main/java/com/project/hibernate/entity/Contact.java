@@ -1,6 +1,7 @@
 package com.project.hibernate.entity;
 
 
+import lombok.Data;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
@@ -13,14 +14,39 @@ import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
 
-//@Entity
-//@Table(name = "contact")
+
 //@XmlRootElement
 //@NamedQueries({
 //        @NamedQuery(name = "Contact.findAll", query = "SELECT s FROM contact s")})
 //@JsonIgnoreProperties(value = {"createdAt", "updatedAt"},
 //        allowGetters = true)
-public class Contact {
+@Entity
+@Data
+@Table(name = "contact", uniqueConstraints = {
+        @UniqueConstraint(columnNames = "contact_id"),
+        @UniqueConstraint(columnNames = "contact_code") })
+public class Contact implements Serializable {
+    @Id
+    @GeneratedValue
+    @Column(name = "contact_id", unique = true, nullable = false)
+    private int contactId;
+
+    @Column(name = "contact_code", unique = true, nullable = false, length = 5)
+    private String contactCode;
+
+    private String firstName;
+
+    private String lastName;
+
+    private String email;
+
+    private String phone;
+
+    private String image;
+
+    @Temporal(TemporalType.DATE)
+    private Date birthday;
+
 //
 //    private static final long serialVersionUID = 1L;
 //    @Id

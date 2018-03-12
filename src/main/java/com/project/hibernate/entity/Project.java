@@ -32,11 +32,11 @@ public class Project {
 
     @OneToOne
     private ProjectManager projectManager;
-
-    @ManyToMany
-    @JoinTable(name = "user_project", joinColumns = @JoinColumn(name = "project_id"),
-            inverseJoinColumns = @JoinColumn(name = "user_id"))
-    private Set<User> members = new HashSet<>();
+//
+//    @ManyToMany
+//    @JoinTable(name = "user_project", joinColumns = @JoinColumn(name = "project_id"),
+//            inverseJoinColumns = @JoinColumn(name = "user_id"))
+//    private Set<User> members = new HashSet<>();
 
 
 

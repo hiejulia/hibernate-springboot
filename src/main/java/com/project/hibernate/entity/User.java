@@ -18,10 +18,11 @@ import javax.xml.bind.annotation.XmlTransient;
 
 //@XmlRootElement
 ////@NamedQueries({
-////        @NamedQuery(name = "User.findAll", query = "SELECT s FROM user s")})
-@Entity
-@Table
+////
+//      @NamedQuery(name = "User.findAll", query = "SELECT s FROM user s")})
 @Data
+@Entity
+@Table(name = "user")
 public class User implements Serializable {
 
 //    private static final long serialVersionUID = 1L;
@@ -31,9 +32,9 @@ public class User implements Serializable {
 //    private Integer id;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
-    private String userId;
+    private int userId;
 
 
     @NotNull
@@ -41,10 +42,10 @@ public class User implements Serializable {
     @Column(name = "user_name")
     private String userName;
 
-
+    @Column
     private String firstName;
 
-
+    @Column
     private String lastName;
 
 
@@ -56,7 +57,7 @@ public class User implements Serializable {
     @Column(name="email", nullable=false)
     private String email;
 
-    @Basic(optional = false)
+//    @Basic(optional = false)
     @Column(name = "gender")
     private int gender;
 
@@ -70,9 +71,9 @@ public class User implements Serializable {
 
 
 // PROJECT
-    @ManyToMany(mappedBy = "members")
-    private Set<Project> projects = new HashSet<>();
-
+//    @ManyToMany(mappedBy = "members")
+//    private Set<Project> projects = new HashSet<>();
+////
     // role
     @ManyToMany(fetch=FetchType.LAZY)
     @JoinTable(
