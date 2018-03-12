@@ -1,13 +1,10 @@
 package com.project.hibernate.entity;
 import lombok.Data;
+import org.springframework.data.annotation.CreatedDate;
 
 import java.io.Serializable;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import java.util.Date;
+import javax.persistence.*;
 
 
 // Entity Article -> User(role) -> create Article
@@ -34,6 +31,12 @@ public class Article implements Serializable {
 
     @Column(name = "description")
     private String description;
+
+
+    @CreatedDate
+    @Version
+    @Column(name = "created_at")
+    private Date createdAt;
 
 
 

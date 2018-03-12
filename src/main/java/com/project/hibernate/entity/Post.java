@@ -13,12 +13,14 @@ public class Post {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "post_id")
     private Integer id;
 
     @Column
     String title;
 
     @ManyToOne
+    @JoinColumn(name="department_id")
     Department department;
 
 }

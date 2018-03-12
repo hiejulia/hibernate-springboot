@@ -53,5 +53,17 @@ public class UserValidator {
 //            }
 //        }
 //    }
-
+//@Override
+//public boolean supports(Class<?> aClass) {
+//    return aClass.isAssignableFrom(Sequence.class);
+//}
+//
+//    @Override
+//    public void validate(Object object, Errors errors) {
+//        Sequence sequence = (Sequence) object;
+//
+//        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "author", "sequence.author.empty", "Field \"Author\" cannot be empty!");
+//
+//        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "purpose", "sequence.purpose.empty", "Field \"Purpose\" cannot be empty!");
+//    }
 }

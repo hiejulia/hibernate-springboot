@@ -6,6 +6,10 @@ import javax.persistence.PersistenceContext;
 
 import com.project.hibernate.dao.IArticleDAO;
 import com.project.hibernate.entity.Article;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,12 +21,22 @@ public class ArticleDAOImpl implements IArticleDAO {
     private EntityManager entityManager;
 
 
+    SessionFactory sessionFactory;
+
+    Session session;
+
+    Transaction transaction;
+
+
     @Override
+    @Transactional(readOnly = true)
     public Article getArticleById(int articleId) {
         return entityManager.find(Article.class, articleId);
     }
+
     @SuppressWarnings("unchecked")
     @Override
+    @Transactional(readOnly = true)
     public List<Article> getAllArticles() {
         String hql = "FROM Article as atcl ORDER BY atcl.articleId";
         return (List<Article>) entityManager.createQuery(hql).getResultList();
@@ -32,6 +46,7 @@ public class ArticleDAOImpl implements IArticleDAO {
 
 
     @Override
+    @Transactional(readOnly = true)
     public List<Article> getAll5Articles() {
         return entityManager.createQuery("SELECT a FROM Article a ORDER BY a.articleId DESC").setMaxResults(5).getResultList();
     }

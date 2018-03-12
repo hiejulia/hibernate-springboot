@@ -32,7 +32,8 @@ public class Department {
     private String contactPhone;
 
     @OneToMany(orphanRemoval = true, mappedBy = "department")
-    List<Post> posts = new ArrayList<>();
+    @OrderBy("post_id")
+    private List<Post> posts = new ArrayList<>();
 
 
 
