@@ -49,3 +49,13 @@ Project overview : Company management hub
     
     
     
+    
+#### Some optimization for this project
++ Maven build time : 
+    + https://zeroturnaround.com/rebellabs/your-maven-build-is-slow-speed-it-up/
+    + https://stackoverflow.com/questions/32368976/ways-to-make-maven-build-faster
+    + 
+    
+    
+    
+    

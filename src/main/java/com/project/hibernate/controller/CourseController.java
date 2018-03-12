@@ -93,14 +93,49 @@ public class CourseController {
     }
 
     // SEARCH COURSE BY CATEGORY ID
-    @RequestMapping(value = "/searchCoursesByCategory", method = RequestMethod.POST)
-    public Page<Course> searchCourseByCategory(
-            @RequestParam(name="categoryId",   defaultValue="")     Integer categoryId,
-            @RequestParam(name="page", defaultValue="0") 	int page,
-            @RequestParam(name="size", defaultValue="5") 	int size) {
-//        return courseRepository.searchByCategory("%"+categoryId+"%", new PageRequest(page, size));
-        return courseRepository.searchByCategory(categoryId, new PageRequest(page, size));
-    }
+//    @RequestMapping(value = "/searchCoursesByCategory", method = RequestMethod.POST)
+//    public Page<Course> searchCourseByCategory(
+//            @RequestParam(name="categoryId",   defaultValue="")     Integer categoryId,
+//            @RequestParam(name="page", defaultValue="0") 	int page,
+//            @RequestParam(name="size", defaultValue="5") 	int size) {
+////        return courseRepository.searchByCategory("%"+categoryId+"%", new PageRequest(page, size));
+//        return courseRepository.searchByCategory(categoryId, new PageRequest(page, size));
+//    }
+
+
+    // add
+//    @Autowired
+//    private ITutorialService tutorialService;
+//    @GetMapping("tutorial")
+//    public ResponseEntity<Tutorial> getTutorialById(@RequestParam("id") String id) {
+//        Tutorial tutorial = tutorialService.getTutorialById(Integer.parseInt(id));
+//        return new ResponseEntity<Tutorial>(tutorial, HttpStatus.OK);
+//    }
+//    @GetMapping("all-tutorials")
+//    public ResponseEntity<List<Tutorial>> getAllTutorials() {
+//        List<Tutorial> list = tutorialService.getAllTutorials();
+//        return new ResponseEntity<List<Tutorial>>(list, HttpStatus.OK);
+//    }
+//    @PostMapping("tutorial")
+//    public ResponseEntity<Void> createTutorial(@RequestBody Tutorial tutorial, UriComponentsBuilder builder) {
+//        boolean flag = tutorialService.createTutorial(tutorial);
+//        if (flag == false) {
+//            return new ResponseEntity<Void>(HttpStatus.CONFLICT);
+//        }
+//        HttpHeaders headers = new HttpHeaders();
+//        headers.setLocation(builder.path("/tutorial?id={id}").buildAndExpand(tutorial.getTutorialId()).toUri());
+//        return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
+//    }
+//    @PutMapping("tutorial")
+//    public ResponseEntity<Tutorial> updateTutorial(@RequestBody Tutorial tutorial) {
+//        tutorialService.updateTutorial(tutorial);
+//        return new ResponseEntity<Tutorial>(tutorial, HttpStatus.OK);
+//    }
+//    @DeleteMapping("tutorial")
+//    public ResponseEntity<Void> deleteTutorial(@RequestParam("id") String id) {
+//        tutorialService.deleteTutorial(Integer.parseInt(id));
+//        return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
+//    }
 
 
 }

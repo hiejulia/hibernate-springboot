@@ -16,7 +16,7 @@ import java.util.List;
 
 
 public class PersistenceTest {
-    SessionFactory factory;
+//    SessionFactory factory;
 
 //    @BeforeClass
 //    public void setup() {

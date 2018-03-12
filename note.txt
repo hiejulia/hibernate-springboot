@@ -1,3 +1,20 @@
+Hibernate with Spring boot 
+Todo 
++ CSV import to database 
++ Full text search support with MySQL  
++ ElasticSearch support 
++ File upload support 
++ Join, procedure, trigger , function with MySQL and Hibernate
++ RabbitMQ integrate with Hibernate 
++ Expose XML file 
++ Cron job (basic)
++ External API integration - Google map - Banking API - Payment API 
++ Invoice 
++ Design pattern 
++ Test 
++ Check Shortcut of Monir 
++ Check multi threading with Hibernate - Java 8 
+
 Config : http://www.baeldung.com/the-persistence-layer-with-spring-and-jpa
 
 
@@ -34,9 +51,13 @@ https://github.com/pearlscream/Library-managment-system
 
 
 
+CSV : https://github.com/developershyam/CSV-Demo 
+Role and user : https://github.com/Dongor7/my-web-site
+Base : https://github.com/dmijailovic/ballinapp
+Base : https://github.com/mduhovniy/TutorialApp_aws_backend
 
-
-
+Tham khao task : https://github.com/warrenmnocos/application-config/blob/master/application_document.pdf
+Session factory : https://github.com/chocolaaaaate/springtasks
 
 
 

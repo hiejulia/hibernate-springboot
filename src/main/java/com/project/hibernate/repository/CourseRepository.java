@@ -21,7 +21,7 @@ public interface CourseRepository extends JpaRepository<Course, Integer> {
     Course findByCourseId(Integer id);
 
     // search by category
-    @Query("select c from Course c where c.categoryId like :categoryId")
-    public Page<Course> searchByCategory(@Param("categoryId") Integer categoryId, Pageable pageable);
+//    @Query("select c from Course c where c.categoryId like :categoryId")
+//    public Page<Course> searchByCategory(@Param("categoryId") Integer categoryId, Pageable pageable);
 
 }

@@ -21,8 +21,8 @@ public class Project {
 
     private String content;
 
-
-    private Department department;
+//
+//    private Department department;
 
     @NotNull
     private Date deadline;

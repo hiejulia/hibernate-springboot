@@ -53,6 +53,9 @@ public class User {
     @Column(name = "password")
     private String password;
 
+    @Column(name="email", nullable=false)
+    private String email;
+
     @Basic(optional = false)
     @NotNull
     @Column(name = "gender")
@@ -70,6 +73,16 @@ public class User {
 // PROJECT
     @ManyToMany(mappedBy = "members")
     private Set<Project> projects = new HashSet<>();
+
+    // role
+    @ManyToMany(fetch=FetchType.LAZY)
+    @JoinTable(
+            name="user_role",
+            joinColumns = { @JoinColumn(name="user_id")},
+            inverseJoinColumns = { @JoinColumn(name="role_id")}
+    )
+    private List<Role> roles;
+
 
 
 
