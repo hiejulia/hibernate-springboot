@@ -1,6 +1,7 @@
 package com.project.hibernate.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -46,6 +47,10 @@ public class Contact implements Serializable {
 
     @Temporal(TemporalType.DATE)
     private Date birthday;
+
+    @JsonIgnoreProperties
+    @OneToOne(fetch = FetchType.LAZY, mappedBy = "contact", cascade = CascadeType.ALL)
+    private User user;
 
 //
 //    private static final long serialVersionUID = 1L;

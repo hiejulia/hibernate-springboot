@@ -16,6 +16,11 @@ Todo
 + Check multi threading with Hibernate - Java 8 
 + Caching with Redis 
 
+
+
++ Save JSON data type to database check: https://vladmihalcea.com/how-to-map-json-objects-using-generic-hibernate-types/ 
+
+
 Config : http://www.baeldung.com/the-persistence-layer-with-spring-and-jpa
 
 
@@ -48,6 +53,7 @@ https://github.com/philipsorst/angular-rest-springsecurity
 Base project:
 https://github.com/Bartosz-D3V/E-Commerce-Full-Stack
 https://github.com/pearlscream/Library-managment-system
+https://github.com/Vinodh-thimmisetty/Spring-Web-Application
 
 
 

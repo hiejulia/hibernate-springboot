@@ -1,6 +1,7 @@
 package com.project.hibernate.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import javax.persistence.Id;
 
@@ -13,16 +14,15 @@ import java.util.List;
 @Data
 @Entity
 @Table(name = "department")
-public class Department {
+@SequenceGenerator(name="seqId",sequenceName="SEQ_DEPARTMENT")
+public class Department extends BaseEntity{
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "department_id")
-    private int id;
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.AUTO)
+//    @Column(name = "department_id")
+//    private int id;
 
     @Column(name = "name", nullable = false)
-    @NotNull
-    @NotBlank
     String name;
 
     @Column(name = "contact_email", nullable = false)
@@ -34,6 +34,15 @@ public class Department {
     @OneToMany(orphanRemoval = true, mappedBy = "department")
     @OrderBy("post_id")
     private List<Post> posts = new ArrayList<>();
+
+    // employee - aka .user
+    @OneToMany(mappedBy="department",fetch=FetchType.LAZY)
+    @JsonIgnore
+    private List<User> employeeList;
+
+    @ManyToMany(mappedBy="departmentList")
+    private List<Meeting> meetingList;
+
 
 
 

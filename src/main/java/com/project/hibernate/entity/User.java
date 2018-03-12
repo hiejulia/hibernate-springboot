@@ -10,6 +10,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -52,9 +53,11 @@ public class User implements Serializable {
     @NotNull
     @Size(min = 1, max = 255)
     @Column(name = "password")
+    @Transient
     private String password;
 
     @Column(name="email", nullable=false)
+    @Email(message = "*Please provide a valid e-mail address.")
     private String email;
 
 //    @Basic(optional = false)
@@ -75,7 +78,7 @@ public class User implements Serializable {
 //    private Set<Project> projects = new HashSet<>();
 ////
     // role
-    @ManyToMany(fetch=FetchType.LAZY)
+    @ManyToMany(fetch=FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinTable(
             name="user_role",
             joinColumns = { @JoinColumn(name="user_id")},
@@ -83,6 +86,9 @@ public class User implements Serializable {
     )
     private List<Role> roles;
 
+    @OneToOne(fetch = FetchType.LAZY)
+    @PrimaryKeyJoinColumn
+    private Contact contact;
 
 
 }
