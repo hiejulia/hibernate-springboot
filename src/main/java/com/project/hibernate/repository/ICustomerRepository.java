@@ -5,17 +5,11 @@ import com.project.hibernate.entity.Customer;
 
 import java.util.Map;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
+@Repository
+public interface ICustomerRepository extends JpaRepository<Customer,Long> {
 
-public interface ICustomerRepository {
-
-    void save(Customer customer);
-
-    Customer find(Long id);
-
-    Map<Long, Customer> findAll();
-
-    void update(Customer customer);
-
-    void delete(Long id);
+    Customer findOneById(Long id);
 }
