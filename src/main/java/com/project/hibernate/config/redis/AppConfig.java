@@ -1,50 +1,67 @@
 package com.project.hibernate.config.redis;
 
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cache.CacheManager;
-import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
-import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
-import org.springframework.data.redis.cache.RedisCacheManager;
-import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
+import org.springframework.data.redis.connection.RedisConnectionFactory;
+import org.springframework.data.redis.core.HashOperations;
+import org.springframework.data.redis.core.ListOperations;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.SetOperations;
+import org.springframework.data.redis.core.ValueOperations;
+import org.springframework.data.redis.core.ZSetOperations;
+import org.springframework.data.redis.serializer.StringRedisSerializer;
 
-//@Configuration
-//@EnableCaching
-////@ComponentScan("com.memorynotfound")
-//@PropertySource("classpath:/redis.properties")
+@Configuration
 public class AppConfig {
 
-//    private @Value("${redis.host}") String redisHost;
-//    private @Value("${redis.port}") int redisPort;
-//
-//    @Bean
-//    public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
-//        return new PropertySourcesPlaceholderConfigurer();
-//    }
-//
-//    @Bean
-//    JedisConnectionFactory jedisConnectionFactory() {
-//        JedisConnectionFactory factory = new JedisConnectionFactory();
-//        factory.setHostName(redisHost);
-//        factory.setPort(redisPort);
-//        factory.setUsePool(true);
-//        return factory;
-//    }
-//
-//    @Bean
-//    RedisTemplate<Object, Object> redisTemplate() {
-//        RedisTemplate<Object, Object> redisTemplate = new RedisTemplate<Object, Object>();
-//        redisTemplate.setConnectionFactory(jedisConnectionFactory());
-//        return redisTemplate;
-//    }
-//
-//    @Bean
-//    CacheManager cacheManager() {
-//        return new RedisCacheManager(redisTemplate());
-//    }
+    @Autowired
+    private RedisConnectionFactory redisConnectionFactory;
+
+
+    @Bean
+    public RedisTemplate<String, Object> functionDomainRedisTemplate() {
+        RedisTemplate<String, Object> redisTemplate = new RedisTemplate<>();
+        initDomainRedisTemplate(redisTemplate, redisConnectionFactory);
+        return redisTemplate;
+    }
+
+    private void initDomainRedisTemplate(RedisTemplate<String, Object> redisTemplate, RedisConnectionFactory factory) {
+        redisTemplate.setKeySerializer(new StringRedisSerializer());
+        redisTemplate.setHashKeySerializer(new StringRedisSerializer());
+
+        redisTemplate.setHashValueSerializer(new EntityRedisSerializer());
+        redisTemplate.setValueSerializer(new EntityRedisSerializer());
+        redisTemplate.setConnectionFactory(factory);
+    }
+
+    @Bean
+    public HashOperations<String, String, Object> hashOperations(RedisTemplate<String, Object> redisTemplate) {
+        return redisTemplate.opsForHash();
+    }
+
+
+    @Bean
+    public ValueOperations<String, Object> valueOperations(RedisTemplate<String, Object> redisTemplate) {
+        return redisTemplate.opsForValue();
+    }
+
+
+    @Bean
+    public ListOperations<String, Object> listOperations(RedisTemplate<String, Object> redisTemplate) {
+        return redisTemplate.opsForList();
+    }
+
+
+    @Bean
+    public SetOperations<String, Object> setOperations(RedisTemplate<String, Object> redisTemplate) {
+        return redisTemplate.opsForSet();
+    }
+
+   
+    @Bean
+    public ZSetOperations<String, Object> zSetOperations(RedisTemplate<String, Object> redisTemplate) {
+        return redisTemplate.opsForZSet();
+    }
 }

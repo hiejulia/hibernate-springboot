@@ -11,9 +11,8 @@ Project overview : Company management hub
 + Maven 
 + JPA
 + Tomcat 7 
-+ Spring cache - EhCache
++ Spring cache - EhCache - Redis
 + JMS - RabbitMQ
-
 
 
 
