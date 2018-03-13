@@ -7,6 +7,7 @@ import java.util.Optional;
 import com.project.hibernate.entity.Customer;
 import com.project.hibernate.repository.ICustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.*;
@@ -84,12 +85,12 @@ public Optional<Customer> getCustomer(@PathVariable Long customerId) {
         customerRepository.save(customer);
         return customer;
     }
-//    @CacheEvict(value = "users", allEntries=true)
-//    @DeleteMapping("/{id}")
-//    public void deleteUserByID(@PathVariable Long id) {
-//        LOG.info("deleting person with id {}", id);
-//        userRepository.delete(id);
-//    }
+    @CacheEvict(value = "customer",key = "#customer.id", allEntries=true)
+    @DeleteMapping
+    public void deleteUserByID(@RequestBody Customer customer) {
+
+        customerRepository.delete(customer);
+    }
 
 
 }
