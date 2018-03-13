@@ -1,10 +1,11 @@
 Hibernate with Spring boot 
-Todo 
-+ CSV import to database 
-+ Full text search support with MySQL  
-+ ElasticSearch support 
+Todo: DONE         
++ CSV import to database : tuesday  
++ Full text search support with MySQL :wed
++ ElasticSearch support : 
 + File upload support 
-+ Join, procedure, trigger , function with MySQL and Hibernate
++ Join, procedure, trigger , function with MySQL and Hibernate - Join query 
++ Save XML/ JSON into one data type 
 + RabbitMQ integrate with Hibernate 
 + Expose XML file 
 + Cron job (basic)
@@ -12,9 +13,10 @@ Todo
 + Invoice 
 + Design pattern 
 + Test 
-+ Check Shortcut of Monir 
++ Check template 
 + Check multi threading with Hibernate - Java 8 
-+ Caching with Redis 
++ Caching with Redis : tuesday 
++ FTP connection (basic)
 
 
 
@@ -23,6 +25,8 @@ Todo
 
 Config : http://www.baeldung.com/the-persistence-layer-with-spring-and-jpa
 
+Query : https://www.mkyong.com/hibernate/hibernate-many-to-many-example-join-table-extra-column-annotation/
+Query : http://www.in28minutes.com/jpa-and-hibernate-tutorial-with-spring-boot
 
 
 
@@ -54,6 +58,16 @@ Base project:
 https://github.com/Bartosz-D3V/E-Commerce-Full-Stack
 https://github.com/pearlscream/Library-managment-system
 https://github.com/Vinodh-thimmisetty/Spring-Web-Application
+https://github.com/muratdemirkol/meetingApp
+https://github.com/soulaway/journals
+https://github.com/esayasGebre/blogs
+https://github.com/riffert/textgroup
+https://github.com/sunny-udhani/online_file_sharing_springboot
+https://github.com/PeterPorzuczek/web-rooms-app
+Big base project : https://github.com/xaverric/dms
+https://github.com/yubrajpokharel/bankApp
+https://github.com/fionactc/Restaurant-Reservation-Spring
+
 
 
 
@@ -67,9 +81,22 @@ Tham khao task : https://github.com/warrenmnocos/application-config/blob/master/
 Session factory : https://github.com/chocolaaaaate/springtasks
 
 
+Redis : https://github.com/kongcheng123/testSpringBoot
+
+Article : 
+
+
+
+
+
+
+
+
 
 
 
 ---- spring mvc - hibernate  
 https://github.com/xujeff/tianti
 https://github.com/mission008/B2CWeb
+
+

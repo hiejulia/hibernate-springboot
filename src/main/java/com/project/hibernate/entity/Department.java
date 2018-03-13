@@ -14,13 +14,13 @@ import java.util.List;
 @Data
 @Entity
 @Table(name = "department")
-@SequenceGenerator(name="seqId",sequenceName="SEQ_DEPARTMENT")
-public class Department extends BaseEntity{
+//@SequenceGenerator(name="seqId",sequenceName="SEQ_DEPARTMENT")
+public class Department {
 
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.AUTO)
-//    @Column(name = "department_id")
-//    private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "department_id")
+    private int id;
 
     @Column(name = "name", nullable = false)
     String name;

@@ -15,7 +15,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping("/articles")
+@RequestMapping("/v1/api/articles")
 @CrossOrigin
 public class ArticleController {
 

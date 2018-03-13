@@ -3,15 +3,7 @@ package com.project.hibernate.entity;
 
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.SequenceGenerator;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import lombok.Data;
 import org.hibernate.annotations.Cascade;
@@ -21,8 +13,13 @@ import org.hibernate.annotations.FetchMode;
 @Data
 @Entity
 @Table(name="meeting")
-@SequenceGenerator(name="seqId",sequenceName="SEQ_MEETING")
-public class Meeting extends BaseEntity {
+//@SequenceGenerator(name="seqId",sequenceName="SEQ_MEETING")
+public class Meeting {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "meeting_id")
+    private int id;
 
     @Column
     private String name;
@@ -30,8 +27,8 @@ public class Meeting extends BaseEntity {
 
     @ManyToMany(cascade=CascadeType.ALL,fetch = FetchType.EAGER)
     @JoinTable(name = "meeting_department",
-            joinColumns = {@JoinColumn(name = "MEETING_ID" )},
-            inverseJoinColumns = {@JoinColumn(name = "DEPARTMENT_ID")})
+            joinColumns = {@JoinColumn(name = "meeting_id" )},
+            inverseJoinColumns = {@JoinColumn(name = "department_id")})
     private List<Department> departmentList;
 
 

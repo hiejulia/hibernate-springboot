@@ -91,4 +91,9 @@ public class User implements Serializable {
     private Contact contact;
 
 
+    @ManyToOne(fetch=FetchType.EAGER)
+    @JoinColumn(name="department_id")
+    private Department department;
+
+
 }

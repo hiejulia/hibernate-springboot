@@ -18,6 +18,13 @@ Project overview : Company management hub
 
 
 
+### Run the project
++ Run the Redis server :`redis-server`
+
+
+
+
+
 
 
 ### API docs 
