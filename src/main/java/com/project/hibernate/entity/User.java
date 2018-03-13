@@ -6,10 +6,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
 
 import java.io.Serializable;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
@@ -97,5 +94,13 @@ public class User implements Serializable {
     @JsonBackReference
     private Department department;
 
+
+    // UPDATE USER ENTITY WITH MEETUPS ENTITY RELATIONSHIP
+    @OneToMany
+    @JoinColumn(name = "organizer_user_id")
+    private List<Meetup> meetupsOrganized = new ArrayList<>();
+
+    @ManyToMany(mappedBy = "attendees")
+    private List<Meetup> meetupsAttending = new ArrayList<>();
 
 }
