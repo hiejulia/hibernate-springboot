@@ -15,7 +15,7 @@ Todo: DONE
 + Test 
 + Check template 
 + Check multi threading with Hibernate - Java 8 
-+ Caching with Redis : tuesday 
++ DONE: Caching with Redis
 + FTP connection (basic)
 
 
