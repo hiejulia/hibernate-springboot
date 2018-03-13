@@ -191,19 +191,13 @@ public class UserController {
 
     // validate user with captcha
 
-    private SimpleResponse validateSaveBook(Book book, String captchaResponse) {
-        SimpleResponse simpleResponse = new SimpleResponse();
+    private boolean validateUser(User user, String captchaResponse) {
 
-        // Not allowed empty string book name or author
-        if(book.getName() == null || book.getName().length() < 1 ||
-                book.getAuthor() == null || book.getAuthor().length() < 1) {
-            simpleResponse.setType(ResponseType.FAIL.getText());
-            simpleResponse.setMessage("Book info should be provided.");
-        }
         if(!verifier.verifyCaptcha(captchaResponse)){
-            simpleResponse.setType(ResponseType.FAIL.getText());
-            simpleResponse.setMessage("Captcha should be selected.");
+
+            return false;
         }
-        return simpleResponse;
+        return true;
+
     }
 }
