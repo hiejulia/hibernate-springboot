@@ -2,6 +2,7 @@ package com.project.hibernate.entity;
 
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -93,6 +94,7 @@ public class User implements Serializable {
 
     @ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="department_id")
+    @JsonBackReference
     private Department department;
 
 

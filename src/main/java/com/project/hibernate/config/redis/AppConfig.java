@@ -59,7 +59,7 @@ public class AppConfig {
         return redisTemplate.opsForSet();
     }
 
-   
+
     @Bean
     public ZSetOperations<String, Object> zSetOperations(RedisTemplate<String, Object> redisTemplate) {
         return redisTemplate.opsForZSet();
