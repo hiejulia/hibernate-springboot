@@ -2,6 +2,7 @@ package com.project.hibernate.controller;
 
 
 import java.util.Map;
+import java.util.Optional;
 
 import com.project.hibernate.entity.Customer;
 import com.project.hibernate.repository.ICustomerRepository;
@@ -67,24 +68,28 @@ public class CustomerController {
 //
 //        return "Done";
 //    }
-@Cacheable(value = "customers", key = "#customerId")
+@Cacheable(value = "customer", key = "#customerId")
+//@CachePut(value = "customer", key = "#customerId")
 @RequestMapping(value = "/{customerId}", method = RequestMethod.GET)
-public Customer getCustomer(@PathVariable Long customerId) {
+public Optional<Customer> getCustomer(@PathVariable Long customerId) {
 
-    return customerRepository.findOneById(customerId);
+
+    return customerRepository.findById(customerId);
+
 }
 
-//    @CachePut(value = "users", key = "#user.id")
-//    @PutMapping("/update")
-//    public User updatePersonByID(@RequestBody User user) {
-//        userRepository.save(user);
-//        return user;
-//    }
+    @CachePut(value = "customer", key = "#customer.id")
+    @PutMapping
+    public Customer updateCustomerByID(@RequestBody Customer customer) {
+        customerRepository.save(customer);
+        return customer;
+    }
 //    @CacheEvict(value = "users", allEntries=true)
 //    @DeleteMapping("/{id}")
 //    public void deleteUserByID(@PathVariable Long id) {
 //        LOG.info("deleting person with id {}", id);
 //        userRepository.delete(id);
 //    }
+
 
 }
