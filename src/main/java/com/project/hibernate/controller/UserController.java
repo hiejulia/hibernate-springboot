@@ -1,6 +1,7 @@
 package com.project.hibernate.controller;
 
 
+import com.project.hibernate.captcha.CaptchaVerifier;
 import com.project.hibernate.entity.User;
 import com.project.hibernate.repository.IUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/v1/api/users")
 public class UserController {
+
+    private CaptchaVerifier verifier = new CaptchaVerifier();
 
     @Autowired
     private IUserRepository userRepository;
@@ -186,4 +189,21 @@ public class UserController {
 //        return ResponseEntity.ok().build();
 //    }
 
+    // validate user with captcha
+
+    private SimpleResponse validateSaveBook(Book book, String captchaResponse) {
+        SimpleResponse simpleResponse = new SimpleResponse();
+
+        // Not allowed empty string book name or author
+        if(book.getName() == null || book.getName().length() < 1 ||
+                book.getAuthor() == null || book.getAuthor().length() < 1) {
+            simpleResponse.setType(ResponseType.FAIL.getText());
+            simpleResponse.setMessage("Book info should be provided.");
+        }
+        if(!verifier.verifyCaptcha(captchaResponse)){
+            simpleResponse.setType(ResponseType.FAIL.getText());
+            simpleResponse.setMessage("Captcha should be selected.");
+        }
+        return simpleResponse;
+    }
 }

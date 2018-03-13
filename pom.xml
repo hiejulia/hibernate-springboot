@@ -169,6 +169,31 @@
 				<version>3.5</version>
 			</dependency>
 
+			<!--add elastic search-->
+			<dependency>
+				<groupId>org.elasticsearch</groupId>
+				<artifactId>elasticsearch</artifactId>
+				<version>5.5.2</version>
+			</dependency>
+			<dependency>
+				<groupId>org.elasticsearch.client</groupId>
+				<artifactId>transport</artifactId>
+				<version>5.5.2</version>
+			</dependency>
+			<!-- https://mvnrepository.com/artifact/org.apache.lucene/lucene-core -->
+			<dependency>
+				<groupId>org.apache.lucene</groupId>
+				<artifactId>lucene-core</artifactId>
+				<version>6.6.0</version>
+			</dependency>
+
+			<!--add rabbitmq-->
+			<dependency>
+				<groupId>com.rabbitmq</groupId>
+				<artifactId>amqp-client</artifactId>
+				<version>5.1.2</version>
+			</dependency>
+
 		</dependencies>
 
 	<build>

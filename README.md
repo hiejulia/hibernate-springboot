@@ -13,7 +13,7 @@ Project overview : Company management hub
 + Tomcat 7 
 + Spring cache - EhCache - Redis
 + JMS - RabbitMQ
-
++ External API source : Captcha
 
 
 
