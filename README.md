@@ -63,7 +63,8 @@ Project overview : Company management hub
     
     
     
-    
++ Query ElasticSearch database 
+    + `locahost:9200/elastic_sample/category_search`    
     
 #### Some optimization for this project
 + Maven build time : 
