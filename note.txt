@@ -2,7 +2,7 @@ Hibernate with Spring boot
 Todo:
 + CSV import to database : FRIDAY 
 + Full text search support with MySQL :THURS 
-+ ElasticSearch support : WED + THURS : book, article, github project 
++ ElasticSearch support : WED + THURS : book, github project
 + File upload support 
 + Join, procedure, trigger , function with MySQL and Hibernate - Join query : DEN HET CUOI TUAN NAY 
 + Save XML/ JSON into one data type 

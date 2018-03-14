@@ -4,6 +4,7 @@ package com.project.hibernate.service.elasticsearch;
 import com.project.hibernate.entity.Category;
 import com.project.hibernate.repository.elasticsearch.CategoryRepositoryElasticSearch;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -24,6 +25,25 @@ public class CategoryESService {
     public List<Category> getByIdInterval(Integer begin,Integer end){
         return categoryRepositoryElasticSearch.findByIdBetween(begin,end);
     }
+
+    // DELETE
+
+    public void delete(Category book) {
+        categoryRepositoryElasticSearch.delete(book);
+    }
+
+//    public Category findOne(Integer id) {
+//        return categoryRepositoryElasticSearch.findOne(id);
+//    }
+
+    public Iterable<Category> findAll() {
+        return categoryRepositoryElasticSearch.findAll();
+    }
+
+//    public Page<Category> findByAuthor(String author, PageRequest pageRequest) {
+//        return bookRepository.findByAuthor(author, pageRequest);
+//    }
+
 
 
 }

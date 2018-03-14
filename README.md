@@ -1,4 +1,4 @@
-# hibernate-springboot
+# hibernate-springboot 
 Project overview : Company management hub 
 + Company manager web app that manage all the workflow from employee  
 
@@ -62,9 +62,10 @@ Project overview : Company management hub
     
     
     
++ Meeting : 
     
 + Query ElasticSearch database 
-    + `locahost:9200/elastic_sample/category_search`    
+    + `locahost:9200/category/category/_search?pretty=true`    
     
 #### Some optimization for this project
 + Maven build time : 
@@ -75,3 +76,19 @@ Project overview : Company management hub
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+#### Reference
++ ElasticSearch book 
++ Redis book
++ Spring design pattern book
