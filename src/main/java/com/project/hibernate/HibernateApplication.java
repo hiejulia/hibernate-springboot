@@ -10,7 +10,10 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerA
 import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.FilterType;
 import org.springframework.core.env.Environment;
+import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 import org.springframework.data.elasticsearch.repository.config.EnableElasticsearchRepositories;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
@@ -23,7 +26,9 @@ import java.util.Properties;
 @SpringBootApplication
 @EnableCaching // caching enabled with redis
 @EnableAsync
-@EnableElasticsearchRepositories(basePackages = "com.project.hibernate.elasticsearch")
+//@EnableElasticsearchRepositories(basePackages = "com.project.hibernate.elasticsearch")
+@EnableElasticsearchRepositories(includeFilters=@ComponentScan.Filter(type= FilterType.ASSIGNABLE_TYPE,value=ElasticsearchRepository.class))
+
 public class HibernateApplication {
 	@Autowired
 	private Environment env;
