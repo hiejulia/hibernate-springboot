@@ -11,15 +11,19 @@ import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfigurat
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.env.Environment;
+import org.springframework.data.elasticsearch.repository.config.EnableElasticsearchRepositories;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
+import org.springframework.scheduling.annotation.EnableAsync;
 
 import javax.sql.DataSource;
 import java.util.Properties;
 
 @SpringBootApplication
 @EnableCaching // caching enabled with redis
+@EnableAsync
+@EnableElasticsearchRepositories(basePackages = "com.project.hibernate.elasticsearch")
 public class HibernateApplication {
 	@Autowired
 	private Environment env;

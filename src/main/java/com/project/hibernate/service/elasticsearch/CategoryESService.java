@@ -2,9 +2,8 @@ package com.project.hibernate.service.elasticsearch;
 
 
 import com.project.hibernate.entity.Category;
-import com.project.hibernate.repository.elasticsearch.CategoryRepositoryElasticSearch;
+import com.project.hibernate.elasticsearch.CategoryRepositoryElasticSearch;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -22,9 +21,9 @@ public class CategoryESService {
     }
 
     // FIND CATEGORY BETWEEN ID
-    public List<Category> getByIdInterval(Integer begin,Integer end){
-        return categoryRepositoryElasticSearch.findByIdBetween(begin,end);
-    }
+//    public List<Category> getByIdInterval(Integer begin,Integer end){
+//        return categoryRepositoryElasticSearch.findByIdBetween(begin,end);
+//    }
 
     // DELETE
 

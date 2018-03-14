@@ -1,4 +1,4 @@
-package com.project.hibernate.repository.elasticsearch;
+package com.project.hibernate.elasticsearch;
 
 
 import org.springframework.beans.factory.annotation.Autowired;

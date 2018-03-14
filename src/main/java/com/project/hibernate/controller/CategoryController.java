@@ -7,6 +7,8 @@ import javax.validation.Valid;
 
 import com.project.hibernate.entity.Category;
 import com.project.hibernate.service.CategoryService;
+import com.project.hibernate.service.elasticsearch.CategoryESService;
+import org.elasticsearch.search.aggregations.metrics.percentiles.hdr.InternalHDRPercentiles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -30,12 +32,21 @@ public class CategoryController {
     @Autowired
     CategoryService categoryService;
 
+    @Autowired
+    private CategoryESService categoryESService;
+
     // Get All Notes
     @GetMapping
     public List<Category> getAllCategory() {
 //        categoryService = (CategoryController) SpringUtils.ctx.getBean(CategoryController.class);
 
         return categoryService.listAll();
+    }
+
+    // get all category with elastic search database base
+    @GetMapping
+    public Iterable<Category> getAllCategoryES() {
+        return categoryESService.findAll();
     }
 
     // Create a new Note
@@ -46,6 +57,12 @@ public class CategoryController {
         return categoryService.insert(category);
     }
 
+    // INSERT A NEW CATEGORY WITH ELASTICSEARCH
+
+    @PostMapping(value = "/insertes")
+    public void insertCategory(@RequestBody Category c){
+        categoryESService.addCategory(c);
+    }
     // Get a Single Note
 
     @GetMapping("/category/{id}")
@@ -90,5 +107,11 @@ public class CategoryController {
 
         return ResponseEntity.ok().build();
     }
+
+    // DELETE CATEGORY WITH ELASTICSEARCH DATABASE
+//    @RequestMapping(value = "/delete/student/{id}", method = RequestMethod.GET)
+//    public void deleteStudent(@PathVariable int id){
+//        studentService.deleteStudent(id);
+//    }
 
 }
