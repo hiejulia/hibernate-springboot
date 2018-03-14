@@ -11,7 +11,9 @@ import org.springframework.data.elasticsearch.repository.config.EnableElasticsea
 
 //@Configuration
 //@EnableElasticsearchRepositories(basePackages = "com.project.hibernate.repository")
-//@ComponentScan(basePackages = {"com.project.hibernate.service"})
+//@ComponentScan(basePackages = {"com.project.hibernate.service"})@Configuration
+//@EnableElasticsearchRepositories(basePackages = "org/springframework/data/elasticsearch/repositories")
+
 public class Config {
 
 //    @Bean
@@ -34,5 +36,12 @@ public class Config {
 //                .settings(elasticsearchSettings.build())
 //                .node()
 //                .client());
+//    }
+
+
+
+//    @Bean
+//    public ElasticsearchOperations elasticsearchTemplate() {
+//        return new ElasticsearchTemplate(nodeBuilder().local(true).node().client());
 //    }
 }

@@ -2,6 +2,7 @@ package com.project.hibernate.dao.impl;
 
 
 
+import com.project.hibernate.entity.Guest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,51 +20,51 @@ public class GuestDAO {
     EntityManager entityManager;
 
 
-    public Person find(Integer id) {
+    public Guest find(Integer id) {
 
         final EntityManager em = entityManager;
         try {
-            return em.find(Person.class, id);
+            return em.find(Guest.class, id);
         } catch (RuntimeException e) {
-            LOGGER.error("failed to find person id {} :{}",id, e.getMessage());
+
             return null;
         }
     }
 
-    public Person save(String name, String address, String phone) {
-        final EntityManager em = entityManager;
-        final EntityTransaction trx = em.getTransaction();
-
-        Person person = new Person(name, address, phone);
-
-        try {
-
-            trx.begin();
-            em.persist(person);
-            trx.commit();
-            return person;
-
-        } catch (RuntimeException e) {
-            if (trx != null && trx.isActive()) {
-                trx.rollback();
-            }
-            LOGGER.error("failed to persist person {} :{}",name, e.getMessage());
-            return null;
-        }
-    }
-
-    public List<Person> findName(String name) {
-        if(!StringUtils.isEmpty(name)){
-            name = name + "%";
-        } else return new ArrayList<>();
-        final EntityManager em = entityManager;
-        try {
-            Query query = em.createQuery("SELECT p FROM Person p WHERE p.name LIKE :NAME");
-            query.setParameter("NAME", name);
-            return (List<Person>) query.getResultList();
-        } catch (RuntimeException e) {
-            LOGGER.error("failed to find person name {} :{}",name, e.getMessage());
-            return null;
-        }
-    }
+//    public Guest save(String name, String address, String phone) {
+//        final EntityManager em = entityManager;
+//        final EntityTransaction trx = em.getTransaction();
+//
+//        Guest person = new Guest(name, address, phone);
+//
+//        try {
+//
+//            trx.begin();
+//            em.persist(person);
+//            trx.commit();
+//            return person;
+//
+//        } catch (RuntimeException e) {
+//            if (trx != null && trx.isActive()) {
+//                trx.rollback();
+//            }
+//
+//            return null;
+//        }
+//    }
+//
+//    public List<Guest> findName(String name) {
+//        if(!StringUtils.isEmpty(name)){
+//            name = name + "%";
+//        } else return new ArrayList<>();
+//        final EntityManager em = entityManager;
+//        try {
+//            Query query = em.createQuery("SELECT p FROM guest p WHERE p.name LIKE :NAME");
+//            query.setParameter("NAME", name);
+//            return (List<Guest>) query.getResultList();
+//        } catch (RuntimeException e) {
+//
+//            return null;
+//        }
+//    }
 }

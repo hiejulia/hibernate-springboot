@@ -26,8 +26,8 @@ import java.util.Properties;
 @SpringBootApplication
 @EnableCaching // caching enabled with redis
 @EnableAsync
-//@EnableElasticsearchRepositories(basePackages = "com.project.hibernate.elasticsearch")
-@EnableElasticsearchRepositories(includeFilters=@ComponentScan.Filter(type= FilterType.ASSIGNABLE_TYPE,value=ElasticsearchRepository.class))
+@EnableElasticsearchRepositories(basePackages = "com.project.hibernate.elasticsearch")
+//@EnableElasticsearchRepositories(includeFilters=@ComponentScan.Filter(type= FilterType.ASSIGNABLE_TYPE,value=ElasticsearchRepository.class))
 
 public class HibernateApplication {
 	@Autowired
