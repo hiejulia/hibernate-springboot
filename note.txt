@@ -1,10 +1,10 @@
 Hibernate with Spring boot 
-Todo: DONE         
-+ CSV import to database : tuesday  
-+ Full text search support with MySQL :wed
-+ ElasticSearch support : 
+Todo:
++ CSV import to database : FRIDAY 
++ Full text search support with MySQL :THURS 
++ ElasticSearch support : WED + THURS : book, article, github project 
 + File upload support 
-+ Join, procedure, trigger , function with MySQL and Hibernate - Join query 
++ Join, procedure, trigger , function with MySQL and Hibernate - Join query : DEN HET CUOI TUAN NAY 
 + Save XML/ JSON into one data type 
 + RabbitMQ integrate with Hibernate 
 + Expose XML file 
@@ -13,11 +13,23 @@ Todo: DONE
 + Invoice 
 + Design pattern 
 + Test 
-+ Check template 
 + Check multi threading with Hibernate - Java 8 
-+ DONE: Caching with Redis
+DONE: Caching with Redis
 + FTP connection (basic)
++ Check design pattern in hibernate: Proxy pattern for lazy loading 
++ Scheduled task 
++ AOP
++ JMS message
++ 
 
+Advanced book:https://www.reddit.com/r/java/comments/5svzzs/best_advanced_spring_boot_books/
+
+
+Advance query need to be include
+
+
+
+--------------
 
 
 + Save JSON data type to database check: https://vladmihalcea.com/how-to-map-json-objects-using-generic-hibernate-types/ 
@@ -28,7 +40,14 @@ Config : http://www.baeldung.com/the-persistence-layer-with-spring-and-jpa
 Query : https://www.mkyong.com/hibernate/hibernate-many-to-many-example-join-table-extra-column-annotation/
 Query : http://www.in28minutes.com/jpa-and-hibernate-tutorial-with-spring-boot
 
+Base : https://github.com/eresearchrmit/estored
 
+Base : https://github.com/beamofsoul/BusinessInfrastructurePlatformGroupVersion
+SQL relationship: https://github.com/callicoder/jpa-hibernate-tutorials 
+Base project : https://github.com/ykameshrao/spring-mvc-angular-js-hibernate-bootstrap-java-single-page-jwt-auth-rest-api-webapp-framework
+
+Base project : https://github.com/juanca87/example-envers
+Base project : https://github.com/dmitrykhramov/Online-Bank-Simulator
 
 
 
@@ -40,12 +59,21 @@ https://www.mkyong.com/spring-boot/spring-boot-hibernate-search-example/
 
 
 
+Base : https://github.com/dzinot/spring-boot-jpa-data-rest-soft-delete
+
+
+
+
+
+
+
+
+
 
 
 Search word: spring boot hibernate
 
-
-
+Base project : https://github.com/atereshkov/Diber-backend
 
 https://github.com/philipsorst/angular-rest-springsecurity
 

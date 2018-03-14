@@ -31,6 +31,9 @@ public class Meetup {
     @DateTimeFormat
     private LocalTime time;
 
+    @Column(name = "topic")
+    @NotNull
+    private String topic;
 
     @ManyToOne
     private User organizer;

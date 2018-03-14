@@ -14,12 +14,14 @@ Project overview : Company management hub
 + Spring cache - EhCache - Redis
 + JMS - RabbitMQ
 + External API source : Captcha
++ ElasticSearch 
 
 
 
 ### Run the project
-+ Run the Redis server :`redis-server`
-
++ Run the Redis server :`redis-server` (local)
++ Run the ElasticSearch server : `brew services start elasticsearch` (local)
+ 
 
 
 
@@ -51,6 +53,7 @@ Project overview : Company management hub
     
 + Project : Department post their new/ incoming/ongoing projects 
 
++ Meetup
 
 
 + Event : Each department have events (tech event, party event, travel event, sports event ) for company 

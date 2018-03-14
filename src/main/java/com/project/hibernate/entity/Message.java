@@ -8,11 +8,10 @@ import java.util.Date;
 
 @Data
 @Entity
-@Table
+@Table(name = "message_table")
 public class Message {
     @Id
     @GeneratedValue
-    @Column(name = "message_id")
     private Integer id;
 
     private String body;

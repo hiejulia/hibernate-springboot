@@ -1,7 +1,7 @@
 package com.project.hibernate.dao.impl;
 
 
-import com.egorbratuhin.dao.ReportsEntity;
+
 import com.project.hibernate.entity.Report;
 import com.sun.org.apache.regexp.internal.RE;
 import org.springframework.stereotype.Repository;

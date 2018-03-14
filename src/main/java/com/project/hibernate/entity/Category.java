@@ -5,6 +5,7 @@ import java.io.Serializable;
 import javax.persistence.*;
 
 import lombok.Data;
+import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -13,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Table(name="category")
 @EntityListeners(AuditingEntityListener.class)
 @Data
+@Document(indexName = "category",type = "category",shards = 1, replicas = 0, refreshInterval = "-1")
 public class Category implements Serializable{
     // id
     @Id
