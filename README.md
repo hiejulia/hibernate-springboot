@@ -5,6 +5,7 @@ Project overview : Company management hub
 
 ### Stack using 
 + Spring boot 
++ REST
 + Hibernate ORM 
 + JPA
 + MySQL 
