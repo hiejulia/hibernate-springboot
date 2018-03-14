@@ -15,6 +15,7 @@ Project overview : Company management hub
 + JMS - RabbitMQ
 + External API source : Captcha
 + ElasticSearch 
+    + Sync data with MySQL database : 
 
 
 

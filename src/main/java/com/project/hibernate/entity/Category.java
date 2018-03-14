@@ -6,6 +6,7 @@ import javax.persistence.*;
 
 import lombok.Data;
 import org.springframework.data.elasticsearch.annotations.Document;
+import org.springframework.data.elasticsearch.annotations.Field;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -20,9 +21,11 @@ public class Category implements Serializable{
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name="category_id",nullable = false)
+    @Field
     private int categoryId;
 
     @Column(name="name")
+    @Field
     private String name;
 
 
