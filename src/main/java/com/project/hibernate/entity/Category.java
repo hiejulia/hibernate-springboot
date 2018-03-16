@@ -4,7 +4,10 @@ import java.io.Serializable;
 
 import javax.persistence.*;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.data.elasticsearch.annotations.Field;
 import org.springframework.data.elasticsearch.annotations.FieldIndex;
@@ -17,6 +20,9 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Table(name="category")
 @EntityListeners(AuditingEntityListener.class)
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 //@Document(indexName = "category",type = "categories",shards = 1, replicas = 0, refreshInterval = "-1")
 public class Category implements Serializable{
     // id
@@ -30,6 +36,9 @@ public class Category implements Serializable{
     @Column(name="name")
 //    @Field(type = FieldType.String)
     private String name;
+
+    @Column(name="description")
+    private String description;
 
 
 

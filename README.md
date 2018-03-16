@@ -62,9 +62,15 @@ Project overview : Company management hub
 
 + User : Employee 
     
+   
+ 
     
-    
-+ Meeting : 
++ Meeting :
+
+
+
++ Book : 
+    +  
     
 + Query ElasticSearch database 
     + `locahost:9200/category/category/_search?pretty=true`    

@@ -20,7 +20,18 @@ DONE: Caching with Redis
 + Scheduled task 
 + AOP
 + JMS message
-+ 
++ Data filter
++ Batch processing
++ Interceptor and event
++ Call trigger and procedure
++ 2nd level cache, 1st level cache, query cache
++ Versioning object
++ Maintain history of object
++ Batch insert
++ DDL
++ Multithreading
+
+
 
 Advanced book:https://www.reddit.com/r/java/comments/5svzzs/best_advanced_spring_boot_books/
 
@@ -62,6 +73,10 @@ https://www.mkyong.com/spring-boot/spring-boot-hibernate-search-example/
 Base : https://github.com/dzinot/spring-boot-jpa-data-rest-soft-delete
 
 
+https://github.com/dmijailovic/ballinapp
+https://github.com/soulaway/journals
+
+https://github.com/PeterPorzuczek/web-rooms-app
 
 
 
@@ -71,17 +86,38 @@ Base : https://github.com/dzinot/spring-boot-jpa-data-rest-soft-delete
 
 
 
-Search word: spring boot hibernate
+Search word: spring boot hibernate, management, user, work, company, project, company, complex, project ,
+web shop, shopping , cart, restaurant, clone, social, network, blog,
+doctor
+client
+booking
+set
+update
+sql
+query
+optimize
+list
+participant
+sport
+
+
+
+
+
 
 Base project : https://github.com/atereshkov/Diber-backend
+base big project : https://github.com/mhaddon/SpringBoot-AirportDemoProject
 
 https://github.com/philipsorst/angular-rest-springsecurity
 
+https://github.com/yubrajpokharel/bankApp
 
+https://github.com/xewu/Online-Banking-Web-Service---Java-Spring-Boot
 
 Big project : https://github.com/rahulkadam/redis-elastic-search-springBoot-demo
 Big : https://github.com/caodangtinh/tinhcao
 
+https://github.com/dmitrykhramov/Online-Bank-Simulator
 
 
 Base project:
@@ -98,6 +134,34 @@ Big base project : https://github.com/xaverric/dms
 https://github.com/yubrajpokharel/bankApp
 https://github.com/fionactc/Restaurant-Reservation-Spring
 https://github.com/adamzareba/company-structure-spring-security-oauth2-cache
+https://github.com/satvirgrewal/BankApp
+https://github.com/machaukumar/tNt-app
+
+https://github.com/MichaelRudyy/Library-Rest-App
+https://github.com/Heisenberg404/BackEndNinjaFinal
+https://github.com/dSouthz/webApp
+https://github.com/sokolinthesky/bus_tickets_v2
+https://github.com/riffert/textgroup
+https://github.com/sofyanhasanuddin/zklatihan
+
+https://github.com/yubrajpokharel/bankApp
+https://github.com/chocolaaaaate/springtasks
+
+https://github.com/HabibeGuler/spring-framework.examples
+
+https://github.com/rohitdesaidev/Springboot-application
+https://github.com/kalwi87/scalable-chat-webapp
+https://github.com/fionactc/Restaurant-Reservation-Spring
+
+https://github.com/esayasGebre/blogs
+
+
+
+https://github.com/rajan-github/caveatEmptor-data
+
+https://github.com/nazrulaub30/Social-Networking-Web-Application
+https://github.com/Vinodh-thimmisetty/Spring-Web-Application
+https://github.com/muratdemirkol/meetingApp
 
 
 
