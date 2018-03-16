@@ -9,23 +9,23 @@ public class GuestException extends Exception  {
     // guest exception class
     public final static String GUEST_NOT_EXISTS_MESSAGE = "Not exists guest !";
 
-    public EmployeeException() {
+    public GuestException() {
         super();
     }
 
-    public EmployeeException(String message) {
+    public GuestException(String message) {
         super(message);
     }
 
-    public EmployeeException(String message, Throwable cause) {
+    public GuestException(String message, Throwable cause) {
         super(message, cause);
     }
 
-    public EmployeeException(Throwable cause) {
+    public GuestException(Throwable cause) {
         super(cause);
     }
 
-    protected EmployeeException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+    protected GuestException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
         super(message, cause, enableSuppression, writableStackTrace);
     }
 

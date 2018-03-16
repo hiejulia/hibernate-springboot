@@ -32,8 +32,8 @@ public class CategoryController {
     @Autowired
     CategoryService categoryService;
 
-    @Autowired
-    private CategoryESService categoryESService;
+//    @Autowired
+//    private CategoryESService categoryESService;
 
     // Get All Notes
     @GetMapping
@@ -44,10 +44,10 @@ public class CategoryController {
     }
 
     // get all category with elastic search database base
-    @GetMapping
-    public Iterable<Category> getAllCategoryES() {
-        return categoryESService.findAll();
-    }
+//    @GetMapping
+//    public Iterable<Category> getAllCategoryES() {
+//        return categoryESService.findAll();
+//    }
 
     // Create a new Note
 
@@ -59,10 +59,10 @@ public class CategoryController {
 
     // INSERT A NEW CATEGORY WITH ELASTICSEARCH
 
-    @PostMapping(value = "/insertes")
-    public void insertCategory(@RequestBody Category c){
-        categoryESService.addCategory(c);
-    }
+//    @PostMapping(value = "/insertes")
+//    public void insertCategory(@RequestBody Category c){
+//        categoryESService.addCategory(c);
+//    }
     // Get a Single Note
 
     @GetMapping("/category/{id}")

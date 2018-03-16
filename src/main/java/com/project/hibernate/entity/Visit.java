@@ -1,6 +1,7 @@
 package com.project.hibernate.entity;
 
 
+import lombok.Data;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
@@ -10,6 +11,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "visit")
+@Data
 public class Visit implements Serializable {
     @Id
     @Column(name = "visit_id", nullable = false)
@@ -56,4 +58,3 @@ public class Visit implements Serializable {
 
 
 
-}

@@ -39,20 +39,21 @@ public class GuestServiceImpl implements IGuestService {
 
     @Override
     public Date calculateWorkingTime(Date date, Guest employee) throws GuestException {
-        final List<Guest> list = guestRepository.findByNameAndSurnameAndPatronymic(
-                employee.getName();
-
-        );
-        Date additionalDate = DateModification.getBeginOfNextDay(date);
-        if (!list.isEmpty()) {
-            final List<Visit> visitList = list.get(0).getVisitsBetweenDates(date, additionalDate);
-            for (int i = 0; i < visitList.size(); i++) {
-                if (visitList.get(i).getStatus().equals(Boolean.FALSE) && i != 0) {
-                    date.setTime(date.getTime() + visitList.get(i).getDate().getTime() - visitList.get(i - 1).getDate().getTime());
-                }
-            }
-            return date;
-        } else throw new GuestException();
+//        final List<Guest> list = guestRepository.findByNameAndSurnameAndPatronymic(
+//                employee.getName();
+//
+//        );
+//        Date additionalDate = DateModification.getBeginOfNextDay(date);
+//        if (!list.isEmpty()) {
+//            final List<Visit> visitList = list.get(0).getVisitsBetweenDates(date, additionalDate);
+//            for (int i = 0; i < visitList.size(); i++) {
+//                if (visitList.get(i).getStatus().equals(Boolean.FALSE) && i != 0) {
+//                    date.setTime(date.getTime() + visitList.get(i).getDate().getTime() - visitList.get(i - 1).getDate().getTime());
+//                }
+//            }
+//            return date;
+//        } else throw new GuestException();
+        return null;
     }
 
 

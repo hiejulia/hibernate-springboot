@@ -10,13 +10,13 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 
-@Repository
-public interface CategoryRepositoryElasticSearch extends ElasticsearchRepository<Category, String> {
+//@Repository
+public interface CategoryRepositoryElasticSearch {
 
-    List<Category> findByName(String name);
-
-    @Query("{\"bool\": {\"must\": [{\"match\": {\"category.name\": \"?0\"}}]}}")
-    List<Category> findByNameUsingCustomQuery(String name);
+//    List<Category> findByName(String name);
+//
+//    @Query("{\"bool\": {\"must\": [{\"match\": {\"category.name\": \"?0\"}}]}}")
+//    List<Category> findByNameUsingCustomQuery(String name);
 
 //    // FIND BY ID BETWEEN
 //    public List < Category>  findByIdBetween(Integer beginning, Integer end);

@@ -16,5 +16,5 @@ public interface GuestRepository extends JpaRepository<Guest, Long> {
     // GET LIST OF GUEST
     List<Guest> findAll();
     // FIND GUEST BY CUSTOM QUERY
-    List<Guest> findByNameAndSurnameAndPatronymic(String name, String surname, String patronymic);
+//    List<Guest> findByNameAndSurnameAndPatronymic(String name, String surname, String patronymic);
 }
