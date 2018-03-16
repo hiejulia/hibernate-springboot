@@ -40,9 +40,9 @@ public class MeetupController {
         //get list of all meetups
         List<Meetup> allMeetups = meetupRepository.findAll();
         //remove meetups in the past
-        allMeetups.removeIf((Meetup meetup) -> meetup.getDate().isBefore(LocalDate.now()));
-        //sort meetups chronologically
-        allMeetups.sort(Comparator.comparing(Meetup::getDate).thenComparing(Meetup::getTopic).thenComparing(Meetup::getTime));
+//        allMeetups.removeIf((Meetup meetup) -> meetup.getDate().isBefore(LocalDate.now()));
+//        //sort meetups chronologically
+//        allMeetups.sort(Comparator.comparing(Meetup::getDate).thenComparing(Meetup::getTopic).thenComparing(Meetup::getTime));
         return allMeetups;
     }
 

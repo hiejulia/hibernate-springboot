@@ -5,6 +5,8 @@ package com.project.hibernate.batch;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
+
+import com.project.hibernate.pojos.Category;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.batch.core.BatchStatus;
 import org.springframework.batch.core.JobExecution;
@@ -25,20 +27,21 @@ public class JobCompletionNotificationListener extends JobExecutionListenerSuppo
 
     @Override
     public void afterJob(JobExecution jobExecution) {
+
         if (jobExecution.getStatus() == BatchStatus.COMPLETED) {
-            log.info("!!! JOB FINISHED! Time to verify the results");
 
-            List<Person> results = jdbcTemplate
-                    .query("SELECT first_name, last_name FROM category", new RowMapper<Person>() {
-                        @Override
-                        public Person mapRow(ResultSet rs, int row) throws SQLException {
-                            return new Person(rs.getString(1), rs.getString(2));
-                        }
-                    });
 
-            for (Person person : results) {
-                log.info("Found <" + person + "> in the database.");
-            }
+//            List<Category> results = jdbcTemplate
+//                    .query("SELECT name, description FROM category", new RowMapper<Category>() {
+//                        @Override
+//                        public Category mapRow(ResultSet rs, int row) throws SQLException {
+//                            return new Category(rs.getString(1), rs.getString(2));
+//                        }
+//                    });
+
+//            for (Category person : results) {
+//                log.info("Found <" + person + "> in the database.");
+//            }
 
         }
     }
