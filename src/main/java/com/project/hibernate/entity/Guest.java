@@ -1,6 +1,7 @@
 package com.project.hibernate.entity;
 
 import lombok.Data;
+import org.springframework.context.annotation.Configuration;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,6 +11,7 @@ import javax.validation.constraints.NotNull;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 
 @Entity
@@ -20,6 +22,7 @@ public class Guest implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "guest_id")
     protected Integer id;
 
     @Temporal(TemporalType.TIMESTAMP)
@@ -45,6 +48,13 @@ public class Guest implements Serializable {
     @NotNull(message = "Phone is required")
     @Column(name = "phone", nullable = false, unique = true)
     private String phone;
+
+    // VISIT
+//    @Column(name = "id")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "guest", cascade = CascadeType.ALL)
+    public List<Visit> visits;
+
+
 
 
 }

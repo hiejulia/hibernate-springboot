@@ -25,6 +25,7 @@ import java.nio.file.Paths;
 import org.elasticsearch.client.Client;
 import org.elasticsearch.common.settings.Settings;
 
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -38,7 +39,7 @@ import org.springframework.data.elasticsearch.repository.config.EnableElasticsea
 @Configuration
 @EnableElasticsearchRepositories(basePackages = "com.baeldung.spring.data.es.repository")
 @ComponentScan(basePackages = { "com.baeldung.spring.data.es.service" })
-public class Config {
+public class ElasticSearchConfiguration {
 
     @Value("${elasticsearch.home:/usr/local/Cellar/elasticsearch/2.3.2}")
     private String elasticsearchHome;

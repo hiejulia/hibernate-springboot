@@ -27,7 +27,7 @@ public class Category implements Serializable{
     private int categoryId;
 
     @Column(name="name")
-    @Field
+    @Field(type = FieldType.String)
     private String name;
 
 

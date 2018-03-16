@@ -17,8 +17,43 @@ public class Visit implements Serializable {
 
 //    private Employee employee;
 
-    private Date date;
 
+//    @Basic
+    @Column(name = "date", nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
+    public Date date;
+
+//    @Basic
+    @Column(name = "status", nullable = false, length = 2147483647)
+    @Type(type = "numeric_boolean")
     private Boolean status;
+
+
+    // REF REPLATIONSHIP
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "guest_id", nullable = false)
+    private Guest guest;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
