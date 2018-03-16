@@ -15,20 +15,20 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;
 
-@Component
-@Slf4j
-public class JobCompletionNotificationListener extends JobExecutionListenerSupport {
+//@Component
+//@Slf4j
+public class JobCompletionNotificationListener {
 
-    private final JdbcTemplate jdbcTemplate;
-
-    public JobCompletionNotificationListener(JdbcTemplate jdbcTemplate) {
-        this.jdbcTemplate = jdbcTemplate;
-    }
-
-    @Override
-    public void afterJob(JobExecution jobExecution) {
-
-        if (jobExecution.getStatus() == BatchStatus.COMPLETED) {
+//    private final JdbcTemplate jdbcTemplate;
+//
+//    public JobCompletionNotificationListener(JdbcTemplate jdbcTemplate) {
+//        this.jdbcTemplate = jdbcTemplate;
+//    }
+//
+//    @Override
+//    public void afterJob(JobExecution jobExecution) {
+//
+//        if (jobExecution.getStatus() == BatchStatus.COMPLETED) {
 
 
 //            List<Category> results = jdbcTemplate
@@ -43,6 +43,6 @@ public class JobCompletionNotificationListener extends JobExecutionListenerSuppo
 //                log.info("Found <" + person + "> in the database.");
 //            }
 
-        }
-    }
+//        }
+//    }
 }

@@ -1,5 +1,6 @@
 package com.project.hibernate;
 
+import com.project.hibernate.config.batch.BatchConfiguration;
 import org.hibernate.SessionFactory;
 import org.springframework.batch.core.launch.support.SimpleJobLauncher;
 import org.springframework.batch.core.repository.JobRepository;
@@ -31,6 +32,7 @@ import java.util.Properties;
 @SpringBootApplication
 @EnableCaching // caching enabled with redis
 @EnableAsync
+//@EnableAutoConfiguration
 //@EnableElasticsearchRepositories(basePackages = "com.project.hibernate.elasticsearch")
 //@EnableElasticsearchRepositories(includeFilters=@ComponentScan.Filter(type= FilterType.ASSIGNABLE_TYPE,value=ElasticsearchRepository.class))
 
