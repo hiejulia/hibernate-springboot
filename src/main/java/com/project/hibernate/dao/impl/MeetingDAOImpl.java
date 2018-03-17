@@ -35,7 +35,7 @@ public class MeetingDAOImpl {
 
 
     public List<Meeting> getAllList() {
-        String sql="select meeting from Meeting meeting where meeting.deleted=false";
+        String sql="select meeting from meeting meeting where meeting.deleted=false";
         Query query= sessionFactory.openSession().createQuery(sql);
         return query.getResultList();
     }

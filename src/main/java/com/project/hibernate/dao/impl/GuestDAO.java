@@ -3,6 +3,7 @@ package com.project.hibernate.dao.impl;
 
 
 import com.project.hibernate.entity.Guest;
+import org.hibernate.SessionFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,9 @@ public class GuestDAO {
 
     @Autowired
     EntityManager entityManager;
+
+    @Autowired
+    private SessionFactory sessionFactory;
 
 
     public Guest find(Integer id) {

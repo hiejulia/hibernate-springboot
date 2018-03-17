@@ -1,6 +1,6 @@
 package com.project.hibernate.dao;
 import com.project.hibernate.entity.Article;
-import org.hibernate.boot.archive.scan.spi.AbstractScannerImpl;
+
 
 import java.util.List;
 

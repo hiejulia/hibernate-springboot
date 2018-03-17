@@ -22,6 +22,16 @@ import javax.xml.bind.annotation.XmlTransient;
 @Data
 @Entity
 @Table(name = "user")
+@NamedQueries({
+        @NamedQuery(
+                name = "findByEmail",
+                query = "from user u where u.email = :email"
+        ),
+        @NamedQuery(
+                name = "findByEmailAndPassword",
+                query = "from user u where u.email= :email and u.password = :password"
+        ),
+})
 public class User implements Serializable {
 
 //    private static final long serialVersionUID = 1L;

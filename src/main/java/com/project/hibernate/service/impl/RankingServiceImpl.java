@@ -5,7 +5,7 @@ package com.project.hibernate.service.impl;
 import com.project.hibernate.service.IRankingService;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.hibernate.query.Query;
+//import org.hibernate.query.Query;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
