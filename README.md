@@ -7,6 +7,12 @@ Project overview : Company management hub
 + Spring boot 
 + REST
 + Hibernate ORM 
+    + NamedQuery 
+    + Criteria 
+    + Transaction management 
+    + Hibernate search 
+    + Hibernate Validator 
+    
 + JPA
 + MySQL 
 + Maven 
