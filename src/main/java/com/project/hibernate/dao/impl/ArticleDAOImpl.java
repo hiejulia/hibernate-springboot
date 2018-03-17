@@ -52,15 +52,60 @@ public class ArticleDAOImpl implements IArticleDAO {
         return entityManager.createQuery("SELECT a FROM Article a ORDER BY a.articleId DESC").setMaxResults(5).getResultList();
     }
 
-    // get all limit 10
+    // get all limit 10 using HQL
     @SuppressWarnings("unchecked")
     public List<Article> getAllArticles10() {
         Session session = sessionFactory.openSession();
-        String hql = "FROM article";
+        String hql = "FROM article as a order by a.created_at desc,a.title asc";
         Query query = session.createQuery(hql);
         List<Article> emList = query.list();
         return emList;
     }
+
+    // SELECT ALL ARTICLE WITH THE SAME CREATED_DATE
+    @SuppressWarnings("unchecked")
+    public List<Article> getAllArticles10GroupByCreatedDate() {
+        Session session = sessionFactory.openSession();
+        String hql = "select count(a.title) from article a group by a.created_date";
+        Query query = session.createQuery(hql);
+        List<Article> emList = query.list();
+        return emList;
+    }
+
+    // HQL - FIND ARTICLE BY CATEGORY - sql injection protection
+    @SuppressWarnings("unchecked")
+    public List<Article> getAllArticlesByCategory() {
+        Session session = sessionFactory.openSession();
+        String hql = "from article a where a.category =:categoryName";
+        Query query = session.createQuery(hql);
+        query.setParameter("categoryName","Work");
+        List<Article> emList = query.list();
+        return emList;
+    }
+
+
+
+    // SELECT QUERY WITH HQL
+    @SuppressWarnings("unchecked")
+    public List<Article> getAllArticlesByCustomQuery() {
+        Session session = sessionFactory.openSession();
+        String hql = "select a.title,a.content,a.description,a.category from article as a";
+        Query query = session.createQuery(hql);
+        List<Article> emList = query.list();
+        return emList;
+    }
+
+    // where clause
+    @SuppressWarnings("unchecked")
+    public List<Article> getAllArticlesByCustomQueryWithWhere() {
+        Session session = sessionFactory.openSession();
+        String hql = "from article a where a.title ='Urgent'";
+        Query query = session.createQuery(hql);
+        List<Article> emList = query.list();
+        return emList;
+    }
+
+
 
 //    @Transactional(readOnly = false)
 //    public void insertEmployee(Employee employee) {
@@ -112,6 +157,12 @@ public class ArticleDAOImpl implements IArticleDAO {
                 .setParameter(2, category).getResultList().size();
         return count > 0 ? true : false;
     }
+
+
+
+
+
+
 }
 
 //    @Override
