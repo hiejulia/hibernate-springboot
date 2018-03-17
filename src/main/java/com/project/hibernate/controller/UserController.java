@@ -2,6 +2,7 @@ package com.project.hibernate.controller;
 
 
 import com.project.hibernate.captcha.CaptchaVerifier;
+import com.project.hibernate.dao.impl.UserDAOImpl;
 import com.project.hibernate.entity.User;
 import com.project.hibernate.repository.IUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,9 @@ public class UserController {
     @Autowired
     private IUserRepository userRepository;
 
+    @Autowired
+    private UserDAOImpl userDAO;
+
 
 
     // find User by user name
@@ -33,6 +37,12 @@ public class UserController {
     public Iterable<User> findAll() {
 
         return userRepository.findAll();
+    }
+
+    // find user by email 1
+    @GetMapping(value = "/email/{email}")
+    public List<User> findByEmail1(@PathVariable String email) {
+        return userDAO.findByEmail1(email);
     }
 
 //    @Autowired

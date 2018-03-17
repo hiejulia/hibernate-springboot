@@ -25,12 +25,12 @@ import javax.xml.bind.annotation.XmlTransient;
 @NamedQueries({
         @NamedQuery(
                 name = "findByEmail",
-                query = "from user u where u.email = :email"
-        ),
-        @NamedQuery(
-                name = "findByEmailAndPassword",
-                query = "from user u where u.email= :email and u.password = :password"
-        ),
+                query = "from User u where u.email = :email"
+        )
+//        @NamedQuery(
+//                name = "findByEmailAndPassword",
+//                query = "from User u where u.email= :email and u.password = :password"
+//        ),
 })
 public class User implements Serializable {
 
