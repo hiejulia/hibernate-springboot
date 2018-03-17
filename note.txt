@@ -1,6 +1,6 @@
 Hibernate with Spring boot 
 Todo:
-(bay gio lam )+ Full text search support with MySQL
+(bay gio lam )+ Full text search support with MySQL : article, tutorial, book, github project
 + File upload support 
 + Join, procedure, trigger , function with MySQL and Hibernate - Join query : DEN HET CUOI TUAN NAY 
 + Save XML/ JSON into one data type 
@@ -15,7 +15,7 @@ Todo:
 DONE: Caching with Redis
 + FTP connection (basic)
 + Check design pattern in hibernate: Proxy pattern for lazy loading 
-+ Scheduled task 
+Dang lam + Scheduled task: article, tutorial(dang lam ), book. github project
 + AOP
 + JMS message
 + Data filter
@@ -185,6 +185,10 @@ Article :
 
 
 -------- Spring boot - hibernate - Banking project
+https://github.com/aapune/BankOfQuadron
+https://github.com/flwkemd/onlineBank/blob/master/src/main/java/com/userfront/controller/AppointmentController.java
+https://github.com/greendevmedia/Bank-Api/tree/master/src/main/java/com/bank
+https://github.com/YOU-CHA/KATA-BANK-SPRING-BOOT-REST-JPA-HIBERNATE-MOCKITO-JUNIT/tree/master/KataCompteYoussefJPAHibernate/src/main/java/org/com/kata/compte
 
 
 
