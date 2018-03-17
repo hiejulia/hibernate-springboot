@@ -17,12 +17,16 @@ public class Appointment {
     @Column(name = "appointment_id")
     private int appointmentId;
 
+    @Column(nullable = true)
     private Date date;
 
+    @Column(nullable = true)
     private String location;
 
+    @Column(nullable = true)
     private String description;
 
+    @Column(nullable = true)
     private boolean confirmed;
 
     @ManyToOne
