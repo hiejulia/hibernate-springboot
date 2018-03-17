@@ -1,12 +1,11 @@
 Hibernate with Spring boot 
-Todo:
-(bay gio lam )+ Full text search support with MySQL : article, tutorial, book, github project
-+ File upload support 
-+ Join, procedure, trigger , function with MySQL and Hibernate - Join query : DEN HET CUOI TUAN NAY 
+Todo: da check het
+(bay gio lam  )+ Full text search support with MySQL : article, tutorial, book, github project
++ File upload support
++ Join, procedure, trigger , function with MySQL and Hibernate - Join query : DEN HET CUOI TUAN NAY, transaction , locking
 + Save XML/ JSON into one data type 
 + RabbitMQ integrate with Hibernate 
-+ Expose XML file 
-+ Cron job (basic)
++ Expose XML file
 + External API integration - Google map - Banking API - Payment API 
 + Invoice 
 + Design pattern 
@@ -14,9 +13,10 @@ Todo:
 + Check multi threading with Hibernate - Java 8 
 DONE: Caching with Redis
 + FTP connection (basic)
-+ Check design pattern in hibernate: Proxy pattern for lazy loading 
-Dang lam + Scheduled task: article, tutorial(dang lam ), book. github project
++ Check design pattern in hibernate: Proxy pattern for lazy loading
 + AOP
++ Hibernate performance tuning: lazy and eager fetching, mass update and remove, config 2nd cache , specific tuning options
++ entity lifecycle
 + JMS message
 + Data filter
 + Batch processing
@@ -28,8 +28,10 @@ Dang lam + Scheduled task: article, tutorial(dang lam ), book. github project
 + Batch insert
 + DDL
 + Multithreading
++ transaction : JTA, flush the session , pessimistic and optimistic locking, using versioning, using timestamp, optimise locking
++ Batch update
 
-
++ Hibernate search
 
 Advanced book:https://www.reddit.com/r/java/comments/5svzzs/best_advanced_spring_boot_books/
 
@@ -116,6 +118,10 @@ Big : https://github.com/caodangtinh/tinhcao
 
 https://github.com/dmitrykhramov/Online-Bank-Simulator
 
+https://github.com/kaiak31/ActivityScheduler
+https://github.com/rodrigo-brito/onibus-api
+https://github.com/N9mo/spring-boot-rest-upload-sample
+https://github.com/AlikJoke/CSVLoader
 
 Base project:
 https://github.com/Bartosz-D3V/E-Commerce-Full-Stack

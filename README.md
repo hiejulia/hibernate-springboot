@@ -37,8 +37,7 @@ Project overview : Company management hub
         + Functional interfaces
         + Streams 
         + Filter 
-       
-+ Scheduled task - cron job run everyday to back up MySQL database(local instance)
++ Scheduled task - cron job run everyday at 1.am to back up MySQL database ( local instance )  
 
 ### Run the project
 + Run the Redis server :`redis-server` (local)
