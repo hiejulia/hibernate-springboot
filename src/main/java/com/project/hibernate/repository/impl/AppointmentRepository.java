@@ -16,4 +16,7 @@ public interface AppointmentRepository extends CrudRepository<Appointment, Long>
 
     // get all appointments by user
     List<Appointment> findAllByUser(User user);
+
+    // find one by id
+    Appointment findByAppointmentId(Integer id);
 }
