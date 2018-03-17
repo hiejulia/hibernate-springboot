@@ -40,8 +40,8 @@ public class UserController {
     }
 
     // find user by email 1
-    @GetMapping(value = "/email/{email}")
-    public List<User> findByEmail1(@PathVariable String email) {
+    @GetMapping(value = "/email/{userEmail}")
+    public List<User> findByEmail1(@PathVariable("userEmail") String email) {
         return userDAO.findByEmail1(email);
     }
 

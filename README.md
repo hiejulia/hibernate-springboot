@@ -13,6 +13,7 @@ Project overview : Company management hub
     + Hibernate search 
     + Hibernate Validator 
     + Hibernate cache : 1st level and 2nd level cache 
+    + HCQL hibernate criteria query language
     
 + JPA
 + MySQL 

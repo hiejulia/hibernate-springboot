@@ -70,7 +70,7 @@ public class User implements Serializable {
 
 //    @Basic(optional = false)
     @Column(name = "gender")
-    private int gender;
+    private String gender;
 
     @Temporal(TemporalType.DATE)
     @Column
