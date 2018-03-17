@@ -68,10 +68,15 @@ Project overview : Company management hub
 
 + Event : Each department have events (tech event, party event, travel event, sports event ) for company 
 
+
 + User : Employee 
     
-   
- 
++ Appointment: Each user / employee can book an appointment with the appointment room  
+    + GET `/v1/api/appointments` : get all current appointments from the company 
+    + POST `/v1/api/appointments` : user create new appointment 
+    + GET `/v1/api/appointments/users/{userId}` : get all appointment by user id 
+    + GET `/v1/api/appointments/{appointmentId}`: user confirm the apppointment
+    
     
 + Meeting :
 

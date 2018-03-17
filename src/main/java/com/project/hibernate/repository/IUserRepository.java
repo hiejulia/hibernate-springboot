@@ -13,5 +13,5 @@ public interface IUserRepository extends CrudRepository<User, Long> {
 //    @Cacheable(value = "findByUserName")
     User findByUserName(String username);
     // find by id
-    User findById(Integer id);
+    User findByUserId(int id);
 }

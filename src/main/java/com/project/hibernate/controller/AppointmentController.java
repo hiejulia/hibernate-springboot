@@ -38,8 +38,7 @@ public class AppointmentController {
     // GET ALL APPOINTMENT BY ONE USER
     @GetMapping(value = "/users/{userId}")
     public List<Appointment> getAllByUser(@PathVariable("userId") int id) {
-        // get user
-        User user = iUserRepository.findById(id);
+        User user = iUserRepository.findByUserId(id);
         return appointmentService.findAllByUser(user);
 
     }
