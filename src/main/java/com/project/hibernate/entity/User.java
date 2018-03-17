@@ -64,7 +64,7 @@ public class User implements Serializable {
     @Transient
     private String password;
 
-    @Column(name="email", nullable=false)
+    @Column(name="email", nullable=false,unique = true)
     @Email(message = "*Please provide a valid e-mail address.")
     private String email;
 

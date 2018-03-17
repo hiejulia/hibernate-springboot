@@ -20,9 +20,9 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Table(name="category")
 @EntityListeners(AuditingEntityListener.class)
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
-@ToString
+//@AllArgsConstructor
+//@NoArgsConstructor
+//@ToString
 //@Document(indexName = "category",type = "categories",shards = 1, replicas = 0, refreshInterval = "-1")
 public class Category implements Serializable{
     // id

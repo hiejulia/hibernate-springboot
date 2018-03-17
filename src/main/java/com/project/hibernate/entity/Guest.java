@@ -49,6 +49,14 @@ public class Guest implements Serializable {
     @Column(name = "phone", nullable = false, unique = true)
     private String phone;
 
+
+    // REFERENCE
+    // Branch
+
+//    @OneToOne(targetEntity=Guest.class, cascade={CascadeType.DETACH,CascadeType.REFRESH,CascadeType.MERGE,CascadeType.PERSIST})
+//    @JoinColumn(name="guestbranch_id",referencedColumnName="guestbranch_id")
+//    private String guestbranch_id;
+
     // VISIT
 //    @Column(name = "id")
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "guest", cascade = CascadeType.ALL)

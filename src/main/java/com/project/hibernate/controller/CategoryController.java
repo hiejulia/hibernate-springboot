@@ -10,6 +10,7 @@ import com.project.hibernate.service.CategoryService;
 import com.project.hibernate.service.elasticsearch.CategoryESService;
 import org.elasticsearch.search.aggregations.metrics.percentiles.hdr.InternalHDRPercentiles;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -37,10 +38,17 @@ public class CategoryController {
 
     // Get All Notes
     @GetMapping
-    public List<Category> getAllCategory() {
+    public ResponseEntity<List<Category>> getAllCategory() {
 //        categoryService = (CategoryController) SpringUtils.ctx.getBean(CategoryController.class);
+        List<Category> categories = null;
+        try {
+            categories = categoryService.listAll();
+        }catch (Exception e){
+            return new ResponseEntity<List<Category>>(categories, HttpStatus.NOT_FOUND);
+        }
 
-        return categoryService.listAll();
+
+        return new ResponseEntity<List<Category>>(categories, HttpStatus.OK);
     }
 
     // get all category with elastic search database base

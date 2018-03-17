@@ -258,10 +258,10 @@ public class ArticleDAOImpl implements IArticleDAO {
     }
     @Override
     public void updateArticle(Article article) {
-        Article artcl = getArticleById(article.getArticleId());
-        artcl.setTitle(article.getTitle());
-        artcl.setCategory(article.getCategory());
-        entityManager.flush();
+//        Article artcl = getArticleById(article.getArticleId());
+//        artcl.setTitle(article.getTitle());
+//        artcl.setCategory(article.getCategory());
+//        entityManager.flush();
     }
     @Override
     public void deleteArticle(int articleId) {
