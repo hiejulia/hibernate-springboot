@@ -1,14 +1,22 @@
 package com.project.hibernate.dao.impl;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import com.project.hibernate.dao.IArticleDAO;
 import com.project.hibernate.entity.Article;
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Criterion;
+import org.hibernate.criterion.LogicalExpression;
+import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Restrictions;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -52,6 +60,19 @@ public class ArticleDAOImpl implements IArticleDAO {
         return entityManager.createQuery("SELECT a FROM Article a ORDER BY a.articleId DESC").setMaxResults(5).getResultList();
     }
 
+    // HSQL - PAGINATION
+
+    @Transactional(readOnly = true)
+    public List<Article> getAllArticlesCustomPagination(Integer start, Integer maxResult) {
+        Session session = sessionFactory.openSession();
+        String hql = "FROM article";
+        Query query = session.createQuery(hql);
+        query.setFirstResult(start);
+        query.setMaxResults(maxResult);
+        List<Article> emList = query.list();
+        return emList;
+    }
+
     // get all limit 10 using HQL
     @SuppressWarnings("unchecked")
     public List<Article> getAllArticles10() {
@@ -83,6 +104,102 @@ public class ArticleDAOImpl implements IArticleDAO {
         return emList;
     }
 
+
+    // CRITERIA API
+    // get all
+    public List<Article> getAllArticlesByCriteria() {
+        Session session = sessionFactory.openSession();
+        Criteria criteria = session.createCriteria(Article.class);
+//        Query query = session.createQuery(hql);
+//        query.setParameter("categoryName","Work");
+        List<Article> emList = criteria.list();
+        return emList;
+    }
+
+    // restriction with criteria
+    // get article on the current date - today
+
+    public List<Article> getAllArticlesByCriteriaToday() {
+        Session session = sessionFactory.openSession();
+        Criteria criteria = session.createCriteria(Article.class);
+//        Query query = session.createQuery(hql);
+//        query.setParameter("categoryName","Work");
+        // get today
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+        LocalDateTime now = LocalDateTime.now();
+        System.out.println(dtf.format(now)); //2016/11/16 12:08:43
+        criteria.add(Restrictions.eq("created_at",dtf.format(now)));
+        List<Article> emList = criteria.list();
+        return emList;
+    }
+
+
+    // FIND ARTICLE WITH TITLE - SEARCH
+    public List<Article> getAllArticlesByCriteriaSearchWithTitle() {
+        Session session = sessionFactory.openSession();
+        Criteria criteria = session.createCriteria(Article.class);
+        criteria.add(Restrictions.like("title","Working is the best thing"));
+
+        List<Article> emList = criteria.list();
+        return emList;
+    }
+
+    // FIND ARTICLE WITH CREATED AT BETWEEN A GIVEN DATE
+//    criteria.add(Restrictions.between("salary", 4000,5000));
+
+
+    // SEARCH ARTICLE WITH SPECIAL CUSTOM QUERY
+    public List<Article> searchArticleCustomQuery(String title1,Date createdAt ) {
+        Session session = sessionFactory.openSession();
+        Criteria criteria = session.createCriteria(Article.class);
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+        LocalDateTime now = LocalDateTime.now();
+        System.out.println(dtf.format(now)); //2016/11/16 12:08:43
+        Criterion createdat = Restrictions.eq("createdAt",createdAt);
+        Criterion title = Restrictions.like("title", title1);
+        LogicalExpression andExp = Restrictions.and(createdat, title); // AND
+        criteria.add(andExp);
+        List<Article> emList = criteria.list();
+        return emList;
+    }
+    // SEARCH FOR ARTICLE WITH 2 CATEGORY (OR)
+    public List<Article> searchArticleByCategories(String category1,String category2 ) {
+        Session session = sessionFactory.openSession();
+        Criteria criteria = session.createCriteria(Article.class);
+
+        Criterion category11 = Restrictions.eq("category",category1);
+        Criterion category22 = Restrictions.like("category",category2);
+        LogicalExpression andExp = Restrictions.and(category11, category22); // OR search
+        criteria.add(andExp);
+        List<Article> emList = criteria.list();
+        return emList;
+    }
+
+    // Pagination - sort with Criteria API
+    public List<Article> searchArticleByCustomSortAndPagination() {
+        Session session = sessionFactory.openSession();
+        Criteria criteria = session.createCriteria(Article.class);
+
+
+        criteria.setFirstResult(0);
+        criteria.setMaxResults(50);
+        // sort
+        criteria.addOrder(Order.desc("created_at"));
+        List<Article> emList = criteria.list();
+        return emList;
+    }
+
+
+
+
+
+//    String hql = "UPDATE Employee E set E.firstName = :name WHERE id =
+//:employee_id";
+//    Query query = session.createQuery(hql);
+//query.setParameter("name", "Shashi");
+//query.setParameter("employee_id", 2);
+//    int result = query.executeUpdate();
+//System.out.println("Row affected: " + result);
 
 
     // SELECT QUERY WITH HQL
@@ -157,6 +274,8 @@ public class ArticleDAOImpl implements IArticleDAO {
                 .setParameter(2, category).getResultList().size();
         return count > 0 ? true : false;
     }
+
+
 
 
 
