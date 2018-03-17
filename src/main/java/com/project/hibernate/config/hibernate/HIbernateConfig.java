@@ -8,13 +8,13 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 
 import javax.sql.DataSource;
 
-@Configuration
+//@Configuration
 public class HIbernateConfig {
-    @Bean(name = "sessionFactory")
-    public SessionFactory getSessionFactory(@Qualifier("dataSource") DataSource dataSource) {
-        LocalSessionFactoryBuilder sessionBuilder = new
-                LocalSessionFactoryBuilder(dataSource);
-        sessionBuilder.scanPackages("com.project.hibernate.entity");
-        return sessionBuilder.buildSessionFactory();
-    }
+//    @Bean(name = "sessionFactory")
+//    public SessionFactory getSessionFactory(@Qualifier("dataSource") DataSource dataSource) {
+//        LocalSessionFactoryBuilder sessionBuilder = new
+//                LocalSessionFactoryBuilder(dataSource);
+//        sessionBuilder.scanPackages("com.project.hibernate.entity");
+//        return sessionBuilder.buildSessionFactory();
+//    }
 }

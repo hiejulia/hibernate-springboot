@@ -7,20 +7,22 @@ import com.project.hibernate.entity.User;
 import com.project.hibernate.repository.IUserRepository;
 import com.project.hibernate.service.BalanceService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/v1/api/balance")
 @CrossOrigin
 public class BalanceController {
-    @Autowired
-    private IUserRepository userRepository;
+//    @Autowired
+//    @Qualifier("IUserRepository")
+//    private IUserRepository userRepository;
 //
 //    @Autowired
 //    private UploadMaterialsService uploadMaterialsService;
 
-    @Autowired
-    private BalanceService balanceService;
+//    @Autowired
+//    private BalanceService balanceService;
 
 
     // GET BALANCE BY USER

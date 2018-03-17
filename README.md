@@ -12,6 +12,7 @@ Project overview : Company management hub
     + Transaction management 
     + Hibernate search 
     + Hibernate Validator 
+    + Hibernate cache : 1st level and 2nd level cache 
     
 + JPA
 + MySQL 

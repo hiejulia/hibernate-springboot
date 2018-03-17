@@ -20,6 +20,7 @@ import org.springframework.context.annotation.FilterType;
 import org.springframework.core.env.Environment;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 import org.springframework.data.elasticsearch.repository.config.EnableElasticsearchRepositories;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
@@ -35,7 +36,7 @@ import java.util.Properties;
 //@EnableAutoConfiguration
 //@EnableElasticsearchRepositories(basePackages = "com.project.hibernate.elasticsearch")
 //@EnableElasticsearchRepositories(includeFilters=@ComponentScan.Filter(type= FilterType.ASSIGNABLE_TYPE,value=ElasticsearchRepository.class))
-
+//@EnableJpaRepositories("com.project.hibernate.entity")
 public class HibernateApplication {
 	@Autowired
 	private Environment env;

@@ -10,7 +10,6 @@ import org.springframework.transaction.annotation.Transactional;
 @Repository
 @Transactional
 public interface IUserRepository extends CrudRepository<User, Long> {
-
 //    @Cacheable(value = "findByUserName")
     User findByUserName(String username);
     // find by id
