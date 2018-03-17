@@ -1,6 +1,7 @@
 package com.project.hibernate.entity;
 
 import java.io.Serializable;
+import java.util.Set;
 
 import javax.persistence.*;
 
@@ -18,7 +19,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name="category")
-@EntityListeners(AuditingEntityListener.class)
+//@EntityListeners(AuditingEntityListener.class)
 @Data
 //@AllArgsConstructor
 //@NoArgsConstructor
@@ -39,6 +40,11 @@ public class Category implements Serializable{
 
     @Column(name="description")
     private String description;
+
+
+    // RELATIONSHIP MAPPING
+    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "categories")
+    private Set<ProjectReview> projectReviewSet;
 
 
 

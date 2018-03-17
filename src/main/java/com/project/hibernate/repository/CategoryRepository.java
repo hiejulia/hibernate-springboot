@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.persistence.EntityManagerFactory;
+import java.util.List;
 
 @Repository
 public interface CategoryRepository extends JpaRepository<Category, Integer> {
@@ -16,6 +17,11 @@ public interface CategoryRepository extends JpaRepository<Category, Integer> {
 
 
     Category findByCategoryId(Integer id);
+
+    // find all
+    List<Category> findAll();
+
+    List<Category> findByNameIn(String[] names);
 
 
 

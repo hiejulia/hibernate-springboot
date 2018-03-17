@@ -35,10 +35,11 @@ public class AppointmentServiceImpl implements AppointmentService {
     }
 
     @Override
-    public void confirmAppointment(int id) {
+    public Appointment confirmAppointment(int id) {
         Appointment appointment = findAppointment(id);
         appointment.setConfirmed(true);// set confirm = true
         appointmentRepository.save(appointment);// save
+        return appointment;
     }
 
     @Override

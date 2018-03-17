@@ -3,9 +3,12 @@ package com.project.hibernate.repository;
 import com.project.hibernate.entity.User;
 import org.omg.CORBA.INTERNAL;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Repository
 @Transactional
@@ -14,4 +17,10 @@ public interface IUserRepository extends CrudRepository<User, Long> {
     User findByUserName(String username);
     // find by id
     User findByUserId(int id);
+
+    // find all user
+    List<User> findAll();
+
+//    @Query(value = "SELECT a, COUNT(a) AS cnt FROM user AS a GROUP BY a ORDER BY cnt")
+//    List<Object[]> findUserProjectreviewStartingWith();
 }

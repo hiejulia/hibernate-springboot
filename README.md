@@ -25,7 +25,19 @@ Project overview : Company management hub
 + External API source : Captcha
 + ElasticSearch 
     + Sync data with MySQL database : 
-
++ Design pattern 
+    + Spring framework 
+        + Factory pattern 
+        + Singleton pattern 
+        + MVC pattern 
+        + Builder pattern 
+        + Decorator pattern 
+    + Java 8 
+        + Lambda expression 
+        + Functional interfaces
+        + Streams 
+        + Filter 
+       
 
 
 ### Run the project
@@ -80,7 +92,8 @@ Project overview : Company management hub
     
 + Meeting :
 
-
++ Project Review : User will create a project review 
+    + GET 
 
 + Book : 
     +  

@@ -113,4 +113,8 @@ public class User implements Serializable {
     @ManyToMany(mappedBy = "attendees")
     private List<Meetup> meetupsAttending = new ArrayList<>();
 
+    // project review
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+    private Set<ProjectReview> projectReviews;
+
 }

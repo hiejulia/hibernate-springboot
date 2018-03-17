@@ -23,7 +23,7 @@ public interface AppointmentService {
     Appointment findAppointment(int id);
 
     // confirm appointment
-    void confirmAppointment(int id);
+    Appointment confirmAppointment(int id);
     // get all appointment by user
     List<Appointment> findAllByUser(User user);
 }

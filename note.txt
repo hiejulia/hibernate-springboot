@@ -92,13 +92,12 @@ booking
 set
 update
 sql
-query
-optimize
 list
 participant
 sport
 
 
+va nhung tinh tu khac
 
 
 
@@ -141,6 +140,7 @@ https://github.com/dSouthz/webApp
 https://github.com/sokolinthesky/bus_tickets_v2
 https://github.com/riffert/textgroup
 https://github.com/sofyanhasanuddin/zklatihan
+base : https://github.com/beamofsoul/BusinessInfrastructurePlatformGroupVersion
 
 https://github.com/yubrajpokharel/bankApp
 https://github.com/chocolaaaaate/springtasks

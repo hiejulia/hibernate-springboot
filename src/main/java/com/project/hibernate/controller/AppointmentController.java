@@ -30,8 +30,8 @@ public class AppointmentController {
 
     // CONFIRM APPOINTMENT
     @RequestMapping("/{id}/confirm")
-    public void confirmAppointment(@PathVariable("id") int id) {
-        appointmentService.confirmAppointment(id);
+    public Appointment confirmAppointment(@PathVariable("id") int id) {
+        return appointmentService.confirmAppointment(id);
     }
 
 

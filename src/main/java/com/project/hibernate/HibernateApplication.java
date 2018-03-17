@@ -25,6 +25,7 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.scheduling.annotation.EnableAsync;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.transaction.PlatformTransactionManager;
 
 import javax.sql.DataSource;
@@ -33,7 +34,9 @@ import java.util.Properties;
 @SpringBootApplication
 @EnableCaching // caching enabled with redis
 @EnableAsync
-//@EnableAutoConfiguration
+@EnableScheduling
+//@EnableAutoCo
+// @EnableSchedulingnfiguration
 //@EnableElasticsearchRepositories(basePackages = "com.project.hibernate.elasticsearch")
 //@EnableElasticsearchRepositories(includeFilters=@ComponentScan.Filter(type= FilterType.ASSIGNABLE_TYPE,value=ElasticsearchRepository.class))
 //@EnableJpaRepositories("com.project.hibernate.entity")
