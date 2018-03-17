@@ -15,7 +15,7 @@ public class ScheduledTasks {
 
     private static final Logger log = LoggerFactory.getLogger(ScheduledTasks.class);
 
-    private static final SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+    private static final SimpleDateFormat dateFormat2 = new SimpleDateFormat("HH:mm:ss");
 
 
     private static final SimpleDateFormat dateFormat1 = new SimpleDateFormat(
