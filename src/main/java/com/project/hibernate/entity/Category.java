@@ -30,6 +30,7 @@ public class Category implements Serializable{
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name="category_id",nullable = false)
+    @SequenceGenerator(name="seq1",sequenceName="HIB_SEQ")
 //    @Field(index = FieldIndex.not_analyzed)
 //    @Field
     private int categoryId;

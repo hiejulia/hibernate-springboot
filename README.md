@@ -15,6 +15,7 @@ Project overview : Company management hub
     + Hibernate cache : 1st level and 2nd level cache 
     + HCQL hibernate criteria query language
     + HQL query 
+    + Hibernate design pattern : Data mapper pattern, Domain model pattern, lazy loading pattern, template pattern
 + JPA
 + MySQL 
 + Maven 

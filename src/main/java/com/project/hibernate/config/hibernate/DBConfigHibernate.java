@@ -7,6 +7,7 @@ import javax.sql.DataSource;
 
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -20,16 +21,16 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 //@EnableTransactionManagement
 //@PropertySource(value = { "application.properties" })
 public class DBConfigHibernate {
-//    @Value("${jdbc.driverClassName}")
-//    private String DRIVER_CLASS_NAME;
-//    @Value("${jdbc.url}")
-//    private String URL;
-//    @Value("${jdbc.username}")
-//    private String USERNAME;
-//    @Value("${jdbc.password}")
-//    private String PASSWORD;
-//    @Value("${hibernate.dialect}")
-//    private String DIALECT;
+    @Value("${jdbc.driverClassName}")
+    private String DRIVER_CLASS_NAME;
+    @Value("${jdbc.url}")
+    private String URL;
+    @Value("${jdbc.username}")
+    private String USERNAME;
+    @Value("${jdbc.password}")
+    private String PASSWORD;
+    @Value("${hibernate.dialect}")
+    private String DIALECT;
 //
 //    @Bean
 //    public DataSource dataSource() {
@@ -64,4 +65,19 @@ public class DBConfigHibernate {
 //        transactionManager.setSessionFactory(s);
 //        return transactionManager;
 //    }
+
+//    @Bean
+//    public LocalSessionFactoryBean sessionFactory(@Qualifier("dataSource") DataSource
+//                                                          dataSource) {
+//        LocalSessionFactoryBean sfb = new LocalSessionFactoryBean();
+//        sfb.setDataSource(dataSource);
+//        sfb.setPackagesToScan(new String[] {
+//                "com.project.hibernate.entity" });
+//        Properties props = new Properties();
+//        props.setProperty("dialect",
+//                "org.hibernate.dialect.H2Dialect");
+//        sfb.setHibernateProperties(props);
+//        return sfb;
+//    }
+
 }
