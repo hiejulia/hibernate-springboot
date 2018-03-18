@@ -2,6 +2,7 @@ package com.project.hibernate.entity;
 
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.*;
 
@@ -24,4 +25,8 @@ public class Address implements Serializable {
     private String houseNumber;
 
     private String zipCode;
+
+    // creationDate
+    @Transient
+    private Date createdAt;
 }

@@ -23,22 +23,22 @@ public class CompanyServiceCriteriaAPIImpl implements CompanyService {
     private EntityManager entityManager;
 
     @Override
-    public Company getCompanyWithDepartments(Integer companyId) {
+    public Company getCompanyWithDepartments(int companyId) {
         return null;
     }
 
     @Override
-    public Company getCompanyWithDepartmentsAndEmployees(Long companyId) {
+    public Company getCompanyWithDepartmentsAndEmployees(int companyId) {
         return null;
     }
 
     @Override
-    public Company getCompanyWithDepartmentsAndEmployeesAndOffices(Long companyId) {
+    public Company getCompanyWithDepartmentsAndEmployeesAndOffices(int companyId) {
         return null;
     }
 
     @Override
-    public Company getCompanyWithCars(Long companyId) {
+    public Company getCompanyWithCars(int companyId) {
         return null;
     }
 }
