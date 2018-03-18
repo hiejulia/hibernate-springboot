@@ -236,6 +236,13 @@
 				<version>5.5.0</version>
 			</dependency>
 
+			<!--add hibernate search-->
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-search-orm</artifactId>
+				<version>5.8.2.Final</version>
+			</dependency>
+
 			<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-batch -->
 			<dependency>
 				<groupId>org.springframework.boot</groupId>

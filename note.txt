@@ -29,8 +29,7 @@ Todo: da check het
 + Multithreading
 + transaction : JTA, flush the session , pessimistic and optimistic locking, using versioning, using timestamp, optimise locking
 + Batch update
-
-+ Hibernate search
++ Hibernate search : tuts(dang check ), book, github project
 
 Advanced book:https://www.reddit.com/r/java/comments/5svzzs/best_advanced_spring_boot_books/
 
