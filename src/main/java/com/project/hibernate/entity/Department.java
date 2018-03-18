@@ -1,7 +1,9 @@
 package com.project.hibernate.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -10,9 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @Data
 @Entity
@@ -34,6 +34,12 @@ public class Department {
     @Column(name = "contact_phone", nullable = false)
     private String contactPhone;
 
+
+
+    // RELATIONSHIP MAPPING
+
+
+
     @OneToMany(orphanRemoval = true, mappedBy = "department")
     @OrderBy("post_id")
     private List<Post> posts = new ArrayList<>();
@@ -41,13 +47,25 @@ public class Department {
     // employee - aka .user
     @OneToMany(mappedBy="department",fetch=FetchType.LAZY)
     @JsonIgnore
-    private List<User> employeeList;
+    @JsonManagedReference
+    private Set<User> employees = new HashSet<>();
 
     @ManyToMany(mappedBy="departmentList")
     private List<Meeting> meetingList;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date createdDate;
+
+    // Office
+    @OneToMany(mappedBy = "department", fetch = FetchType.LAZY)
+    @JsonManagedReference
+    private Set<Office> offices = new HashSet<>();
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonBackReference
+    private Company company;
+
+
 
 
 

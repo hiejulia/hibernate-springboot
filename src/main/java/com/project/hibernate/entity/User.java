@@ -99,7 +99,7 @@ public class User implements Serializable {
     private Contact contact;
 
 
-    @ManyToOne(fetch=FetchType.EAGER)
+    @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="department_id")
     @JsonBackReference
     private Department department;
@@ -116,5 +116,13 @@ public class User implements Serializable {
     // project review
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private Set<ProjectReview> projectReviews;
+
+    // address
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "address_id")
+    private Address address;
+
+
 
 }

@@ -8,6 +8,8 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import static javax.persistence.GenerationType.TABLE;
+
 @Data
 @Entity
 @Table
@@ -16,6 +18,11 @@ public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "post_id")
+//    @TableGenerator(name="tablegen",
+//            table="ID_TABLE",
+//            pkColumnName="ID",
+//            valueColumnName="NEXT_ID")
+//    @GeneratedValue(strategy=TABLE,generator="tablegen")
     private Integer id;
 
     @Column
