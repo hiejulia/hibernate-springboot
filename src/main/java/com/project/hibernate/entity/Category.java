@@ -9,6 +9,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.hibernate.search.annotations.Indexed;
+import org.hibernate.search.annotations.TermVector;
 import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.data.elasticsearch.annotations.Field;
 import org.springframework.data.elasticsearch.annotations.FieldIndex;
@@ -21,6 +23,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Table(name="category")
 //@EntityListeners(AuditingEntityListener.class)
 @Data
+@Indexed
 //@AllArgsConstructor
 //@NoArgsConstructor
 //@ToString
@@ -36,9 +39,11 @@ public class Category implements Serializable{
     private int categoryId;
 
     @Column(name="name")
+    @Field
 //    @Field(type = FieldType.String)
     private String name;
 
+    @Field
     @Column(name="description")
     private String description;
 
