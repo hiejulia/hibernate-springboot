@@ -23,7 +23,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Table(name="category")
 //@EntityListeners(AuditingEntityListener.class)
 @Data
-@Indexed
+// @Indexed
 //@AllArgsConstructor
 //@NoArgsConstructor
 //@ToString
@@ -39,11 +39,11 @@ public class Category implements Serializable{
     private int categoryId;
 
     @Column(name="name")
-    @Field
+    // @Field
 //    @Field(type = FieldType.String)
     private String name;
 
-    @Field
+    // @Field
     @Column(name="description")
     private String description;
 

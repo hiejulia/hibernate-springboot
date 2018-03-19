@@ -98,11 +98,11 @@ public class User implements Serializable {
     @PrimaryKeyJoinColumn
     private Contact contact;
 
-
-    @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="department_id")
-    @JsonBackReference
-    private Department department;
+//
+//    @ManyToOne(fetch=FetchType.LAZY)
+//    @JoinColumn(name="department_id")
+//    @JsonBackReference
+//    private Department department;
 
 
     // UPDATE USER ENTITY WITH MEETUPS ENTITY RELATIONSHIP

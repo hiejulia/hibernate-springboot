@@ -13,7 +13,7 @@ import javax.persistence.*;
 @Entity
 @Data
 @Table(name="article")
-@Indexed
+//@Indexed
 public class Article implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -23,25 +23,25 @@ public class Article implements Serializable {
     @Column(name="article_id",nullable = false)
     private int articleId;
 
-    @Field
+//    @Field
     @Column(name="title",nullable = false)
     private String title;
 
-    @Field
+//    @Field
     @Column(name="category")
     private String category;
 
 
-    @Field
+//    @Field
     @Column(name = "content",nullable = false)
     private String content;
 
 
-    @Field
+    /*@Field*/
     @Column(name = "description")
     private String description;
 
-    @Field
+//    @Field
     @CreatedDate
     @Version
     @Column(name = "created_at")

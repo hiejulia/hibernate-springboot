@@ -21,16 +21,16 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 //@EnableTransactionManagement
 //@PropertySource(value = { "application.properties" })
 public class DBConfigHibernate {
-    @Value("${jdbc.driverClassName}")
-    private String DRIVER_CLASS_NAME;
-    @Value("${jdbc.url}")
-    private String URL;
-    @Value("${jdbc.username}")
-    private String USERNAME;
-    @Value("${jdbc.password}")
-    private String PASSWORD;
-    @Value("${hibernate.dialect}")
-    private String DIALECT;
+//    @Value("${jdbc.driverClassName}")
+//    private String DRIVER_CLASS_NAME;
+//    @Value("${jdbc.url}")
+//    private String URL;
+//    @Value("${jdbc.username}")
+//    private String USERNAME;
+//    @Value("${jdbc.password}")
+//    private String PASSWORD;
+//    @Value("${hibernate.dialect}")
+//    private String DIALECT;
 //
 //    @Bean
 //    public DataSource dataSource() {

@@ -41,8 +41,8 @@ import java.util.Properties;
 //@EnableElasticsearchRepositories(includeFilters=@ComponentScan.Filter(type= FilterType.ASSIGNABLE_TYPE,value=ElasticsearchRepository.class))
 //@EnableJpaRepositories("com.project.hibernate.entity")
 public class HibernateApplication {
-	@Autowired
-	private Environment env;
+//	@Autowired
+//	private Environment env;
 
 	public static void main(String[] args) {
 		SpringApplication.run(HibernateApplication.class, args);

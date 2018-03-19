@@ -40,7 +40,13 @@ Project overview : Company management hub
         + Functional interfaces
         + Streams 
         + Filter 
-+ Scheduled task - cron job run everyday at 1.am to back up MySQL database ( local instance )  
++ Scheduled task - cron job run everyday at 1.am to back up MySQL database ( local instance )
++ Hibernate cache 
+    + Cache structure 
+        + Cache scope, First level cache, Second level cache, Query cache 
+        + Cache strategies : Read only, Non strict read write, read write, transactional, object identity
+        + Manage cache: remove cache entities, cache modes 
+          
 
 ### Run the project
 + Run the Redis server :`redis-server` (local)

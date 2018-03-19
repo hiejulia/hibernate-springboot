@@ -14,7 +14,7 @@ Todo: da check het
 + FTP connection (basic) : tut, book, github project §
 + Check design pattern in hibernate: Proxy pattern for lazy loading
 + AOP
-+ Hibernate performance tuning: lazy and eager fetching, mass update and remove, config 2nd cache , specific tuning options
++ Hibernate performance tuning: mass update and remove, config 2nd cache , specific tuning options
 + entity lifecycle
 + JMS message
 + Data filter
