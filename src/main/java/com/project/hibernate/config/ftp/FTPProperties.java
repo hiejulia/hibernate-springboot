@@ -2,21 +2,28 @@ package com.project.hibernate.config.ftp;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 
 @Configuration
+//@Component
 @ConfigurationProperties(prefix = "ftp")
 public class FTPProperties {
     private String server;
+
     private String username;
+
     private String password;
+
     @Min(0)
     @Max(65535)
     private int port;
+
     private int keepAliveTimeout;
+
     private boolean autoStart;
 
     @PostConstruct
