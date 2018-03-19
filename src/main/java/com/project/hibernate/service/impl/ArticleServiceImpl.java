@@ -5,6 +5,11 @@ import java.util.List;
 import com.project.hibernate.dao.IArticleDAO;
 import com.project.hibernate.entity.Article;
 import com.project.hibernate.service.IArticleService;
+import org.apache.lucene.search.Query;
+import org.hibernate.search.jpa.FullTextEntityManager;
+import org.hibernate.search.jpa.FullTextQuery;
+import org.hibernate.search.jpa.Search;
+import org.hibernate.search.query.dsl.QueryBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -46,4 +51,31 @@ public class ArticleServiceImpl implements IArticleService {
     public void deleteArticle(int articleId) {
         articleDAO.deleteArticle(articleId);
     }
+
+    // ADD FOR HIBERNATE SEARCH
+//    FullTextEntityManager fullTextEntityManager
+////            = Search.getFullTextEntityManager(entityManager);
+////fullTextEntityManager.createIndexer().startAndWait();
+
+//    FullTextEntityManager fullTextEntityManager
+//            = Search.getFullTextEntityManager(entityManager);
+//
+//    QueryBuilder queryBuilder = fullTextEntityManager.getSearchFactory()
+//            .buildQueryBuilder()
+//            .forEntity(Article.class)
+//            .get();
+//
+//
+//    // create lucene query via hibernate query dsl
+//    Query query = queryBuilder
+//            .keyword()
+//            .onField("title")
+//            .matching("New article title")
+//            .createQuery();
+//
+//    // wrap lucene query into hibernate query
+//    FullTextQuery jpaQuery
+//            = fullTextEntityManager.createFullTextQuery(query, Article.class);
+//    // execute the query
+//    List<Article> results = jpaQuery.getResultList();
 }

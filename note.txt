@@ -3,15 +3,15 @@ Todo: da check het
 (bay gio lam  )+ Full text search support with MySQL : article + tutorial(dang lam), book, github project
 + File upload support : article+tut, book, github project
 + Join, procedure, trigger , function with MySQL and Hibernate - Join query : DEN HET CUOI TUAN NAY, transaction , locking
-+ Save XML/ JSON into one data type 
++ Save XML/ JSON into one data type : tut, book, github project 
 + RabbitMQ integrate with Hibernate : article + tut, book, github project
-+ Expose XML file
-+ External API integration - Google map - Banking API - Payment API 
++ Expose XML file : tut, book, github project 
++ External API integration - Google map - Banking API - Payment API : tut, book, github project 
 + Invoice 
 + Design pattern 
 + Test 
 + Check multi threading with Hibernate - Java 8
-+ FTP connection (basic)
++ FTP connection (basic) : tut, book, github project §
 + Check design pattern in hibernate: Proxy pattern for lazy loading
 + AOP
 + Hibernate performance tuning: lazy and eager fetching, mass update and remove, config 2nd cache , specific tuning options

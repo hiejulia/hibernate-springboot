@@ -17,7 +17,7 @@ Project overview : Company management hub
     + HCQL hibernate criteria query language
     + HQL query 
     + Hibernate design pattern : Data mapper pattern, Domain model pattern, lazy loading pattern, template pattern
-        
++ Messaging with RabbitMQ      
 + JPA
 + MySQL 
 + Maven 
@@ -45,7 +45,12 @@ Project overview : Company management hub
 ### Run the project
 + Run the Redis server :`redis-server` (local)
 + Run the ElasticSearch server : `brew services start elasticsearch` (local)
- 
++ Install and set up RabbitMQ server : 
+    + Install 
+    + Enable rabbitmq plugin: `rabbitmq-plugins enable rabbitmq_management --online`
+    + Go to `http://localhost:15672`, login with guest/guest 
+    + Start rabbitMQ server : `./rabbitmq_server-3.5.1/sbin/rabbitmq-server`
+    + Add exchange : 
 
 
 

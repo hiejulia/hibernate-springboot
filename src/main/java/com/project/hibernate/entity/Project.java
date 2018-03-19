@@ -34,8 +34,8 @@ public class Project {
     private ProjectManager projectManager;
 //
 //    @ManyToMany
-//    @JoinTable(name = "user_project", joinColumns = @JoinColumn(name = "project_id"),
-//            inverseJoinColumns = @JoinColumn(name = "user_id"))
+////    @JoinTable(name = "user_project", joinColumns = @JoinColumn(name = "project_id"),
+////            inverseJoinColumns = @JoinColumn(name = "user_id"))
 //    private Set<User> members = new HashSet<>();
 
 

@@ -84,7 +84,7 @@ public class User implements Serializable {
 // PROJECT
 //    @ManyToMany(mappedBy = "members")
 //    private Set<Project> projects = new HashSet<>();
-////
+//
     // role
     @ManyToMany(fetch=FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinTable(

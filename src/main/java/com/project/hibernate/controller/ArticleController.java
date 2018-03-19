@@ -3,6 +3,7 @@ package com.project.hibernate.controller;
 import java.util.List;
 
 import com.project.hibernate.entity.Article;
+import com.project.hibernate.messaging.Producer;
 import com.project.hibernate.service.IArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -18,6 +19,10 @@ import javax.validation.Valid;
 @RequestMapping("/v1/api/articles")
 @CrossOrigin
 public class ArticleController {
+
+    // autowired Producer 
+//    @Autowired
+//	Producer producer;
 
     @Autowired
     private IArticleService articleService;
@@ -39,6 +44,7 @@ public class ArticleController {
         return new ResponseEntity<List<Article>>(list, HttpStatus.OK);
     }
 
+    // send message to queue 
     @PostMapping
     public ResponseEntity<Article> addArticle(@Valid @RequestBody Article article) {
         System.out.print("create new article");
@@ -47,6 +53,9 @@ public class ArticleController {
             return new ResponseEntity<>(HttpStatus.CONFLICT);
         }
         articleService.addArticle(article);
+        // send message to queue -> add new article 
+        String msg = "Create new article successfully";
+//        producer.produceMsg(msg);
 
         HttpHeaders headers = new HttpHeaders();
 //        headers.setLocation(builder.path("/article/{id}").buildAndExpand(article.getArticleId()).toUri());
