@@ -11,7 +11,6 @@ Todo: da check het
 + Design pattern 
 + Test 
 + Check multi threading with Hibernate - Java 8
-+ FTP connection (basic) : tut, book, github project §
 + Check design pattern in hibernate: Proxy pattern for lazy loading
 + AOP
 + Hibernate performance tuning: mass update and remove, config 2nd cache , specific tuning options
