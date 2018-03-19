@@ -35,6 +35,10 @@ public class Meetup {
     @NotNull
     private String topic;
 
+
+    // ENTITY RELATIONSHIP
+
+    // organiser
     @ManyToOne
     private User organizer;
 

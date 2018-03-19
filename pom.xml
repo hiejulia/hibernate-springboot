@@ -308,7 +308,17 @@
 				<version>3.6</version>
 			</dependency>
 
+			<dependency>
+				<groupId>org.springframework.integration</groupId>
+				<artifactId>spring-integration-sftp</artifactId>
+			</dependency>
 
+			<!--add ftp server -->
+			<dependency>
+				<groupId>org.apache.ftpserver</groupId>
+				<artifactId>ftpserver-core</artifactId>
+				<version>1.0.6</version>
+			</dependency>
 
 
 

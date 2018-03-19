@@ -10,7 +10,6 @@ import org.apache.commons.net.ftp.FTPReply;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
-
 import java.io.*;
 
 
@@ -35,10 +34,13 @@ public class FTPServiceImpl implements FTPService {
     public void connectToFTP(String host, String user, String pass) throws FTPErrors {
 
         ftpconnection = new FTPClient();
+
         ftpconnection.addProtocolCommandListener(new PrintCommandListener(new PrintWriter(System.out)));
+
         int reply;
 
         try {
+            // connect to ftp server
             ftpconnection.connect(host);
         } catch (IOException e) {
             ErrorMessage errorMessage = new ErrorMessage(-1, "No fue posible conectarse al FTP a través del host=" + host);
@@ -90,7 +92,9 @@ public class FTPServiceImpl implements FTPService {
 
         try {
             InputStream input = new FileInputStream(file);
+            // store file in ftp server dir
             this.ftpconnection.storeFile(ftpHostDir + serverFilename, input);
+
         } catch (IOException e) {
             ErrorMessage errorMessage = new ErrorMessage(-5, "No se pudo subir el archivo al servidor.");
             logger.error(errorMessage.toString());
@@ -112,6 +116,7 @@ public class FTPServiceImpl implements FTPService {
         FileOutputStream fos;
         try {
             fos = new FileOutputStream(copytoPath);
+
         } catch (FileNotFoundException e) {
             ErrorMessage errorMessage = new ErrorMessage(-6, "No se pudo obtener la referencia a la carpeta relativa donde guardar, verifique la ruta y los permisos.");
             logger.error(errorMessage.toString());
@@ -119,6 +124,7 @@ public class FTPServiceImpl implements FTPService {
         }
 
         try {
+            // retrive file from ftp server
             this.ftpconnection.retrieveFile(ftpRelativePath, fos);
         } catch (IOException e) {
             ErrorMessage errorMessage = new ErrorMessage(-7, "No se pudo descargar el archivo.");

@@ -46,7 +46,7 @@ Project overview : Company management hub
         + Cache scope, First level cache, Second level cache, Query cache 
         + Cache strategies : Read only, Non strict read write, read write, transactional, object identity
         + Manage cache: remove cache entities, cache modes 
-          
++ FTP client         
 
 ### Run the project
 + Run the Redis server :`redis-server` (local)
@@ -89,6 +89,9 @@ Project overview : Company management hub
 + Project : Department post their new/ incoming/ongoing projects 
 
 + Meetup
+    + GET `/v1/api/meetups`
+    + GET 
+    + POST 
 
 
 + Event : Each department have events (tech event, party event, travel event, sports event ) for company 
@@ -113,7 +116,10 @@ Project overview : Company management hub
     
 + Query ElasticSearch database 
     + `locahost:9200/category/category/_search?pretty=true`    
-    
+   
+   
++ FTP endpoint
+    + GET `/v1/api/upload` : upload file to local FTP server     
 #### Some optimization for this project
 + Maven build time : 
     + https://zeroturnaround.com/rebellabs/your-maven-build-is-slow-speed-it-up/

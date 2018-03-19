@@ -106,10 +106,12 @@ public class User implements Serializable {
 
 
     // UPDATE USER ENTITY WITH MEETUPS ENTITY RELATIONSHIP
+    // MEET UP ORGANISED
     @OneToMany
     @JoinColumn(name = "organizer_user_id")
     private List<Meetup> meetupsOrganized = new ArrayList<>();
 
+    // MEETUP ATTENDING
     @ManyToMany(mappedBy = "attendees")
     private List<Meetup> meetupsAttending = new ArrayList<>();
 
