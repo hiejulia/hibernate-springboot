@@ -27,7 +27,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 //        allowGetters = true)
 @Entity
 @Data
-@Indexed
+//@Indexed
 @Table(name = "contact", uniqueConstraints = {
         @UniqueConstraint(columnNames = "contact_id"),
         @UniqueConstraint(columnNames = "contact_code") })
@@ -38,7 +38,7 @@ public class Contact implements Serializable {
     private int contactId;
 
     @Column(name = "contact_code", unique = true, nullable = false, length = 5)
-    @Field( analyze = Analyze.YES, store = Store.NO)
+//    @Field( analyze = Analyze.YES, store = Store.NO)
     private String contactCode;
 
     private String firstName;

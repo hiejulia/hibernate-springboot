@@ -28,6 +28,15 @@ public class Post {
     @Column
     String title;
 
+
+    // transient field
+
+    @Transient
+    private String shortText;
+
+
+
+
     // RELATIONSHIP WITH OTHER TABLE
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinTable(name = "post_categorization",

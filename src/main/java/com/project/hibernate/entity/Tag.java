@@ -4,6 +4,8 @@ package com.project.hibernate.entity;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.Entity;
@@ -25,6 +27,7 @@ public class Tag {
     @JoinColumn(name = "subcat_id")
     private Subcategory subcategory;
 
-    @ManyToMany(mappedBy = "categorization")
+    @ManyToMany(mappedBy = "categorization",fetch = FetchType.LAZY)
+//    @JsonIgnore
     private List<Post> posts = new ArrayList<>();
 }

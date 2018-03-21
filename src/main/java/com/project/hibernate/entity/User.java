@@ -3,6 +3,7 @@ package com.project.hibernate.entity;
 
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -62,6 +63,7 @@ public class User implements Serializable {
     @Size(min = 1, max = 255)
     @Column(name = "password")
     @Transient
+    @JsonIgnore
     private String password;
 
     @Column(name="email", nullable=false,unique = true)
@@ -128,6 +130,12 @@ public class User implements Serializable {
     // Photo
     @OneToMany(mappedBy = "user")
     private List<Photo> photos;
+
+    // post
+    @OneToMany(mappedBy = "user")
+    @JsonBackReference
+    private List<Post> posts;
+
 
 
 
