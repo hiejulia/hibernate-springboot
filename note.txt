@@ -134,6 +134,8 @@ https://github.com/machaukumar/tNt-app
 https://github.com/Undersent/Restaurant
 https://github.com/TopJavaDev/RestaurantRating
 
+https://github.com/mkain0/shopping-cart
+
 https://github.com/MichaelRudyy/Library-Rest-App
 https://github.com/Heisenberg404/BackEndNinjaFinal
 https://github.com/dSouthz/webApp

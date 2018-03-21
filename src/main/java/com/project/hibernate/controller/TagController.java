@@ -15,6 +15,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping(value = "/v1/api/tags")
+//@Api(tags="Vechiles")
 public class TagController {
 
     @Autowired

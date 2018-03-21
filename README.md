@@ -47,7 +47,7 @@ Project overview : Company management hub
         + Cache strategies : Read only, Non strict read write, read write, transactional, object identity
         + Manage cache: remove cache entities, cache modes 
 + FTP client         
-
++ ActiveMQ 
 ### Run the project
 + Run the Redis server :`redis-server` (local)
 + Run the ElasticSearch server : `brew services start elasticsearch` (local)
@@ -84,7 +84,7 @@ Project overview : Company management hub
     + GET `v1/api/tags/{id}` : get tag by id 
     + POST `v1/api/tags` : create new tag 
     + GET `v1/api/tags/{id}/posts` : get all post by tag 
-    
+
 
 + Course : Company / Each department offer course for employee to take to learn 
     + GET `v1/api/courses`: get all courses
