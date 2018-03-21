@@ -23,4 +23,10 @@ public interface IUserRepository extends CrudRepository<User, Long> {
 
 //    @Query(value = "SELECT a, COUNT(a) AS cnt FROM user AS a GROUP BY a ORDER BY cnt")
 //    List<Object[]> findUserProjectreviewStartingWith();
+
+    User findByEmail(String email);
+
+    //Same function of above but with HQL
+    @Query("select u from User u where u.email = ?1")
+    User findByEmailQuery(String email);
 }
