@@ -81,7 +81,7 @@ https://github.com/iqbalsublime/Ednet
 https://github.com/sunilpulugula/SpringSecuritySocialLoginExample
 
 
-Search word: spring boot hibernate, project, company, 
+Search word: project, 
 web shop, shopping , social, 
 client
 booking
@@ -135,6 +135,8 @@ https://github.com/Undersent/Restaurant
 https://github.com/TopJavaDev/RestaurantRating
 
 https://github.com/mkain0/shopping-cart
+https://github.com/fionactc/Restaurant-Reservation-Spring
+https://github.com/AlexeyLevin/restaurantrating
 
 https://github.com/MichaelRudyy/Library-Rest-App
 https://github.com/Heisenberg404/BackEndNinjaFinal

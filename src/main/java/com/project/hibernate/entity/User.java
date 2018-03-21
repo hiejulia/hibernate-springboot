@@ -136,6 +136,10 @@ public class User implements Serializable {
     @JsonBackReference
     private List<Post> posts;
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "position_id")
+    private Position position;
+
 
 
 
