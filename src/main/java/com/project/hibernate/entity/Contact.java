@@ -3,6 +3,10 @@ package com.project.hibernate.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
+import org.hibernate.search.annotations.Analyze;
+import org.hibernate.search.annotations.Field;
+import org.hibernate.search.annotations.Indexed;
+import org.hibernate.search.annotations.Store;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
@@ -23,6 +27,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 //        allowGetters = true)
 @Entity
 @Data
+@Indexed
 @Table(name = "contact", uniqueConstraints = {
         @UniqueConstraint(columnNames = "contact_id"),
         @UniqueConstraint(columnNames = "contact_code") })
@@ -33,6 +38,7 @@ public class Contact implements Serializable {
     private int contactId;
 
     @Column(name = "contact_code", unique = true, nullable = false, length = 5)
+    @Field( analyze = Analyze.YES, store = Store.NO)
     private String contactCode;
 
     private String firstName;

@@ -15,24 +15,26 @@ Todo: da check het
 + AOP
 + Hibernate performance tuning: mass update and remove, config 2nd cache , specific tuning options
 + entity lifecycle
-+ Data filter
++ Data filter: tut(dang check ), book, github project
 + Batch processing
 + Interceptor and event
 + Call trigger and procedure
 + 2nd level cache, 1st level cache, query cache
 + Versioning object
 + Maintain history of object
-+ Batch insert
-+ DDL
-+ Multithreading
++ Batch insert: tut, book, github project
++ DDL : tut, book, gitbub project
 + transaction : JTA, flush the session , pessimistic and optimistic locking, using versioning, using timestamp, optimise locking
 + Batch update
 + Hibernate search : tuts(dang check ), book, github project
 
+
 Advanced book:https://www.reddit.com/r/java/comments/5svzzs/best_advanced_spring_boot_books/
-
-
 Advance query need to be include
+
+
+
++ Doc het doc cua hibernate : https://docs.jboss.org/hibernate/orm/3.3/reference/en/html/transactions.html
 
 
 
@@ -73,6 +75,8 @@ https://github.com/dmijailovic/ballinapp
 https://github.com/soulaway/journals
 
 https://github.com/PeterPorzuczek/web-rooms-app
+https://github.com/nkpznkpz/NewZa-Social-Network
+https://github.com/artur855/Social-Media
 
 
 
@@ -80,11 +84,12 @@ https://github.com/PeterPorzuczek/web-rooms-app
 
 
 
+https://github.com/iqbalsublime/Ednet
+https://github.com/sunilpulugula/SpringSecuritySocialLoginExample
 
 
-Search word: spring boot hibernate, management, user, work, company, project, company, complex, project ,
-web shop, shopping , cart, restaurant, clone, social, network, blog,
-doctor
+Search word: spring boot hibernate, project, company, complex,
+web shop, shopping , cart, restaurant, social, network, blog,
 client
 booking
 update
@@ -105,6 +110,7 @@ https://github.com/philipsorst/angular-rest-springsecurity
 https://github.com/yubrajpokharel/bankApp
 
 https://github.com/xewu/Online-Banking-Web-Service---Java-Spring-Boot
+https://github.com/salahatwa/Hospital-Management-System
 
 Big project : https://github.com/rahulkadam/redis-elastic-search-springBoot-demo
 Big : https://github.com/caodangtinh/tinhcao
@@ -151,7 +157,9 @@ https://github.com/kalwi87/scalable-chat-webapp
 https://github.com/fionactc/Restaurant-Reservation-Spring
 
 https://github.com/esayasGebre/blogs
+https://github.com/Leeyon/ClonePintrestWeb
 
+https://github.com/alphamu/Group-Deal-Clone
 
 
 https://github.com/rajan-github/caveatEmptor-data
@@ -161,10 +169,11 @@ https://github.com/Vinodh-thimmisetty/Spring-Web-Application
 https://github.com/muratdemirkol/meetingApp
 
 
-
+https://github.com/biznomyhq/medrex
 
 Book project(big): Building web apps with spring 5 and angular
 
+https://github.com/glmcguire/Twitter-Clone
 
 
 

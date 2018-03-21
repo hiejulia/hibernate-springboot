@@ -1,6 +1,7 @@
 package com.project.hibernate.entity;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.*;
@@ -51,6 +52,10 @@ public class Category implements Serializable{
     // RELATIONSHIP MAPPING
     @ManyToMany(cascade = CascadeType.ALL, mappedBy = "categories")
     private Set<ProjectReview> projectReviewSet;
+
+    // Photos
+    @OneToMany(mappedBy = "category")
+    private List<Photo> photos;
 
 
 

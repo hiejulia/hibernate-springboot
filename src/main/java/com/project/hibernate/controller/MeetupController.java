@@ -7,18 +7,22 @@ import com.project.hibernate.repository.IUserRepository;
 import com.project.hibernate.repository.MeetupRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -39,12 +43,61 @@ public class MeetupController {
     public List<Meetup> getAll(){
         //get list of all meetups
         List<Meetup> allMeetups = meetupRepository.findAll();
+
         //remove meetups in the past
 //        allMeetups.removeIf((Meetup meetup) -> meetup.getDate().isBefore(LocalDate.now()));
 //        //sort meetups chronologically
 //        allMeetups.sort(Comparator.comparing(Meetup::getDate).thenComparing(Meetup::getTopic).thenComparing(Meetup::getTime));
         return allMeetups;
     }
+
+
+    @PostMapping
+    public Meetup saveMeetup(@Valid @RequestBody Meetup meetup){
+        //check date entered in correct format
+        // get today
+        LocalDate dateToStore;
+        LocalDate localDate = LocalDate.now();
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        Date date = new Date();
+        try {
+            DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+//            dateToStore = LocalDate.parse(date, dateFormatter);
+        } catch (DateTimeParseException ex) {
+
+            ex.printStackTrace();
+        }
+        //check time entered in correct format
+        LocalTime timeToStore;
+//        String stringTime = hour + ":" + minute;
+        try {
+            DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("kk:mm");
+//            timeToStore = LocalTime.parse(stringTime, timeFormatter);
+        } catch (DateTimeParseException ex) {
+            ex.printStackTrace();
+        }
+
+        //get currently logged in user to set as organizer
+//        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+//        String username = auth.getName();
+        User organizer = userRepository.findByUserId(1);
+
+        meetup.setOrganizer(organizer);
+        meetup.setDate(localDate);
+//        meetup.setTime(timeToStore);
+        meetupRepository.save(meetup);
+        return meetup;
+
+    }
+    // FILTER MEETUPS BASED ON SOME FIELDS
+//    @PostMapping
+//    public List<Meetup> getMeetupsFilter(@RequestParam String location, @RequestParam String startDate, @RequestParam String endDate){
+//
+//    }
+
+
+
+
 
     // POST /
     //process meetup creation

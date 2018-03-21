@@ -89,9 +89,9 @@ Project overview : Company management hub
 + Project : Department post their new/ incoming/ongoing projects 
 
 + Meetup
-    + GET `/v1/api/meetups`
+    + GET `/v1/api/meetups` : get all current meetups list 
     + GET 
-    + POST 
+    + POST : `/v1/api/meetups` : create new meetup 
 
 
 + Event : Each department have events (tech event, party event, travel event, sports event ) for company 

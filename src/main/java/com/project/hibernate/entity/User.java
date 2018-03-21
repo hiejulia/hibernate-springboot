@@ -125,6 +125,11 @@ public class User implements Serializable {
     @JoinColumn(name = "address_id")
     private Address address;
 
+    // Photo
+    @OneToMany(mappedBy = "user")
+    private List<Photo> photos;
+
+
 
 
 }
