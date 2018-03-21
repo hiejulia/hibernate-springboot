@@ -78,7 +78,14 @@ Project overview : Company management hub
     + POST `v1/api/category/` : create new category
     + PUT `v1/api/category/id`: edit one category
     + DELETE `v1/api/category/id` : delete one category by id
+
++ Tag : Tag for post - and article 
+    + GET `v1/api/tags`: get list of tags 
+    + GET `v1/api/tags/{id}` : get tag by id 
+    + POST `v1/api/tags` : create new tag 
+    + GET `v1/api/tags/{id}/posts` : get all post by tag 
     
+
 + Course : Company / Each department offer course for employee to take to learn 
     + GET `v1/api/courses`: get all courses
     + GET `v1/api/courses/id` : get one course by id  
