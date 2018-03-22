@@ -37,6 +37,12 @@ public class Course implements Serializable{
     @Cascade(CascadeType.SAVE_UPDATE)
     private Category category;
 
+    // topic
+
+    @ManyToOne
+    private Topic topic;
+
+
 
 
 

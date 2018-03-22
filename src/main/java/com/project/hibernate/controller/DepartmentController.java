@@ -9,35 +9,29 @@ import com.project.hibernate.entity.Department;
 import com.project.hibernate.repository.DepartmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.*;
 
 
 @RestController
-
+@CrossOrigin
+@RequestMapping("/v1/api/departments")
 public class DepartmentController {
 
     @Autowired
     DepartmentRepository departmentRepository;
 
-    @PostMapping(value = "/departments")
+    @PostMapping
     public Department createDepartment(@Valid @RequestBody Department department) {
         return departmentRepository.save(department);
     }
 
-    @GetMapping("/departments")
+    @GetMapping
     public List<Department> listDepartment() {
         return departmentRepository.findAll();
     }
 
-    @GetMapping("/departments/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<?> getDepartment(@PathVariable(value = "id")  Integer id) {
         Department department = departmentRepository.findById(id);
 
@@ -47,7 +41,7 @@ public class DepartmentController {
         return ResponseEntity.ok().body(department);
     }
 
-    @PutMapping("/departments/{id}")
+    @PutMapping("/{id:\\\\d+}")
     public ResponseEntity<?> updateDepartment(@PathVariable(value = "id")  Integer id,
                                               @Valid @RequestBody Department updateData) {
         Department department = departmentRepository.findById(id);
@@ -63,7 +57,7 @@ public class DepartmentController {
         return ResponseEntity.ok(updatedDepartment);
     }
 
-    @DeleteMapping("/departments/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteDepartment(@PathVariable(value = "id")  Integer id) {
         Department department = departmentRepository.findById(id);
 

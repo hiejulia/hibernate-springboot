@@ -13,6 +13,10 @@ import javax.persistence.SequenceGenerator;
 
 @MappedSuperclass
 public abstract class BaseEntity {
+//     extends AbstractPersistable<Integer> {
+
+    private static final long serialVersionUID = -9214388576700297054L;
+
     @Id
     @GeneratedValue(generator="seqId",strategy=GenerationType.SEQUENCE)
     @Column(name="id")
@@ -26,6 +30,9 @@ public abstract class BaseEntity {
 
     @Column(name="DELETED")
     protected boolean deleted;
+
+    @Column(name = "created_at")
+    private Date createdDate;
 
 
 

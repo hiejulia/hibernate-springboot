@@ -1,5 +1,6 @@
 package com.project.hibernate.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
@@ -16,6 +17,7 @@ import java.io.Serializable;
 //@RequiredArgsConstructor
 @RedisHash("customers")
 @NoArgsConstructor
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Data
 public class Customer implements Serializable {
 

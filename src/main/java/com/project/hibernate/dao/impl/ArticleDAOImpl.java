@@ -30,6 +30,7 @@ public class ArticleDAOImpl implements IArticleDAO {
     private EntityManager entityManager;
 
 
+
     SessionFactory sessionFactory;
 
     Session session;

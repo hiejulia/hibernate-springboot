@@ -4,11 +4,9 @@ Todo: da check het
 + File upload support : article+tut, book, github project
 + Join, procedure, trigger , function with MySQL and Hibernate - Join query : DEN HET CUOI TUAN NAY, transaction , locking
 + Save XML/ JSON into one data type : tut(dang check), book, github project
-+ RabbitMQ integrate with Hibernate : article + tut(dang lam), book, github project
 + Expose XML file : tut, book, github project 
 + External API integration - Google map - Banking API - Payment API : tut, book, github project 
-+ Invoice 
-+ Design pattern 
++ Invoice
 + Test 
 + Check multi threading with Hibernate - Java 8
 + Check design pattern in hibernate: Proxy pattern for lazy loading
@@ -27,7 +25,7 @@ Todo: da check het
 + transaction : JTA, flush the session , pessimistic and optimistic locking, using versioning, using timestamp, optimise locking
 + Batch update
 + Hibernate search : tuts(dang check ), book, github project
-
++ Doc het Hibernate docs
 
 Advanced book:https://www.reddit.com/r/java/comments/5svzzs/best_advanced_spring_boot_books/
 Advance query need to be include
@@ -114,6 +112,9 @@ https://github.com/kaiak31/ActivityScheduler
 https://github.com/rodrigo-brito/onibus-api
 https://github.com/N9mo/spring-boot-rest-upload-sample
 https://github.com/AlikJoke/CSVLoader
+https://github.com/varunchandra36/cartrackerApp
+https://github.com/otero9/footballTraining
+https://github.com/satuk/cama-api
 
 Base project:
 https://github.com/Bartosz-D3V/E-Commerce-Full-Stack
@@ -228,4 +229,10 @@ https://github.com/singaramsubramanian/todoapi-dropwizard
 https://github.com/xujeff/tianti
 https://github.com/mission008/B2CWeb
 
+
+
+-------- spring boot - migration
+Github project
+https://github.com/adamzareba/company-structure-spring-security-oauth2-swagger
+https://github.com/adamzareba/company-structure-spring-security-oauth2-cache
 

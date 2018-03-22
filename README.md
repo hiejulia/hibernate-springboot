@@ -64,6 +64,10 @@ Project overview : Company management hub
 
 
 ### API docs 
++ Employes: Keep a list of all employee in the company
+
+
+
 + Articles : User (Employee) create article on their profile about daily work, share useful information for other colleagues as well 
     + GET `v1/api/articles`: get all articles
     + GET `v1/api/articles/id` : get one article by id 
@@ -71,28 +75,29 @@ Project overview : Company management hub
     + POST `v1/api/articles/` : create new article
     + PUT `v1/api/articles/id`: edit one article
     + DELETE `v1/api/articles/id` : delete one article by id 
-    
 + Category : Category type for course 
     + GET `v1/api/category`: get all categories
     + GET `v1/api/category/id` : get one category by id  
     + POST `v1/api/category/` : create new category
     + PUT `v1/api/category/id`: edit one category
     + DELETE `v1/api/category/id` : delete one category by id
-
 + Tag : Tag for post - and article 
     + GET `v1/api/tags`: get list of tags 
     + GET `v1/api/tags/{id}` : get tag by id 
     + POST `v1/api/tags` : create new tag 
     + GET `v1/api/tags/{id}/posts` : get all post by tag 
-
-
 + Course : Company / Each department offer course for employee to take to learn 
     + GET `v1/api/courses`: get all courses
     + GET `v1/api/courses/id` : get one course by id  
     + POST `v1/api/courses/` : create new course with category 
     + PUT `v1/api/courses/id`: edit one course with category
     + DELETE `v1/api/courses/id` : delete one course by id
-    
++ Topic : topic of the course 
+    + GET `/v1/api/topics` : list all topics
+    + GET `/v1/api/topics/id` :get one topic by id 
+    + POST `/v1/api/topics` : create new topic
+    + DELETE `/v1/api/topics/id` : delete topic by id 
+    + PUT `/v1/api/topics/id` : edit topic by id 
 + Project : Department post their new/ incoming/ongoing projects 
 
 + Meetup
@@ -103,8 +108,18 @@ Project overview : Company management hub
 
 + Event : Each department have events (tech event, party event, travel event, sports event ) for company 
 
++ Department
+    + GET : `/v1/api/departments` : get all departments
+    + GET : `/v1/api/departments/id` : get department by id 
+    + POST : `/v1/api/departments`: create new department 
+    + GET : `/v1/api/departments/{id}/employees`: get list all employees by department id 
+    + DELETE :`/v1/api/departments/id` : delete one department by id 
+    + PUT :`/v1/api/departments/id`: edit one department by id 
 
-+ User : Employee 
++ User : Employee api doc 
+    + GET 
+    + GET 
+    + POST 
     
 + Appointment: Each user / employee can book an appointment with the appointment room  
     + GET `/v1/api/appointments` : get all current appointments from the company 
@@ -112,7 +127,12 @@ Project overview : Company management hub
     + GET `/v1/api/appointments/users/{userId}` : get all appointment by user id 
     + GET `/v1/api/appointments/{appointmentId}`: user confirm the apppointment
     
-    
++ File 
+    + GET : `/v1/api/files` : get all files in the database
+    + GET : `/v1/api/files/id` : get file by id 
+    + POST : `/v1/api/files` : create new file  
+    + DELETE `/v1/api/files/id` : delete file by id 
+    + PUT : `/v1/api/files` : edit existing file  
 + Meeting :
 
 + Project Review : User will create a project review 

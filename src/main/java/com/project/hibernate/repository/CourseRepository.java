@@ -13,6 +13,8 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 
 @Repository
 @Transactional
@@ -23,5 +25,8 @@ public interface CourseRepository extends JpaRepository<Course, Integer> {
     // search by category
 //    @Query("select c from Course c where c.categoryId like :categoryId")
 //    public Page<Course> searchByCategory(@Param("categoryId") Integer categoryId, Pageable pageable);
+
+    // find by topic id - topic name
+    public List<Course> findByTopicId(String name);
 
 }
