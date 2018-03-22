@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
+import org.hibernate.envers.Audited;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.Id;
@@ -17,6 +18,7 @@ import java.util.*;
 @Data
 @Entity
 @Table(name = "department")
+@Audited
 //@SequenceGenerator(name="seqId",sequenceName="SEQ_DEPARTMENT")
 public class Department {
 
