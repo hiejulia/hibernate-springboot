@@ -1,6 +1,7 @@
 package com.project.hibernate.entity;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
@@ -56,6 +57,11 @@ public class Category implements Serializable{
     // Photos
     @OneToMany(mappedBy = "category")
     private List<Photo> photos;
+
+    @Column(name="create_at")
+    @Temporal(TemporalType.DATE)
+    //@DateTimeFormat(pattern="yyyy-MM-dd)
+    private Date create_at;
 
 
 

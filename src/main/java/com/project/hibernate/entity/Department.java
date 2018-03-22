@@ -47,10 +47,10 @@ public class Department {
     private List<Post> posts = new ArrayList<>();
 
     // employee - aka .user
-//    @OneToMany(mappedBy="department_id",fetch=FetchType.LAZY,cascade = CascadeType.ALL)
-//    @JsonIgnore
-//    @JsonManagedReference
-//    private Set<User> employees = new HashSet<>();
+    @OneToMany(mappedBy="department",fetch=FetchType.LAZY,cascade = CascadeType.ALL)
+    @JsonIgnore
+    @JsonManagedReference
+    private Set<User> employees = new HashSet<>();
 
     @ManyToMany(mappedBy="departmentList")
     private List<Meeting> meetingList;

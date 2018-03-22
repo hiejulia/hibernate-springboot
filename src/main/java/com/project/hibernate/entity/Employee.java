@@ -4,19 +4,7 @@ package com.project.hibernate.entity;
 import java.sql.Date;
 import java.util.Set;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.Fetch;
@@ -60,6 +48,7 @@ public class Employee {
     @NotNull
     @Column(name="DOB")
     @Type(type="date")
+    @Temporal(TemporalType.DATE)
     private Date dateOfBirth;
 
     @NotNull
@@ -97,7 +86,10 @@ public class Employee {
     private Set<EmployeeKin> employeesKins;
 
     // for testing purpose
-    private String department;
+//    private String department;
+    @ManyToOne(cascade=CascadeType.ALL,fetch= FetchType.LAZY)
+    @JoinColumn(name="department_id")
+    private Department department;
 
 
 

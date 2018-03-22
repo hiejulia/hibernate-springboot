@@ -12,7 +12,7 @@ import java.util.Date;
 public class Comment {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "comment_id")
     private int id;
 
@@ -27,5 +27,11 @@ public class Comment {
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date creationDate;
+
+
+    @Column(name = "user")
+    private String user;
+
+
 
 }

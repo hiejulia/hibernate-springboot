@@ -5,6 +5,7 @@ import java.util.Map;
 import java.util.Optional;
 
 import com.project.hibernate.entity.Customer;
+import com.project.hibernate.repository.CustomerRepository;
 import com.project.hibernate.repository.ICustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
@@ -20,6 +21,10 @@ public class CustomerController {
 
     @Autowired
     private ICustomerRepository customerRepository;
+
+
+    @Autowired
+    private CustomerRepository customerRepository1;
 
 //    @RequestMapping("/save")
 //    public String save() {
@@ -91,6 +96,33 @@ public Optional<Customer> getCustomer(@PathVariable Long customerId) {
 
         customerRepository.delete(customer);
     }
+
+    // find customer by firstname
+    @GetMapping(path="/getByFirstName")
+    public @ResponseBody Customer getByFirstName( @RequestParam(value = "name") String firstName){
+        return customerRepository1.findByFirstName(firstName);
+    }
+
+    @GetMapping(path="/getByFirstNameNativeQ")
+    public @ResponseBody Customer getByFirstNameNAtiveQ( @RequestParam(value = "name") String firstName){
+        return customerRepository1.findByFirstNameNativeQ(firstName);
+    }
+
+    @GetMapping(path="/getByFirstNameJQPL")
+    public @ResponseBody Customer getByFirstNameJQPL( @RequestParam(value = "name") String firstName){
+        return customerRepository1.findByFirstNameJPQL(firstName);
+    }
+
+    @GetMapping(path="/getByFirstNameHQL")
+    public @ResponseBody Customer getByFirstNameHQL( @RequestParam(value = "name") String firstName){
+        return customerRepository1.findByFirstNameHQL(firstName);
+    }
+
+    @GetMapping(path="/runProcesDocumentCustomerByNIP")
+    public @ResponseBody String runProcesDocumentCustomerByNIP() {
+        return "Wartość  pojedyńczego pola zwracana z procedury składowanej => " + customerRepository1.procesDocumentCustomerByNIP();
+    }
+
 
 
 }

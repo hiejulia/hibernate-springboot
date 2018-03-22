@@ -104,7 +104,13 @@ Project overview : Company management hub
     + GET `/v1/api/meetups` : get all current meetups list 
     + GET 
     + POST : `/v1/api/meetups` : create new meetup 
-
++ Customer 
+    + GET `v1/api/customers`: get all customer
+    + GET `v1/api/customers/id` : get customer by id 
+    + GET `v1/api/customers/name` : get customer by name
+    + POST : `v1/api/customers` : create new customer
+    + DELETE : `v1/api/customers/id` : delete customer
+    + PUT : `v1/api/customers/id` : edit customer
 
 + Event : Each department have events (tech event, party event, travel event, sports event ) for company 
 
