@@ -5,16 +5,74 @@ import com.project.hibernate.entity.BaseEntity;
 
 import java.util.List;
 
+import java.util.List;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 
+@Repository
+@Transactional
+public abstract class BaseDAO<T> {
+    // An EntityManager will be automatically injected from entityManagerFactory
+    // setup on DatabaseConfig class.
+    @PersistenceContext
+    private EntityManager entityManager;
 
-public interface BaseDAO <T> {
+    public void create(final T object) {
 
-    T insert(T t);
+        entityManager.persist(object);
+        return;
+    }
 
-    T update(T t);
+    /**
+     * Delete the Object from the database.
+     */
+    public void delete(final T object) {
+        if (entityManager.contains(object))
+            entityManager.remove(object);
+        else
+            entityManager.remove(entityManager.merge(object));
+        return;
+    }
 
-    boolean delete(T t);
+    /**
+     * Return all the Objects stored in the database.
+     */
+    @SuppressWarnings("unchecked")
+    public List<T> getAll(final String entity) {
 
-    List<T> getAllList();
+        return entityManager.createQuery(String.format("from %s", entity)).getResultList();
+    }
+
+    public void truncate(final String entity) {
+        entityManager.createQuery(String.format("delete from %s", entity)).executeUpdate();
+    }
+
+    /**
+     * Return the Object having the passed id.
+     */
+    public T getById(final Class classType, final long code) {
+        return (T)entityManager.find(classType, code);
+    }
+
+    /**
+     * Update the passed Object in the database.
+     */
+    public void update(final T object) {
+        entityManager.merge(object);
+        return;
+    }
+
+    /**
+     * Return the Object having the passed email.
+     */
+    public List<T> getBySalesCode(final String entity, final long salesCode) {
+        return entityManager.createQuery(String.format("from %s where sales_code = %s", entity, salesCode))
+                .getResultList();
+    }
+
+
 }
