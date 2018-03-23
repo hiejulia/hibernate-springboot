@@ -2,6 +2,7 @@ package com.project.hibernate;
 
 import com.project.hibernate.config.batch.BatchConfiguration;
 import org.hibernate.SessionFactory;
+import org.springframework.amqp.support.converter.MessageConverter;
 import org.springframework.batch.core.launch.support.SimpleJobLauncher;
 import org.springframework.batch.core.repository.JobRepository;
 import org.springframework.batch.core.repository.support.MapJobRepositoryFactoryBean;
@@ -12,6 +13,7 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration;
+import org.springframework.boot.autoconfigure.jms.DefaultJmsListenerContainerFactoryConfigurer;
 import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
@@ -22,26 +24,54 @@ import org.springframework.data.elasticsearch.repository.ElasticsearchRepository
 import org.springframework.data.elasticsearch.repository.config.EnableElasticsearchRepositories;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.jms.annotation.EnableJms;
+import org.springframework.jms.config.DefaultJmsListenerContainerFactory;
+import org.springframework.jms.config.JmsListenerContainerFactory;
+import org.springframework.jms.core.JmsTemplate;
+import org.springframework.jms.support.converter.MappingJackson2MessageConverter;
+import org.springframework.jms.support.converter.MessageType;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.transaction.PlatformTransactionManager;
 
+import javax.jms.ConnectionFactory;
 import javax.sql.DataSource;
 import java.util.Properties;
 
-@SpringBootApplication
-@EnableCaching // caching enabled with redis
-@EnableAsync
-@EnableScheduling
 
 //@EnableAutoCo
 // @EnableSchedulingnfiguration
 //@EnableElasticsearchRepositories(basePackages = "com.project.hibernate.elasticsearch")
 //@EnableElasticsearchRepositories(includeFilters=@ComponentScan.Filter(type= FilterType.ASSIGNABLE_TYPE,value=ElasticsearchRepository.class))
 //@EnableJpaRepositories("com.project.hibernate.entity")
+@SpringBootApplication
+@EnableCaching // caching enabled with redis
+@EnableAsync
+@EnableScheduling
+@EnableJms // enable jms
 public class HibernateApplication {
+
+	// add the jms template
+	public static JmsTemplate jmsTemplate;
+
+
+	@Bean
+	public JmsListenerContainerFactory<?> myFactory(ConnectionFactory connectionFactory,
+													DefaultJmsListenerContainerFactoryConfigurer configurer) {
+		DefaultJmsListenerContainerFactory factory = new DefaultJmsListenerContainerFactory();
+		configurer.configure(factory, connectionFactory);
+		return factory;
+	}
+
+	@Bean
+	public MessageConverter jacksonJmsMessageConverter() {
+		MappingJackson2MessageConverter converter = new MappingJackson2MessageConverter();
+		converter.setTargetType(MessageType.TEXT);
+		converter.setTypeIdPropertyName("_type");
+		return converter;
+	}
 //	@Autowired
 //	private Environment env;
 

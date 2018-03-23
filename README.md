@@ -47,7 +47,7 @@ Project overview : Company management hub
         + Cache strategies : Read only, Non strict read write, read write, transactional, object identity
         + Manage cache: remove cache entities, cache modes 
 + FTP client         
-+ ActiveMQ 
++ ActiveMQ and JMS template
 ### Run the project
 + Run the Redis server :`redis-server` (local)
 + Run the ElasticSearch server : `brew services start elasticsearch` (local)
@@ -146,7 +146,9 @@ Project overview : Company management hub
 
 + Book : 
     +  
-
++ Product 
+    + POST `/v1/api/products` : create new product and send with JMStemplate to the ActiveMQ queue
+    
 
 + Portal also include one area for job posting information from the company and other corporate company 
     + Company 

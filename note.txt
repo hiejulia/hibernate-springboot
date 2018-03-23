@@ -115,6 +115,7 @@ https://github.com/AlikJoke/CSVLoader
 https://github.com/varunchandra36/cartrackerApp
 https://github.com/otero9/footballTraining
 https://github.com/satuk/cama-api
+https://github.com/nagypeterjob/oauth
 
 Base project:
 https://github.com/Bartosz-D3V/E-Commerce-Full-Stack
@@ -149,6 +150,7 @@ base : https://github.com/beamofsoul/BusinessInfrastructurePlatformGroupVersion
 
 https://github.com/yubrajpokharel/bankApp
 https://github.com/chocolaaaaate/springtasks
+https://github.com/wangf111/hibernateSptialPostgreSql
 
 https://github.com/HabibeGuler/spring-framework.examples
 
@@ -159,8 +161,11 @@ https://github.com/fionactc/Restaurant-Reservation-Spring
 https://github.com/esayasGebre/blogs
 https://github.com/Leeyon/ClonePintrestWeb
 https://github.com/ben-tes/Enterprise-Arch-Labs
-
+https://github.com/eugenp/tutorials
 https://github.com/alphamu/Group-Deal-Clone
+https://github.com/eugenp/tutorials
+https://github.com/kaiserahmed-isu/LinkedU
+https://github.com/IvanPerez9/FitURJC
 
 
 https://github.com/rajan-github/caveatEmptor-data
@@ -169,12 +174,13 @@ https://github.com/nazrulaub30/Social-Networking-Web-Application
 https://github.com/Vinodh-thimmisetty/Spring-Web-Application
 https://github.com/muratdemirkol/meetingApp
 
-
+https://github.com/Talakh/AccountingDepartment
 https://github.com/biznomyhq/medrex
 
 Book project(big): Building web apps with spring 5 and angular
 
 https://github.com/glmcguire/Twitter-Clone
+https://github.com/mustafamym/Spring-Boot-REST-JPA-Hibernate-MySQL-Example
 
 
 
