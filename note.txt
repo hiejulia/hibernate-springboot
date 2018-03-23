@@ -38,7 +38,7 @@ Advance query need to be include
 
 --------------
 
-
+https://github.com/tmanev/quis-listing
 + Save JSON data type to database check: https://vladmihalcea.com/how-to-map-json-objects-using-generic-hibernate-types/ 
 
 
@@ -158,6 +158,7 @@ https://github.com/fionactc/Restaurant-Reservation-Spring
 
 https://github.com/esayasGebre/blogs
 https://github.com/Leeyon/ClonePintrestWeb
+https://github.com/ben-tes/Enterprise-Arch-Labs
 
 https://github.com/alphamu/Group-Deal-Clone
 

@@ -91,31 +91,31 @@ public class FileController {
     void update(@PathVariable("id") String  id){
         fileService.delete(id);
     }
+//
+//    @PostMapping("/upload")
+//    public ResponseEntity<Long> serveInstance(@RequestParam("file") MultipartFile file) {
+//        //deleteOldFile();
+//        File dataSet = null;
+//        try {
+//            dataSet = new File(file.getBytes(),new Date(),file.getOriginalFilename());
+//            fileRepository.save(dataSet);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        return new ResponseEntity<>(dataSet.getId(), HttpStatus.OK);
+//
+//    }
 
-    @PostMapping("/upload")
-    public ResponseEntity<Long> serveInstance(@RequestParam("file") MultipartFile file) {
-        //deleteOldFile();
-        File dataSet = null;
-        try {
-            dataSet = new File(file.getBytes(),new Date(),file.getOriginalFilename());
-            fileRepository.save(dataSet);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return new ResponseEntity<>(dataSet.getId(), HttpStatus.OK);
+//    @PutMapping("/update/{id}")
+//    public void updateEntityById(@PathVariable Long id, @RequestParam("description") String description) {
+//        File dataSet = fileRepository.findOne(id);
+//        dataSet.setDescription(description);
+//        fileRepository.save(dataSet);
+//    }
 
-    }
-
-    @PutMapping("/update/{id}")
-    public void updateEntityById(@PathVariable Long id, @RequestParam("description") String description) {
-        File dataSet = fileRepository.findOne(id);
-        dataSet.setDescription(description);
-        fileRepository.save(dataSet);
-    }
-
-    @DeleteMapping("/delete/{id}")
-    public void deleteEntityById(@PathVariable("id") int id) {
-        fileRepository.delete(id);
-    }
+//    @DeleteMapping("/delete/{id}")
+//    public void deleteEntityById(@PathVariable("id") int id) {
+//        fileRepository.delete(id);
+//    }
 
 }

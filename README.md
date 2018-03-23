@@ -146,6 +146,17 @@ Project overview : Company management hub
 
 + Book : 
     +  
+
+
++ Portal also include one area for job posting information from the company and other corporate company 
+    + Company 
+        + GET `v1/api/companies`: list of the company existing from the list of corporate company
+        + GET `v1/api/companies/id` : get one company by id 
+        + 
+
+
+
+
     
 + Query ElasticSearch database 
     + `locahost:9200/category/category/_search?pretty=true`    
@@ -158,19 +169,6 @@ Project overview : Company management hub
     + https://zeroturnaround.com/rebellabs/your-maven-build-is-slow-speed-it-up/
     + https://stackoverflow.com/questions/32368976/ways-to-make-maven-build-faster
     + 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     

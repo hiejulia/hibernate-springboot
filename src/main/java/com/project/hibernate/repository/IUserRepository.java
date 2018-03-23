@@ -29,4 +29,8 @@ public interface IUserRepository extends CrudRepository<User, Long> {
     //Same function of above but with HQL
     @Query("select u from User u where u.email = ?1")
     User findByEmailQuery(String email);
+
+    // find user by name
+    @Query(nativeQuery = true,value = "SELECT * from user where username like '%?1%'")
+    Iterable<User> search(String username);
 }

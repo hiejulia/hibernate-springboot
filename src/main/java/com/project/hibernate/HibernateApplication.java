@@ -35,6 +35,7 @@ import java.util.Properties;
 @EnableCaching // caching enabled with redis
 @EnableAsync
 @EnableScheduling
+
 //@EnableAutoCo
 // @EnableSchedulingnfiguration
 //@EnableElasticsearchRepositories(basePackages = "com.project.hibernate.elasticsearch")

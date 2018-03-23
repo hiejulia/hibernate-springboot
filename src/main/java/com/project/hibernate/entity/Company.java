@@ -12,14 +12,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.NamedAttributeNode;
-import javax.persistence.NamedEntityGraph;
-import javax.persistence.NamedEntityGraphs;
-import javax.persistence.NamedNativeQueries;
-import javax.persistence.NamedNativeQuery;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.NamedSubgraph;
+
 import javax.persistence.OneToMany;
 
 import lombok.Getter;
@@ -31,6 +24,19 @@ import javax.persistence.Entity;
 import javax.persistence.SecondaryTable;
 import javax.persistence.Table;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 @Data
 @Entity
 @Table(name = "company")
@@ -44,6 +50,20 @@ public class Company {
     @Column(name = "name")
     private String name;
 
+
+    @Column(name = "logo_url")
+    private String logoURL;
+
+    @Column(name = "location")
+    private String location;
+
+    @Column(name = "description", length = 1500)
+    private String description;
+
+    @Column(name = "website")
+    private String website;
+
+    // ENTITY RELATIONSHIP
     @OneToMany(mappedBy = "company", fetch = FetchType.LAZY)
     @JsonManagedReference
     private Set<Department> departments = new HashSet<>();
@@ -51,5 +71,15 @@ public class Company {
     @OneToMany(mappedBy = "company", fetch = FetchType.LAZY)
     @JsonManagedReference
     private Set<Car> cars = new HashSet<>();
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    private User user;
+
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "company", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<JobPost> jobPosts;
+
+
 
 }
