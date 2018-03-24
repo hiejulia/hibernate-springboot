@@ -77,8 +77,8 @@ public class Company {
     private User user;
 
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "company", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<JobPost> jobPosts;
+//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "company", cascade = CascadeType.ALL, orphanRemoval = true)
+//    private List<JobPost> jobPosts;
 
 
 

@@ -156,7 +156,7 @@ Project overview : Company management hub
         + GET `v1/api/companies/id` : get one company by id 
         + 
 
-
++ Hibernate search index for Employee search on field Firstname and Lastname
 
 
     
@@ -170,7 +170,11 @@ Project overview : Company management hub
 + Maven build time : 
     + https://zeroturnaround.com/rebellabs/your-maven-build-is-slow-speed-it-up/
     + https://stackoverflow.com/questions/32368976/ways-to-make-maven-build-faster
-    + 
+    +
+    
++ Hibernate 
+    + Versioning and auditing with Hibernate Envers
+        
     
     
     

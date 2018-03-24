@@ -31,11 +31,11 @@ public class Education {
     @Column(name = "field")
     private String field;
 
-    @Embedded
-    private Period period;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "job_seeker_id")
-    private JobSeeker jobSeeker;
+//    @Embedded
+//    private Period period;
+//
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "job_seeker_id")
+//    private JobSeeker jobSeeker;
 
 }

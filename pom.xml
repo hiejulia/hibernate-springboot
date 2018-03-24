@@ -394,6 +394,19 @@
 				<artifactId>jackson-databind</artifactId>
 			</dependency>
 
+			<!--add for hibernate search-->
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-search-orm</artifactId>
+				<version>4.5.1.Final</version>
+			</dependency>
+
+			<!-- Optional: to use JPA 2.1 -->
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-entitymanager</artifactId>
+			</dependency>
+
 		</dependencies>
 
 	<build>

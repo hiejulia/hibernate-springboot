@@ -13,6 +13,10 @@ import org.hibernate.annotations.Type;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
+import org.hibernate.search.annotations.Analyze;
+import org.hibernate.search.annotations.Field;
+import org.hibernate.search.annotations.Indexed;
+import org.hibernate.search.annotations.Store;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 // job title
@@ -24,6 +28,7 @@ enum JobTitle {
 @EnableJpaAuditing //add enable jpa auditing
 @Entity
 @Table(name="Employee")
+@Indexed // add for hibernate search
 @Inheritance(strategy=InheritanceType.JOINED)
 public class Employee {
 
@@ -38,10 +43,12 @@ public class Employee {
     private String ssn;
 
     @NotNull
+    @Field(analyze= Analyze.NO, store = Store.YES)
     @Column(name="first_name")
     private String firstName;
 
     @NotNull
+    @Field(analyze= Analyze.NO, store = Store.YES)
     @Column(name="last_name")
     private String lastName;
 
