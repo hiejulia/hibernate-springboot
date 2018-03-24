@@ -2,7 +2,6 @@
 Project overview : Company management hub 
 + Company manager web app that manage all the workflow from employee  
 
-
 ### Stack using 
 + Spring boot 
 + REST
@@ -175,7 +174,8 @@ Project overview : Company management hub
 + Hibernate 
     + Versioning and auditing with Hibernate Envers
 + Aspects 
-    + Logging : With User controller : (class UserLogginAspect)       
+    + Logging : With User controller : (class UserLogginAspect)   
+    + Hibernate transaction log    
     
     
     
