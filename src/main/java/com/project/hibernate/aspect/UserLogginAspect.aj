@@ -11,10 +11,7 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.springframework.stereotype.Component;
 
-import com.mtit.spring_aop.assignment.common.Constants;
-import com.mtit.spring_aop.assignment.common.Utility;
-
-@Aspect
+@Aspect // aspect class
 @Component
 public class UserLogginAspect {
     public static final Logger LOGGER = LogManager.getLogger(UserLogginAspect.class.getName());
@@ -25,9 +22,10 @@ public class UserLogginAspect {
 	 * -------------------------------------------------------------------------
 	 */
 
-    @Before("execution(* com.mtit.spring_aop.assignment.controller.ApiController.getUsers())")
+	// GET ALL 5 ARTICLES
+    @Before("execution(* com.project.hibernate.controller.UserController.findAll())")
     public void beforeGetUsers() {
-        LOGGER.info("+++++ getUsers - before +++++");
+        LOGGER.info("GET USER BEFORE");
         Utility.logAction(Constants.USER, Constants.SEARCH);
     }
 

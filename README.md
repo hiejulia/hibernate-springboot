@@ -58,7 +58,7 @@ Project overview : Company management hub
     + Start rabbitMQ server : `./rabbitmq_server-3.5.1/sbin/rabbitmq-server`
     + Add exchange : 
 
-
++ Basic AOP implementation with Spring - Hibernate 
 
 
 
@@ -175,8 +175,7 @@ Project overview : Company management hub
 + Hibernate 
     + Versioning and auditing with Hibernate Envers
 + Aspects 
-    + Logging 
-    + Security        
+    + Logging : With User controller : (class UserLogginAspect)       
     
     
     
