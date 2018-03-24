@@ -5,6 +5,9 @@ package com.project.hibernate.entity;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
+import org.hibernate.search.annotations.Field;
+import org.hibernate.search.annotations.Indexed;
+import org.hibernate.search.annotations.Store;
 
 import java.io.Serializable;
 import java.util.*;
@@ -22,6 +25,7 @@ import javax.xml.bind.annotation.XmlTransient;
 //      @NamedQuery(name = "User.findAll", query = "SELECT s FROM user s")})
 @Data
 @Entity
+@Indexed
 @Table(name = "user")
 @NamedQueries({
         @NamedQuery(
@@ -53,6 +57,7 @@ public class User implements Serializable {
     private String userName;
 
     @Column
+    @Field
     private String firstName;
 
     @Column
@@ -67,6 +72,7 @@ public class User implements Serializable {
     private String password;
 
     @Column(name="email", nullable=false,unique = true)
+    @Field(store = Store.NO)
     @Email(message = "*Please provide a valid e-mail address.")
     private String email;
 

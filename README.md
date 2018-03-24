@@ -26,7 +26,7 @@ Project overview : Company management hub
 + JMS - RabbitMQ
 + External API source : Captcha
 + ElasticSearch 
-    + Sync data with MySQL database : 
+    + Sync data with MySQL database 
 + Design pattern 
     + Spring framework 
         + Factory pattern 
@@ -58,7 +58,7 @@ Project overview : Company management hub
     + Add exchange : 
 
 + Basic AOP implementation with Spring - Hibernate 
-
++ Full text search MySQL with Spring data JPA
 
 
 
@@ -122,9 +122,10 @@ Project overview : Company management hub
     + PUT :`/v1/api/departments/id`: edit one department by id 
 
 + User : Employee api doc 
-    + GET 
+    + GET `/v1/api/users` : get all users
     + GET 
     + POST 
+    + POST :     search for one user 
     
 + Appointment: Each user / employee can book an appointment with the appointment room  
     + GET `/v1/api/appointments` : get all current appointments from the company 
