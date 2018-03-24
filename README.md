@@ -174,7 +174,9 @@ Project overview : Company management hub
     
 + Hibernate 
     + Versioning and auditing with Hibernate Envers
-        
++ Aspects 
+    + Logging 
+    + Security        
     
     
     

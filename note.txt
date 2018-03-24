@@ -9,7 +9,6 @@ Todo: da check het
 + Test 
 + Check multi threading with Hibernate - Java 8
 + Check design pattern in hibernate: Proxy pattern for lazy loading
-+ AOP
 + Hibernate performance tuning: mass update and remove, config 2nd cache , specific tuning options
 + entity lifecycle
 + Data filter: tut(dang check ), book, github project
