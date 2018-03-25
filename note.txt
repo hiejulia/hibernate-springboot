@@ -81,7 +81,7 @@ https://github.com/gurkancakir/EmployeeManagement
 https://github.com/karolpat/Final-Project-CodersLab
 https://github.com/andrewtobilko/diploma-project
 
-https://github.com/mayweather1993/Hotel_booking
+
 https://github.com/ameypophali/RESTful-website-Java-SpringBoot-backend
 https://github.com/ejperez71/MyBigJavaProject
 https://github.com/Bartosz-D3V/E-Commerce-Full-Stack
@@ -92,7 +92,7 @@ base big project : https://github.com/mhaddon/SpringBoot-AirportDemoProject
 https://github.com/ZhuXS/Spring-Shiro-Spark
 https://github.com/dszfw/booking-app
 https://github.com/karolpat/Final-Project-CodersLab
-https://github.com/mayweather1993/Hotel_booking
+
 https://github.com/sstjerne/campsite-booking-api
 https://github.com/hemalvasani/flight2.0
 https://github.com/juniorhc/listavip

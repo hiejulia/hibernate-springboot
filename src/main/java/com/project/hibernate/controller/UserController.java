@@ -5,13 +5,18 @@ import com.project.hibernate.captcha.CaptchaVerifier;
 import com.project.hibernate.dao.impl.UserDAOImpl;
 import com.project.hibernate.entity.User;
 import com.project.hibernate.repository.IUserRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
 @RequestMapping("/v1/api/users")
+@AllArgsConstructor
 public class UserController {
 
     private CaptchaVerifier verifier = new CaptchaVerifier();
@@ -149,10 +154,11 @@ public class UserController {
 //    @Autowired
 //    EmployeeRepository employeeRepository;
 //
-//    @PostMapping(value = "/employees")
-//    public Employee createEmployee(@Valid @RequestBody Employee employee) {
-//        return employeeRepository.save(employee);
-//    }
+    @PostMapping
+    public ResponseEntity createUser(@Valid @RequestBody final User user) {
+        userRepository.save(user);
+        return new ResponseEntity<>(user, HttpStatus.CREATED);
+    }
 //
 //    @GetMapping("/employees")
 //    public List<Employee> listEmployee() {
