@@ -34,7 +34,7 @@ public class Booking {
     private int cost;
 
 
-    // RELATIONSHIP TABLE 
+    // RELATIONSHIP TABLE
     @ManyToOne
     @JoinColumn(name = "room_id")
     private Room room;

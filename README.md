@@ -65,8 +65,6 @@ Project overview : Company management hub
 ### API docs 
 + Employes: Keep a list of all employee in the company
 
-
-
 + Articles : User (Employee) create article on their profile about daily work, share useful information for other colleagues as well 
     + GET `v1/api/articles`: get all articles
     + GET `v1/api/articles/id` : get one article by id 
@@ -136,6 +134,29 @@ Project overview : Company management hub
     + POST `/v1/api/appointments` : user create new appointment 
     + GET `/v1/api/appointments/users/{userId}` : get all appointment by user id 
     + GET `/v1/api/appointments/{appointmentId}`: user confirm the apppointment
+    
+    
++ Meeting room booking API 
+    + Room Options API 
+        + GET `/v1/api/room-options` : get all room options available
+        + GET `/v1/api/room-options/id` : get room options available by id 
+        
+    + Room API 
+        + GET `/v1/api/rooms` : get all room options available
+        + GET `/v1/api/rooms_by_category/{category}` : get all room by category 
+        + GET `/v1/api/rooms_by_option/{option_name}` : get all room by option
+        + GET `/v1/api/available_rooms/{startdate}/{enddate}` : get all available room by date 
+
+    + Booking API 
+        + GET `/v1/api/bookings` : get all bookings 
+        + GET `/v1/api/bookings/id` : get booking by id 
+        + GET `/v1/api/{user_id}/bookings` : get bookings by user 
+        + GET `/v1/api/bookings_by_room/{room_id}` : find booking by room 
+        + POST `/v1/api/bookings` : create new booking
+        + PUT `/v1/api/bookings/id` : update booking 
+        + DELETE `/v1/api/bookings/id` : delete booking 
+    
+    
     
 + File 
     + GET : `/v1/api/files` : get all files in the database
