@@ -128,6 +128,8 @@ Project overview : Company management hub
     + PUT : `/v1/api/users/ID` : UPDATE user by id 
     + DELETE : `/v1/api/users/ID` : delete user by id 
     + POST :     search for one user 
+    (updated API docs )
+    + 
     
 + Appointment: Each user / employee can book an appointment with the appointment room  
     + GET `/v1/api/appointments` : get all current appointments from the company 

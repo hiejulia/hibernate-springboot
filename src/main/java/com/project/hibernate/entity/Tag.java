@@ -30,4 +30,8 @@ public class Tag {
     @ManyToMany(mappedBy = "categorization",fetch = FetchType.LAZY)
 //    @JsonIgnore
     private List<Post> posts = new ArrayList<>();
+
+    // Add photo
+    @ManyToMany
+    private List<Photo> photo;
 }

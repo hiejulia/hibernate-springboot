@@ -4,6 +4,7 @@ package com.project.hibernate.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 import org.hibernate.search.annotations.Field;
 import org.hibernate.search.annotations.Indexed;
@@ -23,6 +24,7 @@ import javax.xml.bind.annotation.XmlTransient;
 ////@NamedQueries({
 ////
 //      @NamedQuery(name = "User.findAll", query = "SELECT s FROM user s")})
+
 @Data
 @Entity
 @Indexed
@@ -36,6 +38,16 @@ import javax.xml.bind.annotation.XmlTransient;
 //                name = "findByEmailAndPassword",
 //                query = "from User u where u.email= :email and u.password = :password"
 //        ),
+})
+@NamedNativeQueries({
+        @NamedNativeQuery(name = "User.getFollowed",resultClass = User.class, query = "SELECT * FROM user LEFT JOIN relationship on relationship.follower = :id WHERE relationship.followed = user.id"),
+        @NamedNativeQuery(name = "User.findByIdIs", query = "SELECT DISTINCT photo.uploader_Id, user.name, photo.date_updated,photo.caption, photo.id FROM user,relationship,photo WHERE relationship.follower = :id AND (uploader_id = user.id AND (user.id = relationship.followed) AND (path <> '' OR path iS NOT NULL)) OR (uploader_id = :id AND uploader_id = user.id) ORDER BY photo.date_updated DESC"),
+        @NamedNativeQuery(name = "User.getFollower", resultClass = User.class, query = "SELECT * FROM user LEFT JOIN relationship on relationship.followed = :id WHERE relationship.follower = user.id\n"),
+        @NamedNativeQuery(name = "User.getPostsCount", query="SELECT COUNT(id) FROM photo WHERE uploader_id = :id"),
+        @NamedNativeQuery(name = "User.isFollowingId", resultClass = Relationship.class, query = "SELECT DISTINCT * FROM relationship WHERE follower = :id AND followed = :profileid"),
+        @NamedNativeQuery(name = "User.removeRelationship", query = "DELETE FROM relationship WHERE follower = :id AND followed = :profileid"),
+        @NamedNativeQuery(name = "User.findUserByNameLike", query = "SELECT id,name FROM user WHERE name LIKE :keyword") // find user by name
+
 })
 public class User implements Serializable {
 
@@ -83,6 +95,13 @@ public class User implements Serializable {
     @Temporal(TemporalType.DATE)
     @Column
     private Date date_of_birth;
+
+
+    public Date dateRegistered;
+
+    public String description;
+
+    public String website;
 
 
 //    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user_id",fetch = FetchType.LAZY)
@@ -134,8 +153,13 @@ public class User implements Serializable {
     private Address address;
 
     // Photo
-    @OneToMany(mappedBy = "user")
+//    @OneToMany(mappedBy = "user")
+//    private List<Photo> photos;
+
+    @OneToMany(mappedBy = "uploader")
+    @JsonManagedReference
     private List<Photo> photos;
+
 
     // post
     @OneToMany(mappedBy = "user")
@@ -149,6 +173,11 @@ public class User implements Serializable {
     // task table
     @ManyToMany(mappedBy = "users")
     private List<Task> tasks;
+
+    @OneToMany(mappedBy = "follower")
+    @JsonManagedReference
+    private Collection<Relationship> following;
+
 
 
 
