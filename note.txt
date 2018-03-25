@@ -58,7 +58,7 @@ Base : https://github.com/dzinot/spring-boot-jpa-data-rest-soft-delete
 https://github.com/anastasia69/SpringBootRESTService
 
 https://github.com/dmijailovic/ballinapp
-https://github.com/soulaway/journals
+
 
 https://github.com/PeterPorzuczek/web-rooms-app
 https://github.com/nkpznkpz/NewZa-Social-Network
@@ -92,7 +92,7 @@ base big project : https://github.com/mhaddon/SpringBoot-AirportDemoProject
 https://github.com/ZhuXS/Spring-Shiro-Spark
 https://github.com/dszfw/booking-app
 https://github.com/karolpat/Final-Project-CodersLab
-
+Base ;https://github.com/sstjerne/campsite-booking-api
 
 https://github.com/hemalvasani/flight2.0
 https://github.com/juniorhc/listavip
@@ -122,14 +122,14 @@ https://github.com/AlikJoke/CSVLoader
 https://github.com/varunchandra36/cartrackerApp
 https://github.com/otero9/footballTraining
 https://github.com/satuk/cama-api
-https://github.com/nagypeterjob/oauth
+
 
 Base project:
 https://github.com/Bartosz-D3V/E-Commerce-Full-Stack
 https://github.com/pearlscream/Library-managment-system
 https://github.com/Vinodh-thimmisetty/Spring-Web-Application
 https://github.com/muratdemirkol/meetingApp
-https://github.com/soulaway/journals
+
 https://github.com/esayasGebre/blogs
 https://github.com/riffert/textgroup
 https://github.com/sunny-udhani/online_file_sharing_springboot
@@ -197,7 +197,7 @@ https://github.com/artur855/Social-Media
 https://github.com/nazrulaub30/Social-Networking-Web-Application
 https://github.com/ali-sadri/AgileManager/tree/master/src/main/java/com/agile/controller
 https://github.com/ak826843/onlinetestchallenge
-https://github.com/nagypeterjob/oauth
+
 https://github.com/iqbalsublime/Ednet
 https://github.com/nmerris/Job-Pro-5K
 

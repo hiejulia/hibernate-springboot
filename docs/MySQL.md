@@ -60,3 +60,11 @@ WITH RECURSIVE employee_paths (id, name, path) AS
  ON ep.id = e.manager_id
 )
 SELECT * FROM employee_paths ORDER BY path;
+
+
+### Config MySQL 
++ Using config file
++ Using global and session variables
++ Using parameters with startup script
++ Configuring the parameters
++ Changing the data directory

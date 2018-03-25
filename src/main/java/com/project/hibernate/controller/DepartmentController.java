@@ -11,12 +11,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.*;
-
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 @RestController
 @CrossOrigin
 @RequestMapping("/v1/api/departments")
 public class DepartmentController {
+    private static final Log logger = LogFactory.getLog(DepartmentController.class);
 
     @Autowired
     DepartmentRepository departmentRepository;

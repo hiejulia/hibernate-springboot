@@ -22,8 +22,9 @@ public class EmployeeController {
     }
 
     // Get the list of all employees of one department
-    @RequestMapping("/depts/{deptId}/employees")
-    public Iterable<Employee> getEmployeesByDept(@PathVariable String deptId) {
+    @RequestMapping(value="/depts/{deptId}/employees", method = RequestMethod.GET,consumes = { "application/json", "application/xml" }, produces = { "application/json",
+            "application/xml" })
+    public Iterable<Employee> getEmployeesByDept(@PathVariable String deptId) throws Exception {
         return employeeService.getEmployeesByDept(deptId);
     }
 
