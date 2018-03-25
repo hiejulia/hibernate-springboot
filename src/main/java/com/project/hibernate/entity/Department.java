@@ -25,7 +25,7 @@ public class Department {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "department_id")
-    private int id;
+    private long id;
 
     @Column(name = "name", nullable = false)
     String name;
@@ -66,6 +66,11 @@ public class Department {
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonBackReference
     private Company company;
+
+//    @OneToMany
+//    @JoinColumn(name="user_department", referencedColumnName="id")
+//    private List<User> users;
+
 
 
 

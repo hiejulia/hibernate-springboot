@@ -156,6 +156,8 @@ public class UserController {
 //
     @PostMapping
     public ResponseEntity createUser(@Valid @RequestBody final User user) {
+//        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+//        password = bCryptPasswordEncoder.encode(password);
         userRepository.save(user);
         return new ResponseEntity<>(user, HttpStatus.CREATED);
     }
@@ -192,18 +194,21 @@ public class UserController {
 //        return ResponseEntity.ok(updatedEmployee);
 //    }
 //
-//    @DeleteMapping("/employees/{id}")
-//    public ResponseEntity<?> deleteEmployee(@PathVariable(value = "id")  Long id) {
-//        Employee employee = employeeRepository.findOne(id);
-//
-//        if(employee == null) {
-//            return ResponseEntity.notFound().build();
-//        }
-//
-//        employeeRepository.delete(employee);
-//
-//        return ResponseEntity.ok().build();
-//    }
+
+
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> delete(@PathVariable(value = "id")final  int id) {
+        User user = userRepository.findByUserId(id);
+
+        if(user == null) {
+            return ResponseEntity.notFound().build();
+        }
+
+        userRepository.delete(user);
+
+        return ResponseEntity.ok().build();
+    }
 
     // validate user with captcha
 

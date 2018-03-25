@@ -5,10 +5,12 @@ import org.omg.CORBA.INTERNAL;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 @Transactional
@@ -33,4 +35,8 @@ public interface IUserRepository extends CrudRepository<User, Long> {
     // find user by name
     @Query(nativeQuery = true,value = "SELECT * from user where username like '%?1%'")
     Iterable<User> search(String username);
+
+    // left join with roles table
+    @Query("select u from User u left join fetch u.roles r where u.username=:username")
+    public Optional<User> findByUsernameJoin(@Param("username") String username);
 }

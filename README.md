@@ -123,8 +123,10 @@ Project overview : Company management hub
 
 + User : Employee api doc 
     + GET `/v1/api/users` : get all users
-    + GET 
-    + POST 
+    + GET `/v1/api/users/join/{name}` : get user by name (with left join Role table)
+    + GET `/v1/api/users/ID` : get user by id 
+    + PUT : `/v1/api/users/ID` : UPDATE user by id 
+    + DELETE : `/v1/api/users/ID` : delete user by id 
     + POST :     search for one user 
     
 + Appointment: Each user / employee can book an appointment with the appointment room  

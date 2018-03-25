@@ -77,7 +77,7 @@ https://github.com/bavenka/RESTful-API-SportShop
 https://github.com/andela-Kshittu/SalesOrder-SpringBoot-Swing-MySql-Hibernate
 https://github.com/hemalvasani/flight2.0
 
-https://github.com/gurkancakir/EmployeeManagement
+
 https://github.com/karolpat/Final-Project-CodersLab
 https://github.com/andrewtobilko/diploma-project
 
@@ -93,7 +93,7 @@ https://github.com/ZhuXS/Spring-Shiro-Spark
 https://github.com/dszfw/booking-app
 https://github.com/karolpat/Final-Project-CodersLab
 
-https://github.com/sstjerne/campsite-booking-api
+
 https://github.com/hemalvasani/flight2.0
 https://github.com/juniorhc/listavip
 https://github.com/KonstantinasFalkovskis/UsersList
@@ -236,7 +236,7 @@ https://github.com/Vinodh-thimmisetty/Spring-Web-Application
 https://github.com/muratdemirkol/meetingApp
 
 https://github.com/Talakh/AccountingDepartment
-https://github.com/biznomyhq/medrex
+
 
 Book project(big): Building web apps with spring 5 and angular
 
@@ -248,7 +248,7 @@ https://github.com/mustafamym/Spring-Boot-REST-JPA-Hibernate-MySQL-Example
 
 CSV : https://github.com/developershyam/CSV-Demo 
 Role and user : https://github.com/Dongor7/my-web-site
-Base : https://github.com/dmijailovic/ballinapp
+
 Base : https://github.com/mduhovniy/TutorialApp_aws_backend
 
 Tham khao task : https://github.com/warrenmnocos/application-config/blob/master/application_document.pdf

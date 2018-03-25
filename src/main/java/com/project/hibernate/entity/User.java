@@ -146,6 +146,10 @@ public class User implements Serializable {
     @JoinColumn(name = "position_id")
     private Position position;
 
+    // task table
+    @ManyToMany(mappedBy = "users")
+    private List<Task> tasks;
+
 
 
 
