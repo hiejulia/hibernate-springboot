@@ -19,7 +19,7 @@ Todo: da check het
 + Doc het Hibernate docs
 Advanced book:https://www.reddit.com/r/java/comments/5svzzs/best_advanced_spring_boot_books/
 Advance query need to be include
-+ Doc het doc cua hibernate : https://docs.jboss.org/hibernate/orm/3.3/reference/en/html/transactions.html
++ Doc het doc cua hibernate :
 
 
 

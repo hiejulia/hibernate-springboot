@@ -18,7 +18,7 @@ public interface IEmployeeDAO {
     void addEmployee(Employee employee);
 
     Employee updateEmployee(Employee employee);
-
+    EmployeeDAOImpl
     void deleteEmployee(long employeeId);
 
     boolean employeeExists(String firstName, String lastName, String ssn);
