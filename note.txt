@@ -66,15 +66,10 @@ https://github.com/iqbalsublime/Ednet
 https://github.com/sunilpulugula/SpringSecuritySocialLoginExample
 
 https://github.com/eresearchrmit/estored
-https://github.com/stlk2209/HotelBooking
 
 https://github.com/bavenka/RESTful-API-SportShop
 https://github.com/andela-Kshittu/SalesOrder-SpringBoot-Swing-MySql-Hibernate
-https://github.com/hemalvasani/flight2.0
-
-
 https://github.com/karolpat/Final-Project-CodersLab
-
 https://github.com/ameypophali/RESTful-website-Java-SpringBoot-backend
 https://github.com/ejperez71/MyBigJavaProject
 https://github.com/runjia1987/springboot-jpa-cqrs-swagger-markup
@@ -84,7 +79,6 @@ https://github.com/ZhuXS/Spring-Shiro-Spark
 https://github.com/dszfw/booking-app
 https://github.com/karolpat/Final-Project-CodersLab
 Base ;https://github.com/sstjerne/campsite-booking-api
-https://github.com/hemalvasani/flight2.0
 https://github.com/juniorhc/listavip
 https://github.com/KonstantinasFalkovskis/UsersList
 https://github.com/llka/apartments_task2

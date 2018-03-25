@@ -178,6 +178,11 @@ public class User implements Serializable {
     @JsonManagedReference
     private Collection<Relationship> following;
 
+    // add bookings
+    @OneToMany
+    @JoinColumn(name = "user_id")
+    private List<Booking> bookings;
+
 
 
 
