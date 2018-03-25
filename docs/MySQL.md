@@ -1,0 +1,3 @@
+### Shell commands with MySQL 
++ DESC table;
++ SHOW CREATE TABLE customers\G
